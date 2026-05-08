@@ -71,8 +71,25 @@
             </ul>
           </div>
           <figure class="hostel-photo" data-aos="zoom-in">
-            <img src="images/hall1.jpg" alt="International Hall building" loading="lazy">
+            <img src="images/hall.jpg" alt="International Hall building" loading="lazy">
           </figure>
+        </div>
+        <div class="gallery-grid hall-photo-demo">
+          <article class="gallery-card" data-aos="fade-up">
+            <img src="images/hall1.jpg" alt="Hall demo photo 1" loading="lazy">
+            <h3>Hall Photo 01</h3>
+            <p>Replace this demo file later with hall1.jpg.</p>
+          </article>
+          <article class="gallery-card" data-aos="fade-up" data-aos-delay="120">
+            <img src="images/hall2.jpg" alt="Hall demo photo 2" loading="lazy">
+            <h3>Hall Photo 02</h3>
+            <p>Replace this demo file later with hall2.jpg.</p>
+          </article>
+          <article class="gallery-card" data-aos="fade-up" data-aos-delay="240">
+            <img src="images/hall3.jpg" alt="Hall demo photo 3" loading="lazy">
+            <h3>Hall Photo 03</h3>
+            <p>Upload hall3.jpg later and it will show here.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -86,17 +103,17 @@
           </div>
         </div>
         <div class="person-grid">
-          <article class="person-card" data-aos="fade-up">
+          <article class="person-card" data-aos="fade-up" data-famous-id="one" tabindex="0" role="button">
             <img src="images/famousppl1..jpg" alt="Notable student one" loading="lazy">
             <h3 data-i18n="famous.oneName">Dr. Anis Rahman</h3>
             <p data-i18n="famous.oneText">Demo profile: former hall student, now a public health researcher with medical admission success story.</p>
           </article>
-          <article class="person-card" data-aos="fade-up" data-aos-delay="120">
+          <article class="person-card" data-aos="fade-up" data-aos-delay="120" data-famous-id="two" tabindex="0" role="button">
             <img src="images/famousppl2.jpg" alt="Notable student two" loading="lazy">
             <h3 data-i18n="famous.twoName">Engr. Mahmud Karim</h3>
             <p data-i18n="famous.twoText">Demo profile: engineering graduate, active mentor for admission preparation and student projects.</p>
           </article>
-          <article class="person-card" data-aos="fade-up" data-aos-delay="240">
+          <article class="person-card" data-aos="fade-up" data-aos-delay="240" data-famous-id="three" tabindex="0" role="button">
             <img src="images/famousppl.jpg" alt="Notable student three" loading="lazy">
             <h3 data-i18n="famous.threeName">Sadia Chowdhury</h3>
             <p data-i18n="famous.threeText">Demo profile: university scholarship achiever, known for debate, leadership and academic excellence.</p>
@@ -133,22 +150,18 @@
             <h2 data-i18n="hostel.locationTitle">International Hall Location</h2>
           </div>
           <p class="location-copy" data-aos="fade-up" data-aos-delay="120" data-i18n="hostel.locationText">
-            Dhaka College International Hostel is located near New Market, Dhaka. It is easily accessible by public transport and is situated in a central academic area.
+            Exact location: International Hall, Dhaka College. The live Google map below can be viewed directly on the website.
           </p>
         </div>
-        <a class="map-link-card" href="https://share.google/foMuM6aK0aHqdYUFj" target="_blank" rel="noopener" data-aos="zoom-in">
-          <span data-i18n="hostel.locationTitle">International Hall Location</span>
-          <strong data-i18n="hostel.openLocation">Open exact shared location</strong>
-        </a>
+        <div class="map-wrap" data-aos="zoom-in">
+          <iframe title="International Hall live map" src="https://www.google.com/maps?q=International%20Hall,%20Dhaka%20College&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <p data-i18n="footer.demo">&copy; 2026 DC Hostel. Student information demo.</p>
-      <p data-i18n="footer.credits">Photo credits: Wikimedia Commons CC BY-SA 4.0; demo portraits from Random User.</p>
-    </div>
+    <div class="container footer-inner"></div>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
