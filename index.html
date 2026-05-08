@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DC Hostel | Home</title>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("dc-hostel-theme") === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="DC Hostel home">
+        <img class="logo-img" src="images/logo.png" alt="International Hall logo" loading="lazy">
+        <span data-i18n="nav.logo">International Hall</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+        <a href="students.html" data-i18n="nav.students">Students</a>
+        <a href="roommates.html" data-i18n="nav.roommates">Roommates</a>
+        <a href="results.html" data-i18n="nav.results">Results</a>
+        <a href="hostel.html" data-i18n="nav.hostel">Hostel Info</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="language-switch" aria-label="Language selector">
+          <button type="button" data-lang-option="en">English</button>
+          <button type="button" data-lang-option="bn">বাংলা</button>
+        </div>
+        <button class="theme-toggle" id="toggle" type="button" aria-label="Toggle dark mode">
+          <span aria-hidden="true">&#9789;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow" data-aos="fade-up" data-i18n="home.heroEyebrow">Dhaka College</p>
+        <h1 data-aos="fade-up" data-aos-delay="100" data-i18n="home.heroTitle">International Hall</h1>
+        <p class="hero-subtitle rotating-line" id="heroRotator" data-aos="fade-up" data-aos-delay="200">
+          Together we learn, together we succeed.
+        </p>
+        <a class="btn primary" href="#students-preview" data-aos="fade-up" data-aos-delay="300" data-i18n="home.viewStudents">View Students</a>
+      </div>
+    </section>
+
+    <section class="section" id="students-preview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="common.students">Students</p>
+            <h2 data-i18n="home.studentsPreview">Students Preview</h2>
+          </div>
+          <a class="btn secondary" href="students.html" data-i18n="common.viewAll">View All</a>
+        </div>
+        <div class="search-wrap" data-aos="fade-up">
+          <label for="studentSearch" class="sr-only" data-i18n="common.searchStudents">Search students</label>
+          <input id="studentSearch" class="search-input" type="search" placeholder="Search by name, room, blood group or address" data-i18n-placeholder="common.searchPlaceholderShort">
+        </div>
+        <div class="student-grid" id="studentGrid" data-limit="6"></div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="roommates-preview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="common.rooms">Rooms</p>
+            <h2 data-i18n="home.roommatePreview">Roommate Preview</h2>
+          </div>
+          <a class="btn secondary" href="roommates.html" data-i18n="common.viewRooms">View Rooms</a>
+        </div>
+        <div class="roommate-grid" id="roommateGrid" data-limit="2"></div>
+      </div>
+    </section>
+
+    <section class="section" id="hostel-info-preview">
+      <div class="container">
+        <div class="split">
+          <div data-aos="fade-up">
+            <p class="eyebrow" data-i18n="common.hostelInfo">Hall Info</p>
+            <h2 data-i18n="home.infoTitle">Legacy, achievement and student life</h2>
+            <p class="lead" data-i18n="home.infoLead">
+              International Hall brings student profiles, room assignments, result records and important hall stories into a clean digital hub.
+            </p>
+            <a class="btn primary" href="hostel.html" data-i18n="home.exploreHostel">Explore Hall Info</a>
+          </div>
+          <div class="info-grid">
+            <article class="info-box" data-aos="fade-up" data-aos-delay="0">
+              <span class="info-icon">01</span>
+              <h3 data-i18n="common.history">History</h3>
+              <p data-i18n="home.historyText">A short look at Dhaka College's academic legacy and hall life.</p>
+            </article>
+            <article class="info-box" data-aos="fade-up" data-aos-delay="140">
+              <span class="info-icon">02</span>
+              <h3 data-i18n="common.famousStudents">Notable Students</h3>
+              <p data-i18n="home.famousText">Demo profiles for notable former students and their achievements.</p>
+            </article>
+            <article class="info-box" data-aos="fade-up" data-aos-delay="280">
+              <span class="info-icon">03</span>
+              <h3 data-i18n="common.admissionSuccess">Admission Success</h3>
+              <p data-i18n="home.successText">Medical, university and engineering admission success preview.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-section" id="location">
+      <div class="container">
+        <div class="section-head">
+          <div data-aos="fade-up">
+            <p class="eyebrow" data-i18n="common.location">Location</p>
+            <h2 data-i18n="home.locationTitle">Near New Market, Dhaka</h2>
+          </div>
+          <p class="location-copy" data-aos="fade-up" data-aos-delay="120" data-i18n="home.locationText">
+            Dhaka College International Hostel is located in a central academic area with easy public transport access.
+          </p>
+        </div>
+        <a class="map-link-card" href="https://share.google/foMuM6aK0aHqdYUFj" target="_blank" rel="noopener" data-aos="zoom-in">
+          <span data-i18n="hostel.locationTitle">International Hall Location</span>
+          <strong data-i18n="hostel.openLocation">Open exact shared location</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p data-i18n="footer.demo">&copy; 2026 DC Hostel. Student information demo.</p>
+      <p data-i18n="footer.credits">Photo credits: Wikimedia Commons CC BY-SA 4.0; demo portraits from Random User.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="studentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Close student profile" data-close-modal>&times;</button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

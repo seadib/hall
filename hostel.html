@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DC Hostel | Hostel Info</title>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("dc-hostel-theme") === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="hostel">
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="DC Hostel home">
+        <img class="logo-img" src="images/logo.png" alt="International Hall logo" loading="lazy">
+        <span data-i18n="nav.logo">International Hall</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="students.html" data-i18n="nav.students">Students</a>
+        <a href="roommates.html" data-i18n="nav.roommates">Roommates</a>
+        <a href="results.html" data-i18n="nav.results">Results</a>
+        <a href="hostel.html" class="active" data-i18n="nav.hostel">Hostel Info</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="language-switch" aria-label="Language selector">
+          <button type="button" data-lang-option="en">English</button>
+          <button type="button" data-lang-option="bn">বাংলা</button>
+        </div>
+        <button class="theme-toggle" id="toggle" type="button" aria-label="Toggle dark mode">
+          <span aria-hidden="true">&#9789;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero hostel-hero compact">
+      <div class="container" data-aos="fade-up">
+        <p class="eyebrow" data-i18n="common.hostelInfo">Hall Info</p>
+        <h1 data-i18n="hostel.title">Hall Information</h1>
+        <p data-i18n="hostel.subtitle">History, notable students, admission success and location preview.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div data-aos="fade-up">
+            <p class="eyebrow" data-i18n="common.history">History</p>
+            <h2 data-i18n="hostel.historyTitle">A hall connected to Dhaka College legacy</h2>
+            <p class="lead" data-i18n="hostel.historyText">
+              Dhaka College, established in 1841, is one of the oldest and most influential educational institutions in Bangladesh. International Hall carries that academic spirit through shared study, discipline and student community life.
+            </p>
+            <ul class="nearby-list">
+              <li data-i18n="places.newMarket">New Market</li>
+              <li data-i18n="places.scienceLab">Science Lab</li>
+              <li data-i18n="places.dhanmondi">Dhanmondi</li>
+            </ul>
+          </div>
+          <figure class="hostel-photo" data-aos="zoom-in">
+            <img src="images/hall1.jpg" alt="International Hall building" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="common.famousStudents">Notable Students</p>
+            <h2 data-i18n="hostel.famousTitle">Demo notable alumni profiles</h2>
+          </div>
+        </div>
+        <div class="person-grid">
+          <article class="person-card" data-aos="fade-up">
+            <img src="images/famousppl1..jpg" alt="Notable student one" loading="lazy">
+            <h3 data-i18n="famous.oneName">Dr. Anis Rahman</h3>
+            <p data-i18n="famous.oneText">Demo profile: former hall student, now a public health researcher with medical admission success story.</p>
+          </article>
+          <article class="person-card" data-aos="fade-up" data-aos-delay="120">
+            <img src="images/famousppl2.jpg" alt="Notable student two" loading="lazy">
+            <h3 data-i18n="famous.twoName">Engr. Mahmud Karim</h3>
+            <p data-i18n="famous.twoText">Demo profile: engineering graduate, active mentor for admission preparation and student projects.</p>
+          </article>
+          <article class="person-card" data-aos="fade-up" data-aos-delay="240">
+            <img src="images/famousppl.jpg" alt="Notable student three" loading="lazy">
+            <h3 data-i18n="famous.threeName">Sadia Chowdhury</h3>
+            <p data-i18n="famous.threeText">Demo profile: university scholarship achiever, known for debate, leadership and academic excellence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div data-aos="fade-up">
+            <p class="eyebrow" data-i18n="common.admissionSuccess">Admission Success</p>
+            <h2 data-i18n="hostel.successTitle">Admission success overview</h2>
+          </div>
+          <p class="location-copy" data-aos="fade-up" data-aos-delay="120" data-i18n="hostel.successText">
+            Demo chart showing how many students received chances in engineering, medical and university admission.
+          </p>
+        </div>
+        <div class="success-chart" data-aos="fade-up">
+          <div class="chart-row"><span>2023</span><div style="--w: 48%"><b>BUET 6 · Medical 12 · University 28</b></div></div>
+          <div class="chart-row"><span>2024</span><div style="--w: 62%"><b>BUET 9 · Medical 16 · University 34</b></div></div>
+          <div class="chart-row"><span>2025</span><div style="--w: 78%"><b>BUET 12 · Medical 21 · University 42</b></div></div>
+          <div class="chart-row"><span>2026</span><div style="--w: 86%"><b>BUET 14 · Medical 24 · University 48</b></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-section">
+      <div class="container">
+        <div class="section-head">
+          <div data-aos="fade-up">
+            <p class="eyebrow" data-i18n="common.location">Location</p>
+            <h2 data-i18n="hostel.locationTitle">International Hall Location</h2>
+          </div>
+          <p class="location-copy" data-aos="fade-up" data-aos-delay="120" data-i18n="hostel.locationText">
+            Dhaka College International Hostel is located near New Market, Dhaka. It is easily accessible by public transport and is situated in a central academic area.
+          </p>
+        </div>
+        <a class="map-link-card" href="https://share.google/foMuM6aK0aHqdYUFj" target="_blank" rel="noopener" data-aos="zoom-in">
+          <span data-i18n="hostel.locationTitle">International Hall Location</span>
+          <strong data-i18n="hostel.openLocation">Open exact shared location</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p data-i18n="footer.demo">&copy; 2026 DC Hostel. Student information demo.</p>
+      <p data-i18n="footer.credits">Photo credits: Wikimedia Commons CC BY-SA 4.0; demo portraits from Random User.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

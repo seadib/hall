@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Hall | Developer</title>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("dc-hostel-theme") === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="developer">
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="International Hall home">
+        <img class="logo-img" src="images/logo.png" alt="International Hall logo" loading="lazy">
+        <span data-i18n="nav.logo">International Hall</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="students.html" data-i18n="nav.students">Students</a>
+        <a href="roommates.html" data-i18n="nav.roommates">Roommates</a>
+        <a href="results.html" data-i18n="nav.results">Results</a>
+        <a href="hostel.html" data-i18n="nav.hostel">Hall Info</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="language-switch" aria-label="Language selector">
+          <button type="button" data-lang-option="en">English</button>
+          <button type="button" data-lang-option="bn">বাংলা</button>
+        </div>
+        <button class="theme-toggle" id="toggle" type="button" aria-label="Toggle dark mode">
+          <span aria-hidden="true">&#9789;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero compact">
+      <div class="container" data-aos="fade-up">
+        <p class="eyebrow" data-i18n="nav.developer">Developer</p>
+        <h1 data-i18n="developer.title">Developer Profile</h1>
+        <p data-i18n="developer.subtitle">Student developer, small apps, web projects and contributors.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="developer-layout">
+          <aside class="developer-card" data-aos="fade-up">
+            <img src="images/developer.jpg" alt="Developer portrait" loading="lazy">
+            <h2 data-i18n="developer.name">Adib Rahman</h2>
+            <p data-i18n="developer.bio">I study in Science at Dhaka College. I build small apps and websites and try to learn something new every day.</p>
+            <a class="btn primary" href="mailto:adib@gmail.com" data-i18n="developer.sendMessage">Send Message</a>
+          </aside>
+          <div class="developer-content">
+            <article class="info-box" data-aos="fade-up">
+              <h3 data-i18n="developer.education">Education</h3>
+              <p>Dhaka College — Intermediate (Science)</p>
+              <p>Abdul Motaleb High School — SSC Graduate</p>
+            </article>
+            <article class="info-box" data-aos="fade-up">
+              <h3 data-i18n="developer.projects">Featured Projects</h3>
+              <p><a href="https://seadib.blogspot.com" target="_blank" rel="noopener">seadib.blogspot.com</a></p>
+              <p><a href="https://drsahitto.blogspot.com" target="_blank" rel="noopener">drsahitto.blogspot.com</a></p>
+              <p><a href="https://quantelixvero.github.io/voice/" target="_blank" rel="noopener">Experimental Apps</a></p>
+            </article>
+            <article class="info-box" data-aos="fade-up">
+              <h3 data-i18n="developer.timeline">Journey Timeline</h3>
+              <div class="timeline">
+                <p><b>2022 — Start</b><span>HTML & CSS basics.</span></p>
+                <p><b>2023 — Blogging</b><span>First web presence.</span></p>
+                <p><b>2025 — Code</b><span>Beginning logic building.</span></p>
+                <p><b>2026 — Apps</b><span>Experimental tools.</span></p>
+              </div>
+            </article>
+            <article class="info-box" data-aos="fade-up">
+              <h3 data-i18n="developer.skills">Technical Skills</h3>
+              <div class="skill-bars">
+                <span>HTML5 <b style="--w:90%"></b></span>
+                <span>CSS3 <b style="--w:85%"></b></span>
+                <span>JavaScript (Basic) <b style="--w:60%"></b></span>
+                <span>C Programming <b style="--w:20%"></b></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="developer.contributors">Contributors</p>
+            <h2 data-i18n="developer.contributorTitle">Project contributors</h2>
+          </div>
+        </div>
+        <div class="person-grid">
+          <article class="person-card" data-aos="fade-up">
+            <img src="images/contributor1..jpg" alt="Photographer contributor" loading="lazy">
+            <h3 data-i18n="developer.photographer">Photographer</h3>
+            <p data-i18n="developer.photographerText">Supports the project with hall and student event photos.</p>
+          </article>
+          <article class="person-card" data-aos="fade-up" data-aos-delay="120">
+            <img src="images/contributor2.jpg" alt="Content contributor" loading="lazy">
+            <h3 data-i18n="developer.contentHelper">Content Helper</h3>
+            <p data-i18n="developer.contentHelperText">Helps collect student data, event descriptions and hall updates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner"></div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

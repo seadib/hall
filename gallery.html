@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Hall | Gallery</title>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("dc-hostel-theme") === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery">
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="International Hall home">
+        <img class="logo-img" src="images/logo.png" alt="International Hall logo" loading="lazy">
+        <span data-i18n="nav.logo">International Hall</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="students.html" data-i18n="nav.students">Students</a>
+        <a href="roommates.html" data-i18n="nav.roommates">Roommates</a>
+        <a href="results.html" data-i18n="nav.results">Results</a>
+        <a href="hostel.html" data-i18n="nav.hostel">Hall Info</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="language-switch" aria-label="Language selector">
+          <button type="button" data-lang-option="en">English</button>
+          <button type="button" data-lang-option="bn">বাংলা</button>
+        </div>
+        <button class="theme-toggle" id="toggle" type="button" aria-label="Toggle dark mode">
+          <span aria-hidden="true">&#9789;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero compact">
+      <div class="container" data-aos="fade-up">
+        <p class="eyebrow" data-i18n="nav.gallery">Gallery</p>
+        <h1 data-i18n="gallery.title">Hall Gallery</h1>
+        <p data-i18n="gallery.subtitle">Event photos, group moments and student activities. Replace these demo files later with real photos.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-grid">
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery1.jpg" alt="Gallery event 1" loading="lazy"><h3>Event 01</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery2.jpg" alt="Gallery event 2" loading="lazy"><h3>Event 02</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery3.jpg" alt="Gallery event 3" loading="lazy"><h3>Event 03</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery4.jpg" alt="Gallery event 4" loading="lazy"><h3>Event 04</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery5.jpg" alt="Gallery event 5" loading="lazy"><h3>Event 05</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery6.jpg" alt="Gallery event 6" loading="lazy"><h3>Event 06</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery7.jpg" alt="Gallery event 7" loading="lazy"><h3>Event 07</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery8.jpg" alt="Gallery event 8" loading="lazy"><h3>Event 08</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery9.jpg" alt="Gallery event 9" loading="lazy"><h3>Event 09</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+          <article class="gallery-card" data-aos="fade-up"><img src="images/gallery10.jpg" alt="Gallery event 10" loading="lazy"><h3>Event 10</h3><p data-i18n="gallery.demoText">Headline and short event description will be added here.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner"></div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
