@@ -443,19 +443,35 @@ const studentSeeds = [
   ["alif28", "Alif Mahmud", "আলিফ মাহমুদ"]
 ];
 
+const sheetOverrides = {
+  "adib1": { name: "Abdullah Al Adib", bnName: "আবদুল্যাহ আল আদিব", roll: "139", group: "science", section: "A", practicalGroup: "A2", blood: "A+", address: "Hatia, Noakhali", phone: "01625329874", email: "seadibpc@gmail.com", fb: "https://www.facebook.com/seadix", bio: "" },
+  "santo2": { name: "Naimul Islam", bnName: "নাইমুল ইসলাম", roll: "161", group: "science", section: "B", practicalGroup: "B1", blood: "O+", address: "Hatia, Noakhali", phone: "01613601161", fatherPhone: "01613601161", email: "mistersanto1000@gmail.com", bio: "" },
+  "jahid3": { name: "Md Zahidul Islam", bnName: "মোঃ জাহিদুল ইসলাম", roll: "164", group: "science", section: "B", practicalGroup: "B1", blood: "A+", address: "Hatiya, Noakhali", phone: "01844474892", email: "zahidsigma164@gmail.com", fb: "https://www.facebook.com/share/1BABcH2cjn/", bio: "I'm SIGMA The Zahid" },
+  "sasfkat5": { name: "Shafkat Rahman", bnName: "শাফকাত রহমান", roll: "008", group: "science", section: "A", practicalGroup: "A1", blood: "O+", address: "Deboi, Rupganj, Narayanganj", phone: "01996569688", email: "shafkatrahmandkam@gmail.com", fb: "https://www.facebook.com/share/18oRrju5zF/", bio: "CT-1= Absent, CT-2= Absent, Half yearly = Absent, CT-3= loading, Year FINAL= Loading" },
+  "sakil4": { name: "Md. Shakil Sheikh", bnName: "মোঃ শাকিল শেখ", roll: "326", group: "science", section: "C", practicalGroup: "C1", blood: "O+", address: "Rupganj, Narayanganj", phone: "01739554600", fatherPhone: "01758684640", bio: "" },
+  "pranto15": { name: "Ratul Hassan Pranto", bnName: "রাতুল হাসান প্রান্ত", roll: "863", group: "science", section: "F", practicalGroup: "F2", blood: "O+", address: "Kushtia sadar,kushtia", phone: "01995393323", fatherPhone: "01755729078", email: "rh597040@gmail.com", fb: "https://www.facebook.com/share/1T3gCxVk6J/", bio: "" },
+  "musfik7": { name: "Md. Mushfiqur Rahman", bnName: "মোঃ মুশফিকুর রহমান", roll: "122", group: "science", section: "A", practicalGroup: "A2", blood: "A+", address: "South Sakuchia,Monpura,Bhola", phone: "01577390514", email: "mushfiq88bd@gmail.com", fb: "https://www.facebook.com/share/18osDPmvYU/", bio: "" },
+  "siam12": { name: "Siam Hasan", bnName: "সিয়াম হাসান", roll: "195", group: "science", section: "B", practicalGroup: "B1", blood: "B+", address: "Moshinda Majpara, Gurudaspur, Natore", phone: "01804692801", fatherPhone: "01761866285", email: "siamhasananik01@gmail.com", fb: "https://www.facebook.com/siam.hasan.anik.402132", bio: "I am a Crazy Boy." },
+  "alif28": { name: "Alimuzzamann Alif", bnName: "আলিমুজ্জামান আলিফ", roll: "153", group: "science", section: "B", practicalGroup: "B1", blood: "AB+", address: "Sundarganj, Gaibandha", phone: "01758173284", fatherPhone: "1540759625", email: "mdalimuzzamanalif890@gmail.com", fb: "https://www.facebook.com/share/18MFvaQuS2/", bio: "What an amazing website it is for our international hall which created by meritorious adib. Keep going higher. Truly appreciating for such kind of initiatives. With all are staying with it . Hoping main target Will fulfill with it's modern development." }
+};
+
 const students = studentSeeds.map(([slug, name, bnName], index) => {
-  const group = groups[index % groups.length];
-  const section = group === "science" ? ["A", "B", "C", "D", "E"][index % 5] : "";
+  const overrides = sheetOverrides[slug] || {};
+  
+  const group = overrides.group || groups[index % groups.length];
+  const section = overrides.section || (group === "science" ? ["A", "B", "C", "D", "E"][index % 5] : "");
   const room = String(101 + Math.floor(index / 2));
-  const roll = String(101 + index).padStart(3, "0");
-  const fullRoll = `12025260${roll}`;
-  const practicalGroup = section ? `${section}${(index % 2) + 1}` : "";
-  const phone = `0170000${String(index + 1).padStart(4, "0")}`;
+  const roll = overrides.roll || String(101 + index).padStart(3, "0");
+  
+  const fullRoll = group === "science" ? `1202526010${roll}` : roll;
+  
+  const practicalGroup = overrides.practicalGroup || (section ? `${section}${(index % 2) + 1}` : "");
+  const phone = overrides.phone || `0170000${String(index + 1).padStart(4, "0")}`;
 
   return {
     id: index + 1,
     slug,
-    name,
+    name: overrides.name || name,
     room,
     roll,
     fullRoll,
@@ -465,13 +481,13 @@ const students = studentSeeds.map(([slug, name, bnName], index) => {
     practicalGroup,
     college: "Dhaka College",
     phone,
-    fatherPhone: `0180000${String(index + 1).padStart(4, "0")}`,
-    email: `${slug}@gmail.com`,
+    fatherPhone: overrides.fatherPhone || `0180000${String(index + 1).padStart(4, "0")}`,
+    email: overrides.email || `${slug}@gmail.com`,
     img: `images/${slug}.jpg`,
-    fb: "https://facebook.com/",
-    address: ["Kaliganj, Dhaka", "Narayanganj", "Cumilla", "Gazipur", "Mymensingh", "Sylhet", "Barishal", "Tangail"][index % 8],
-    blood: bloodGroups[index % bloodGroups.length],
-    bio: "Demo student profile for International Hall. Detailed information can be updated later from the student sheet.",
+    fb: overrides.fb || "https://facebook.com/",
+    address: overrides.address || ["Kaliganj, Dhaka", "Narayanganj", "Cumilla", "Gazipur", "Mymensingh", "Sylhet", "Barishal", "Tangail"][index % 8],
+    blood: overrides.blood || bloodGroups[index % bloodGroups.length],
+    bio: overrides.bio || "Demo student profile for International Hall. Detailed information can be updated later from the student sheet.",
     result: {
       gpa: Number((4.7 + (index % 6) * 0.05).toFixed(2)),
       physics: 84 + (index % 13),
@@ -479,10 +495,10 @@ const students = studentSeeds.map(([slug, name, bnName], index) => {
       math: 86 + (index % 12)
     },
     bn: {
-      name: bnName,
+      name: overrides.bnName || bnName,
       college: "ঢাকা কলেজ",
-      address: ["কালীগঞ্জ, ঢাকা", "নারায়ণগঞ্জ", "কুমিল্লা", "গাজীপুর", "ময়মনসিংহ", "সিলেট", "বরিশাল", "টাঙ্গাইল"][index % 8],
-      bio: "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।"
+      address: overrides.address || ["কালীগঞ্জ, ঢাকা", "নারায়ণগঞ্জ", "কুমিল্লা", "গাজীপুর", "ময়মনসিংহ", "সিলেট", "বরিশাল", "টাঙ্গাইল"][index % 8],
+      bio: overrides.bio || "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।"
     }
   };
 });
