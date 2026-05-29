@@ -127,7 +127,7 @@ const i18n = {
       subtitle: "History, notable students, admission success and location preview.",
       historyTitle: "A hall connected to Dhaka College legacy",
       historyText: "Dhaka College, established in 1841, is one of the oldest and most influential educational institutions in Bangladesh. International Hall carries that academic spirit through shared study, discipline and student community life.",
-      famousTitle: "Demo notable alumni profiles",
+      famousTitle: "Alumni Profiles",
       successTitle: "Admission success overview",
       successText: "Demo chart showing how many students received chances in engineering, medical and university admission.",
       locationTitle: "International Hall Location",
@@ -327,7 +327,7 @@ const i18n = {
       subtitle: "ইতিহাস, কৃতি সন্তান, এডমিশন সাফল্য ও লোকেশন প্রিভিউ।",
       historyTitle: "ঢাকা কলেজের ঐতিহ্যের সঙ্গে যুক্ত একটি হল",
       historyText: "১৮৪১ সালে প্রতিষ্ঠিত ঢাকা কলেজ বাংলাদেশের অন্যতম প্রাচীন ও প্রভাবশালী শিক্ষাপ্রতিষ্ঠান। আন্তর্জাতিক ছাত্রাবাস সেই একাডেমিক চেতনা, সম্মিলিত পড়াশোনা, শৃঙ্খলা ও ছাত্রসমাজের জীবনধারা বহন করে।",
-      famousTitle: "ডেমো কৃতি শিক্ষার্থী প্রোফাইল",
+      famousTitle: "Alumni Profiles",
       successTitle: "এডমিশন সাফল্যের সারাংশ",
       successText: "ইঞ্জিনিয়ারিং, মেডিকেল ও বিশ্ববিদ্যালয় ভর্তি সাফল্যের ডেমো চার্ট।",
       locationTitle: "আন্তর্জাতিক ছাত্রাবাস লোকেশন",
@@ -444,15 +444,19 @@ const studentSeeds = [
 ];
 
 const sheetOverrides = {
-  "adib1": { name: "Abdullah Al Adib", bnName: "আবদুল্যাহ আল আদিব", roll: "139", group: "science", section: "A", practicalGroup: "A2", blood: "A+", address: "Hatia, Noakhali", phone: "01625329874", email: "seadibpc@gmail.com", fb: "https://www.facebook.com/seadix", bio: "" },
-  "santo2": { name: "Naimul Islam", bnName: "নাইমুল ইসলাম", roll: "161", group: "science", section: "B", practicalGroup: "B1", blood: "O+", address: "Hatia, Noakhali", phone: "01613601161", fatherPhone: "01613601161", email: "mistersanto1000@gmail.com", bio: "" },
-  "jahid3": { name: "Md Zahidul Islam", bnName: "মোঃ জাহিদুল ইসলাম", roll: "164", group: "science", section: "B", practicalGroup: "B1", blood: "A+", address: "Hatiya, Noakhali", phone: "01844474892", email: "zahidsigma164@gmail.com", fb: "https://www.facebook.com/share/1BABcH2cjn/", bio: "I'm SIGMA The Zahid" },
-  "sasfkat5": { name: "Shafkat Rahman", bnName: "শাফকাত রহমান", roll: "008", group: "science", section: "A", practicalGroup: "A1", blood: "O+", address: "Deboi, Rupganj, Narayanganj", phone: "01996569688", email: "shafkatrahmandkam@gmail.com", fb: "https://www.facebook.com/share/18oRrju5zF/", bio: "CT-1= Absent, CT-2= Absent, Half yearly = Absent, CT-3= loading, Year FINAL= Loading" },
-  "sakil4": { name: "Md. Shakil Sheikh", bnName: "মোঃ শাকিল শেখ", roll: "326", group: "science", section: "C", practicalGroup: "C1", blood: "O+", address: "Rupganj, Narayanganj", phone: "01739554600", fatherPhone: "01758684640", bio: "" },
-  "pranto15": { name: "Ratul Hassan Pranto", bnName: "রাতুল হাসান প্রান্ত", roll: "863", group: "science", section: "F", practicalGroup: "F2", blood: "O+", address: "Kushtia sadar,kushtia", phone: "01995393323", fatherPhone: "01755729078", email: "rh597040@gmail.com", fb: "https://www.facebook.com/share/1T3gCxVk6J/", bio: "" },
-  "musfik7": { name: "Md. Mushfiqur Rahman", bnName: "মোঃ মুশফিকুর রহমান", roll: "122", group: "science", section: "A", practicalGroup: "A2", blood: "A+", address: "South Sakuchia,Monpura,Bhola", phone: "01577390514", email: "mushfiq88bd@gmail.com", fb: "https://www.facebook.com/share/18osDPmvYU/", bio: "" },
-  "siam12": { name: "Siam Hasan", bnName: "সিয়াম হাসান", roll: "195", group: "science", section: "B", practicalGroup: "B1", blood: "B+", address: "Moshinda Majpara, Gurudaspur, Natore", phone: "01804692801", fatherPhone: "01761866285", email: "siamhasananik01@gmail.com", fb: "https://www.facebook.com/siam.hasan.anik.402132", bio: "I am a Crazy Boy." },
-  "alif28": { name: "Alimuzzamann Alif", bnName: "আলিমুজ্জামান আলিফ", roll: "153", group: "science", section: "B", practicalGroup: "B1", blood: "AB+", address: "Sundarganj, Gaibandha", phone: "01758173284", fatherPhone: "1540759625", email: "mdalimuzzamanalif890@gmail.com", fb: "https://www.facebook.com/share/18MFvaQuS2/", bio: "What an amazing website it is for our international hall which created by meritorious adib. Keep going higher. Truly appreciating for such kind of initiatives. With all are staying with it . Hoping main target Will fulfill with it's modern development." }
+  "adib1": { name: "Abdullah Al Adib", bnName: "আবদুল্যাহ আল আদিব", fullRoll: "1202526010139", roll: "139", room: "103", group: "science", section: "A", practicalGroup: "A2", blood: "A+", address: "Hatia, Noakhali", phone: "01625329874", email: "seadibpc@gmail.com", fb: "https://www.facebook.com/seadix", bio: "" },
+  "santo2": { name: "Naimul Islam", bnName: "নাইমুল ইসলাম", fullRoll: "1202526010161", roll: "161", room: "105", group: "science", section: "B", practicalGroup: "B1", blood: "O+", address: "Hatia, Noakhali", phone: "01613601161", email: "mistersanto1000@gmail.com", bio: "" },
+  "jahid3": { name: "Md Zahidul Islam", bnName: "মোঃ জাহিদুল ইসলাম", fullRoll: "1202526010164", roll: "164", room: "102", group: "science", section: "B", practicalGroup: "B1", blood: "A+", address: "Hatia, Noakhali", phone: "01844474892", email: "zahidsigma164@gmail.com", fb: "https://www.facebook.com/share/1BABcH2cjn/", bio: "I'm SIGMA The Zahid" },
+  "sasfkat5": { name: "Shafkat Rahman", bnName: "শাফকাত রহমান", fullRoll: "1202526010008", roll: "008", room: "104", group: "science", section: "A", practicalGroup: "A1", blood: "O+", address: "Deboi, Rupganj, Narayanganj", phone: "01996569688", email: "shafkatrahmandkam@gmail.com", fb: "https://www.facebook.com/share/18oRrju5zF/", bio: "CT-1= Absent, CT-2= Absent, Half yearly = Absent, CT-3= loading, Year FINAL= Loading" },
+  "sakil4": { name: "Md. Shakil Sheikh", bnName: "মোঃ শাকিল শেখ", fullRoll: "1202526010326", roll: "326", room: "103", group: "science", section: "C", practicalGroup: "C1", blood: "O+", address: "Kanchan, Rupganj, Narayanganj", phone: "01739554600", fatherPhone: "01758684640", bio: "" },
+  "pranto15": { name: "Ratul Hassan Pranto", bnName: "রাতুল হাসান প্রান্ত", fullRoll: "1202526010863", roll: "863", room: "106", group: "science", section: "F", practicalGroup: "F2", blood: "O+", address: "Kushtia Sadar, Kushtia", phone: "01995393323", fatherPhone: "01755729078", email: "rh597040@gmail.com", fb: "https://www.facebook.com/share/1T3gCxVk6J/", bio: "" },
+  "musfik7": { name: "Md. Mushfiqur Rahman", bnName: "মোঃ মুশফিকুর রহমান", fullRoll: "1202526010122", roll: "122", room: "107", group: "science", section: "A", practicalGroup: "A2", blood: "A+", address: "South Sakuchia, Monpura, Bhola", phone: "01577390514", email: "mushfiq88bd@gmail.com", fb: "https://www.facebook.com/share/18osDPmvYU/", bio: "" },
+  "siam12": { name: "Siam Hasan", bnName: "সিয়াম হাসান", fullRoll: "1202526010195", roll: "195", room: "107", group: "science", section: "B", practicalGroup: "B1", blood: "B+", address: "Moshinda Majpara, Gurudaspur, Natore", phone: "01804692801", fatherPhone: "01761866285", email: "siamhasananik01@gmail.com", fb: "https://www.facebook.com/siam.hasan.anik.402132", bio: "I am a Crazy Boy." },
+  "alif28": { name: "Alimuzzamann Alif", bnName: "আলিমুজ্জামান আলিফ", fullRoll: "1202526010153", roll: "153", room: "110", group: "science", section: "B", practicalGroup: "B1", blood: "AB+", address: "সুন্দরগঞ্জ, গাইবান্ধা", phone: "01758173284", fatherPhone: "1540759625", email: "mdalimuzzamanalif890@gmail.com", fb: "https://www.facebook.com/share/18MFvaQuS2/", bio: "What an amazing website it is for our international hall which created by meritorious adib. Keep going higher. Truly appreciating for such kind of initiatives. With all are staying with it . Hoping main target Will fulfill with it's modern development." },
+  "nafis9": { name: "Nafis Alam Tarif", bnName: "নাফিস আলম তারিফ", fullRoll: "1202526010141", roll: "141", room: "108", group: "science", section: "A", practicalGroup: "A2", blood: "O+", address: "Ranisonkail, Thakurgaon", phone: "01346588124", fatherPhone: "01738770330", email: "tarifalam265@gmail.com", fb: "https://www.facebook.com/share/1EDVSWD95F/", bio: "Competition, I'm The Competition...." },
+  "kayes10": { name: "Riasadul Islam Kayes", bnName: "রিয়াসাদুল ইসলাম কায়েস", fullRoll: "1202526010882", roll: "882", room: "108", group: "science", section: "F", practicalGroup: "F2", blood: "A+", address: "Chakaria, Cox's bazar.", phone: "01629171207", email: "riasadulislamkayes@gmail.com", bio: "\"প্রত্যেক প্রাণীই মৃত্যুর স্বাদ গ্রহণ করবে\"" },
+  "ariful25": { name: "Ariful Islam", bnName: "আরিফুল ইসলাম", fullRoll: "1202526010050", roll: "050", room: "109", group: "science", section: "A", practicalGroup: "A1", blood: "O+", address: "Rohanpur, Gomastapur, Chapainawabganj", phone: "01848631025", email: "arifulislam20238086@gmail.com", fb: "https://www.facebook.com/profile.php?id=100093029856067", bio: "" },
+  "rejawl26": { name: "Md Rezaul Karim", bnName: "মোঃ রেজাউল করিম", fullRoll: "1202526030098", roll: "098", room: "110", group: "arts", section: "", practicalGroup: "", blood: "A+", address: "Titas, Cumilla", phone: "01641659606", email: "rkdc8989@gmail.com", bio: "Sports lover" }
 };
 
 const students = studentSeeds.map(([slug, name, bnName], index) => {
@@ -460,10 +464,10 @@ const students = studentSeeds.map(([slug, name, bnName], index) => {
   
   const group = overrides.group || groups[index % groups.length];
   const section = overrides.section || (group === "science" ? ["A", "B", "C", "D", "E"][index % 5] : "");
-  const room = String(101 + Math.floor(index / 2));
+  const room = overrides.room || String(101 + Math.floor(index / 2));
   const roll = overrides.roll || String(101 + index).padStart(3, "0");
   
-  const fullRoll = group === "science" ? `1202526010${roll}` : roll;
+  const fullRoll = overrides.fullRoll || (group === "science" ? `1202526010${roll}` : roll);
   
   const practicalGroup = overrides.practicalGroup || (section ? `${section}${(index % 2) + 1}` : "");
   const phone = overrides.phone || `0170000${String(index + 1).padStart(4, "0")}`;
@@ -512,7 +516,10 @@ const famousProfiles = {
     education: "MBBS and public health research training.",
     contribution: "Guides younger students on medical admission preparation, study routine and community health awareness.",
     achievements: ["Medical admission success", "Public health research work", "Student mentoring and academic guidance"],
-    details: "He is presented as a demo notable student profile. His story highlights how focused study, discipline and hall community support can help a student build a strong academic path."
+    biography: "Dr. Anis Rahman is presented as an alumni profile shaped by disciplined study, shared responsibility and the academic rhythm of International Hall. His student life reflects how a focused hall environment can help a learner build confidence, routine and long-term ambition.",
+    career: "He built his career in medical education and public health research, connecting classroom learning with community-focused service. His journey highlights admission success, professional training and a continuing interest in helping younger students prepare with structure.",
+    hallMemory: "During his hall life, group study, peer support and late-evening academic discussions helped him stay consistent. The hall gave him a practical sense of teamwork, time management and care for fellow students.",
+    hallContribution: "His story represents the hall's role in building disciplined study culture, mentorship and confidence for students who dream of medical and health-related careers."
   },
   two: {
     img: "images/famousppl2.jpg",
@@ -522,7 +529,10 @@ const famousProfiles = {
     education: "Engineering graduate with project and technical mentoring experience.",
     contribution: "Supports students with admission preparation, problem solving, project ideas and confidence building.",
     achievements: ["Engineering admission success", "Student project mentorship", "Admission preparation support"],
-    details: "This demo profile represents a former student who used hall life for disciplined preparation and later helped juniors with technical learning and admission goals."
+    biography: "Engr. Mahmud Karim's alumni profile focuses on curiosity, problem solving and the steady preparation culture of hall life. As a student, he used the shared academic environment to sharpen his routine and grow through collaboration.",
+    career: "He moved into engineering education and project-based learning, later becoming a mentor for students interested in technical subjects. His career path shows the value of practical thinking, admission preparation and consistent academic support.",
+    hallMemory: "His strongest hall memories are connected with group problem-solving sessions, exam preparation and the motivation that came from living among students with similar goals.",
+    hallContribution: "He represents the hall's contribution to technical ambition, peer learning and the confidence students need for engineering admission and project work."
   },
   three: {
     img: "images/famousppl.jpg",
@@ -532,7 +542,10 @@ const famousProfiles = {
     education: "University scholarship track with leadership and co-curricular achievements.",
     contribution: "Encourages students to balance study, communication skills, leadership and scholarship preparation.",
     achievements: ["University scholarship success", "Debate and leadership recognition", "Academic excellence"],
-    details: "This demo profile shows how a student can grow through academic focus, communication skills and leadership activities connected to hall life."
+    biography: "Sadia Chowdhury's alumni profile presents a student who balanced academic focus with leadership and communication. Her hall journey shows how a supportive residential environment can help students grow beyond textbooks.",
+    career: "She followed a university scholarship path and became known for academic excellence, debate and leadership activities. Her success points to the importance of confidence, communication and disciplined preparation.",
+    hallMemory: "Her hall memories include shared reading sessions, cultural conversations, leadership practice and the encouragement she received from classmates during important academic moments.",
+    hallContribution: "Her story reflects the hall's broader contribution to student leadership, scholarship preparation and a culture where students learn to speak, organize and support one another."
   }
 };
 
@@ -746,6 +759,7 @@ function applyLanguage() {
   document.querySelectorAll("[data-lang-option]").forEach((button) => {
     button.classList.toggle("active", button.dataset.langOption === currentLang);
   });
+  updateLanguageButtonLabels();
 
   const toggle = byId("toggle");
   if (toggle) toggle.setAttribute("aria-label", t("common.toggleDark"));
@@ -758,16 +772,29 @@ function applyLanguage() {
   renderFooter();
 }
 
+function updateLanguageButtonLabels() {
+  const compact = window.matchMedia("(max-width: 920px)").matches;
+
+  document.querySelectorAll("[data-lang-option]").forEach((button) => {
+    const option = button.dataset.langOption;
+    button.textContent = compact ? (option === "en" ? "BN" : "EN") : (option === "en" ? "English" : "বাংলা");
+  });
+}
+
 function initLanguage() {
   document.querySelectorAll("[data-lang-option]").forEach((button) => {
     button.addEventListener("click", () => {
-      currentLang = button.dataset.langOption;
+      const compact = window.matchMedia("(max-width: 920px)").matches;
+      const selectedLang = button.dataset.langOption;
+      currentLang = compact && selectedLang === currentLang ? (currentLang === "en" ? "bn" : "en") : selectedLang;
       localStorage.setItem("dc-hostel-lang", currentLang);
       applyLanguage();
       renderDynamicContent();
       refreshAos();
     });
   });
+
+  window.addEventListener("resize", updateLanguageButtonLabels);
 
   applyLanguage();
 }
@@ -1018,6 +1045,7 @@ function renderResults() {
 }
 
 function renderDynamicContent() {
+  initImageFallbacks();
   renderStudentCards();
   renderRoommates();
   renderResults();
@@ -1097,8 +1125,24 @@ function openFamousModal(profileId) {
           ${profile.achievements.map((item) => `<li>${item}</li>`).join("")}
         </ul>
 
-        <h3>${t("common.about")}</h3>
-        <p>${profile.details}</p>
+        <div class="alumni-story">
+          <section>
+            <h3>Biography</h3>
+            <p>${profile.biography}</p>
+          </section>
+          <section>
+            <h3>Career Success</h3>
+            <p>${profile.career}</p>
+          </section>
+          <section>
+            <h3>Hall Memories</h3>
+            <p>${profile.hallMemory}</p>
+          </section>
+          <section>
+            <h3>Hall Contribution</h3>
+            <p>${profile.hallContribution}</p>
+          </section>
+        </div>
       </div>
     </div>
   `;
@@ -1109,6 +1153,63 @@ function openFamousModal(profileId) {
   initImageFallbacks();
 }
 
+function cleanPhoneNumber(phone) {
+  return String(phone || "").replace(/\D/g, "");
+}
+
+function whatsappNumber(phone) {
+  const digits = cleanPhoneNumber(phone);
+  if (!digits) return "";
+  if (digits.startsWith("88")) return digits;
+  if (digits.startsWith("0")) return `88${digits}`;
+  return digits;
+}
+
+function facebookUsername(url) {
+  try {
+    const parsed = new URL(url);
+    if (!parsed.hostname.includes("facebook.com")) return "";
+    const path = parsed.pathname.replace(/^\/+|\/+$/g, "");
+    if (!path || path.includes("/") || path.startsWith("share") || path.startsWith("profile.php")) return "";
+    return path;
+  } catch (error) {
+    return "";
+  }
+}
+
+function contactActions(student, phoneHref, whatsappHref) {
+  const fbUrl = student.fb || "https://facebook.com/";
+  const messengerName = facebookUsername(fbUrl);
+  const messengerHref = messengerName ? `https://m.me/${messengerName}` : fbUrl;
+  const contactIcons = {
+    call: "images/phonelogo.png",
+    whatsapp: "images/whatsapplogo.png",
+    email: "images/emaillogo.png",
+    facebook: "images/facebooklogo.png",
+    messenger: "images/messengerlogo.png"
+  };
+
+  return `
+    <div class="contact-actions" aria-label="Contact links">
+      <a class="contact-btn call" href="${phoneHref}" aria-label="${t("common.tapCall")}" title="${t("common.tapCall")}">
+        <img src="${contactIcons.call}" alt="" loading="lazy">
+      </a>
+      <a class="contact-btn whatsapp" href="${whatsappHref}" target="_blank" rel="noopener" aria-label="${t("common.whatsapp")}" title="${t("common.whatsapp")}">
+        <img src="${contactIcons.whatsapp}" alt="" loading="lazy">
+      </a>
+      <a class="contact-btn email" href="mailto:${student.email}" aria-label="${t("common.email")}" title="${t("common.email")}">
+        <img src="${contactIcons.email}" alt="" loading="lazy">
+      </a>
+      <a class="contact-btn facebook" href="${fbUrl}" target="_blank" rel="noopener" aria-label="${t("common.viewFacebook")}" title="${t("common.viewFacebook")}">
+        <img src="${contactIcons.facebook}" alt="" loading="lazy">
+      </a>
+      <a class="contact-btn messenger" href="${messengerHref}" target="_blank" rel="noopener" aria-label="Messenger" title="Messenger">
+        <img src="${contactIcons.messenger}" alt="" loading="lazy">
+      </a>
+    </div>
+  `;
+}
+
 function openStudentModal(student) {
   const modal = byId("studentModal");
   const content = byId("modalContent");
@@ -1116,9 +1217,9 @@ function openStudentModal(student) {
 
   activeStudentId = student.id;
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(studentValue(student, "address"))}`;
-  const phoneHref = `tel:${student.phone}`;
-  const fatherPhoneHref = `tel:${student.fatherPhone}`;
-  const whatsappHref = `https://wa.me/88${student.phone}`;
+  const phoneHref = `tel:${cleanPhoneNumber(student.phone)}`;
+  const fatherPhoneHref = `tel:${cleanPhoneNumber(student.fatherPhone)}`;
+  const whatsappHref = `https://wa.me/${whatsappNumber(student.phone)}`;
 
   content.innerHTML = `
     <div class="profile">
@@ -1127,9 +1228,10 @@ function openStudentModal(student) {
         <p class="eyebrow">${t("common.fullProfile")}</p>
         <h2 id="modalName">${studentValue(student, "name")}</h2>
         <p class="lead">${t("common.room")} ${student.room} · ${t("common.roll")} ${student.roll}</p>
+        ${contactActions(student, phoneHref, whatsappHref)}
 
         <div class="profile-grid">
-          <div class="profile-item"><span>${t("common.roll")}</span><strong>${student.roll}</strong></div>
+          <div class="profile-item"><span>${t("common.roll")}</span><strong>${student.fullRoll}</strong></div>
           <div class="profile-item"><span>${t("common.classLabel")}</span><strong>${classLabel(student.classNo)}</strong></div>
           <div class="profile-item"><span>${t("common.group")}</span><strong>${groupLabel(student.group)}</strong></div>
           <div class="profile-item"><span>${t("common.section")}</span><strong>${student.section || "-"}</strong></div>
@@ -1151,7 +1253,6 @@ function openStudentModal(student) {
           ${resultFiles(student).map(([key, file]) => `<a class="result-box" href="pdfs/${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a>`).join("")}
         </div>
 
-        <a href="${student.fb}" target="_blank" rel="noopener">${t("common.viewFacebook")}</a>
       </div>
     </div>
   `;
@@ -1258,7 +1359,20 @@ function initModal() {
 
 function initImageFallbacks() {
   document.querySelectorAll("img").forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) {
+      if (img.closest(".contact-btn")) {
+        img.closest(".contact-btn").classList.add("missing-icon");
+        img.remove();
+      }
+      return;
+    }
+
     img.addEventListener("error", () => {
+      if (img.closest(".contact-btn")) {
+        img.closest(".contact-btn").classList.add("missing-icon");
+        img.remove();
+        return;
+      }
       if (!img.dataset.fallbackApplied) {
         img.dataset.fallbackApplied = "true";
         img.src = "images/hostel-building.jpg";
