@@ -1822,4 +1822,34 @@ h3 {
   .profile {
     padding: 22px;
   }
+
+  .developer-hero {
+    padding: 116px 0 52px;
+  }
+
+  .developer-intro h1 {
+    font-size: clamp(2.4rem, 13vw, 4rem);
+  }
+
+  .developer-lead {
+    font-size: 1rem;
+  }
+
+  .developer-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .developer-actions .btn {
+    width: 100%;
+  }
+
+  .developer-panel,
+  .project-tile {
+    padding: 20px;
+  }
+
+  .project-tile {
+    min-height: 0;
+  }
 }
