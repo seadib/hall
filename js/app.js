@@ -459,7 +459,7 @@ const sheetOverrides = {
   "rejawl26": { name: "Md Rezaul Karim", bnName: "মোঃ রেজাউল করিম", fullRoll: "1202526030098", roll: "098", room: "110", group: "arts", section: "", practicalGroup: "", blood: "A+", address: "Titas, Cumilla", phone: "01641659606", email: "rkdc8989@gmail.com", bio: "Sports lover" }
 };
 
-const students = studentSeeds.map(([slug, name, bnName], index) => {
+let students = studentSeeds.map(([slug, name, bnName], index) => {
   const overrides = sheetOverrides[slug] || {};
   
   const group = overrides.group || groups[index % groups.length];
@@ -475,6 +475,7 @@ const students = studentSeeds.map(([slug, name, bnName], index) => {
   return {
     id: index + 1,
     slug,
+    position: index + 1,
     name: overrides.name || name,
     room,
     roll,
@@ -549,6 +550,108 @@ const famousProfiles = {
   }
 };
 
+let cmsSettings = null;
+
+async function fetchJson(path) {
+  try {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (error) {
+    return null;
+  }
+}
+
+function normalizeCmsPath(path) {
+  if (!path) return "";
+  return String(path).replace(/^\/+/, "");
+}
+
+function mapCmsStudent(item, index) {
+  const slug = item.student_id || `student-${index + 1}`;
+  const group = item.group || "science";
+  const shortRoll = item.short_roll || "";
+  const fullRoll = item.full_roll || shortRoll;
+
+  return {
+    id: index + 1,
+    slug,
+    position: Number(item.position || index + 1),
+    roommateIds: item.roommate_ids || [],
+    name: item.name_en || slug,
+    room: item.room_no || "",
+    roll: shortRoll,
+    fullRoll,
+    classNo: item.class_no || "11",
+    group,
+    groupEn: item.group_en || "",
+    groupBn: item.group_bn || "",
+    section: item.section || "",
+    practicalGroup: item.practical_group || "",
+    college: "Dhaka College",
+    phone: item.phone || "",
+    fatherPhone: item.father_phone || "",
+    email: item.email || "",
+    img: normalizeCmsPath(item.photo) || `images/${slug}.jpg`,
+    fb: item.facebook || "https://facebook.com/",
+    address: item.address_en || "",
+    blood: item.blood_group || "",
+    bio: item.bio_en || "",
+    pdfs: item.pdfs || {},
+    result: {
+      gpa: 0,
+      physics: 0,
+      chemistry: 0,
+      math: 0
+    },
+    bn: {
+      name: item.name_bn || item.name_en || slug,
+      college: "ঢাকা কলেজ",
+      address: item.address_bn || item.address_en || "",
+      bio: item.bio_bn || item.bio_en || ""
+    }
+  };
+}
+
+function applyCmsSettings(settings) {
+  if (!settings) return;
+  cmsSettings = settings;
+
+  const logoPath = normalizeCmsPath(settings.logo);
+  if (logoPath) {
+    document.querySelectorAll(".logo-img, .footer-logo img").forEach((img) => {
+      img.src = logoPath;
+    });
+  }
+
+  const heroImage = normalizeCmsPath(settings.hero_image);
+  if (heroImage) {
+    document.querySelectorAll(".hero, .page-hero, .developer-hero").forEach((section) => {
+      section.style.backgroundImage = `linear-gradient(90deg, var(--overlay), rgba(8, 13, 24, 0.25)), url("${heroImage}")`;
+    });
+  }
+}
+
+async function loadCmsContent() {
+  const [settings, studentData] = await Promise.all([
+    fetchJson("data/settings.json"),
+    fetchJson("data/students.json")
+  ]);
+
+  applyCmsSettings(settings);
+
+  if (studentData?.students?.length) {
+    const fallbackStudents = students;
+    const cmsStudents = studentData.students.map(mapCmsStudent);
+    const cmsBySlug = new Map(cmsStudents.map((student) => [student.slug, student]));
+    const merged = fallbackStudents.map((student) => cmsBySlug.get(student.slug) || student);
+    cmsStudents.forEach((student) => {
+      if (!fallbackStudents.some((item) => item.slug === student.slug)) merged.push(student);
+    });
+    students = merged.sort((a, b) => (a.position || 9999) - (b.position || 9999));
+  }
+}
+
 function t(key) {
   return key.split(".").reduce((value, part) => value && value[part], i18n[currentLang]) || key;
 }
@@ -570,12 +673,22 @@ function sectionText(student) {
 }
 
 function resultFiles(student) {
+  if (student.pdfs && Object.keys(student.pdfs).length) {
+    return [
+      ["ct1", normalizeCmsPath(student.pdfs.ct1)],
+      ["ct2", normalizeCmsPath(student.pdfs.ct2)],
+      ["hy", normalizeCmsPath(student.pdfs.hy)],
+      ["ct3", normalizeCmsPath(student.pdfs.ct3)],
+      ["yearly", normalizeCmsPath(student.pdfs.yearly)]
+    ].filter(([, file]) => file);
+  }
+
   return [
-    ["ct1", `${student.slug}-11-ct1.pdf`],
-    ["ct2", `${student.slug}-11-ct2.pdf`],
-    ["hy", `${student.slug}-11-hy.pdf`],
-    ["ct3", `${student.slug}-11-ct3.pdf`],
-    ["yearly", `${student.slug}-11-y.pdf`]
+    ["ct1", `pdfs/${student.slug}-11-ct1.pdf`],
+    ["ct2", `pdfs/${student.slug}-11-ct2.pdf`],
+    ["hy", `pdfs/${student.slug}-11-hy.pdf`],
+    ["ct3", `pdfs/${student.slug}-11-ct3.pdf`],
+    ["yearly", `pdfs/${student.slug}-11-y.pdf`]
   ];
 }
 
@@ -674,21 +787,28 @@ function ensureNavigation() {
   const nav = document.querySelector(".nav-links");
   if (!nav) return;
 
-  const links = [
-    ["index.html", "home"],
-    ["students.html", "students"],
-    ["roommates.html", "roommates"],
-    ["results.html", "results"],
-    ["hostel.html", "hostel"],
-    ["hallsuper.html", "hallSuper"],
-    ["gallery.html", "gallery"],
-    ["developer.html", "developer"]
-  ];
+  const links = cmsSettings?.menu_items?.length
+    ? cmsSettings.menu_items
+      .slice()
+      .sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
+      .map((item) => [item.link, item.text_en, item.text_bn])
+    : [
+      ["index.html", "home"],
+      ["students.html", "students"],
+      ["roommates.html", "roommates"],
+      ["results.html", "results"],
+      ["hostel.html", "hostel"],
+      ["hallsuper.html", "hallSuper"],
+      ["gallery.html", "gallery"],
+      ["developer.html", "developer"]
+    ];
   const page = document.body.dataset.page || "home";
 
-  nav.innerHTML = links.map(([href, key]) => {
-    const active = key.toLowerCase() === page.toLowerCase() || (key === "hallSuper" && page === "hallsuper");
-    return `<a href="${href}" class="${active ? "active" : ""}" data-nav-key="${key}" data-i18n="nav.${key}">${t(`nav.${key}`)}</a>`;
+  nav.innerHTML = links.map(([href, keyOrEn, bn]) => {
+    const key = cmsSettings?.menu_items?.length ? "" : keyOrEn;
+    const label = cmsSettings?.menu_items?.length ? (currentLang === "bn" ? bn : keyOrEn) : t(`nav.${key}`);
+    const active = href.toLowerCase().includes(`${page}.html`) || (page === "home" && href === "index.html") || (key && (key.toLowerCase() === page.toLowerCase() || (key === "hallSuper" && page === "hallsuper")));
+    return `<a href="${href}" class="${active ? "active" : ""}" ${key ? `data-nav-key="${key}" data-i18n="nav.${key}"` : ""}>${label}</a>`;
   }).join("") + `
     <div class="more-menu" hidden>
       <button class="more-menu-toggle" type="button" aria-expanded="false">${moreMenuLabel()}</button>
@@ -751,6 +871,17 @@ function applyLanguage() {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);
   });
+
+  if (cmsSettings) {
+    const siteTitle = currentLang === "bn" ? cmsSettings.site_title_bn : cmsSettings.site_title_en;
+    const heroTitle = currentLang === "bn" ? cmsSettings.hero_title_bn : cmsSettings.hero_title_en;
+    document.querySelectorAll('[data-i18n="nav.logo"]').forEach((element) => {
+      element.textContent = siteTitle || element.textContent;
+    });
+    document.querySelectorAll('[data-i18n="home.heroTitle"]').forEach((element) => {
+      element.textContent = heroTitle || element.textContent;
+    });
+  }
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     element.setAttribute("placeholder", t(element.dataset.i18nPlaceholder));
@@ -1039,7 +1170,7 @@ function renderResults() {
       <td>${index + 1}</td>
       <td><button type="button" data-student-id="${student.id}">${studentValue(student, "name")}</button></td>
       <td title="${student.fullRoll}">${student.roll}</td>
-      ${resultFiles(student).map(([key, file]) => `<td><a class="table-pdf-link" href="pdfs/${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a></td>`).join("")}
+      ${resultFiles(student).map(([key, file]) => `<td><a class="table-pdf-link" href="${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a></td>`).join("")}
     </tr>
   `).join("");
 }
@@ -1181,6 +1312,7 @@ function contactActions(student, phoneHref, whatsappHref) {
   const fbUrl = student.fb || "https://facebook.com/";
   const messengerName = facebookUsername(fbUrl);
   const messengerHref = messengerName ? `https://m.me/${messengerName}` : fbUrl;
+  const savedLogos = cmsSettings?.contact_logos || {};
   const contactIcons = {
     call: "images/phonelogo.png",
     whatsapp: "images/whatsapplogo.png",
@@ -1188,6 +1320,11 @@ function contactActions(student, phoneHref, whatsappHref) {
     facebook: "images/facebooklogo.png",
     messenger: "images/messengerlogo.png"
   };
+  contactIcons.call = normalizeCmsPath(savedLogos.phone) || contactIcons.call;
+  contactIcons.whatsapp = normalizeCmsPath(savedLogos.whatsapp) || contactIcons.whatsapp;
+  contactIcons.email = normalizeCmsPath(savedLogos.email) || contactIcons.email;
+  contactIcons.facebook = normalizeCmsPath(savedLogos.facebook) || contactIcons.facebook;
+  contactIcons.messenger = normalizeCmsPath(savedLogos.messenger) || contactIcons.messenger;
 
   return `
     <div class="contact-actions" aria-label="Contact links">
@@ -1250,7 +1387,7 @@ function openStudentModal(student) {
 
         <h3>${t("common.academicResult")}</h3>
         <div class="pdf-grid">
-          ${resultFiles(student).map(([key, file]) => `<a class="result-box" href="pdfs/${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a>`).join("")}
+          ${resultFiles(student).map(([key, file]) => `<a class="result-box" href="${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a>`).join("")}
         </div>
 
       </div>
@@ -1403,7 +1540,8 @@ function initAos() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadCmsContent();
   initLanguage();
   initTheme();
   initNavbar();
