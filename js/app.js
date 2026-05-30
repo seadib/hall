@@ -595,6 +595,7 @@ function mapCmsStudent(item, index) {
     email: item.email || "",
     img: normalizeCmsPath(item.photo) || `images/${slug}.jpg`,
     fb: item.facebook || "https://facebook.com/",
+    messenger: item.messenger || "",
     address: item.address_en || "",
     blood: item.blood_group || "",
     bio: item.bio_en || "",
@@ -1424,38 +1425,50 @@ function facebookUsername(url) {
 
 function contactActions(student, phoneHref, whatsappHref) {
   const fbUrl = student.fb || "https://facebook.com/";
-  const messengerName = facebookUsername(fbUrl);
-  const messengerHref = messengerName ? `https://m.me/${messengerName}` : fbUrl;
+  let messengerHref = fbUrl;
+  if (student.messenger) {
+    messengerHref = student.messenger.startsWith("http") ? student.messenger : `https://m.me/${student.messenger}`;
+  } else {
+    const messengerName = facebookUsername(fbUrl);
+    if (messengerName) {
+      messengerHref = `https://m.me/${messengerName}`;
+    }
+  }
   const savedLogos = cmsSettings?.contact_logos || {};
-  const contactIcons = {
-    call: "images/phonelogo.png",
-    whatsapp: "images/whatsapplogo.png",
-    email: "images/emaillogo.png",
-    facebook: "images/facebooklogo.png",
-    messenger: "images/messengerlogo.png"
+  
+  // High-quality white vector SVG icons as defaults
+  const defaultSvgs = {
+    call: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4.01c-.55 0-1 .45-1 1C3.01 12.63 11.38 21 20.01 21c.55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/></svg>`,
+    whatsapp: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.472 1.332 4.988L2 22l5.163-1.355c1.464.798 3.111 1.218 4.793 1.218 5.506 0 9.988-4.482 9.988-9.988 0-2.662-1.036-5.164-2.918-7.046A9.923 9.923 0 0 0 12.012 2zm5.727 14.126c-.237.668-1.378 1.285-1.921 1.343-.492.052-1.127.086-1.808-.13-2.946-.931-4.992-3.83-5.139-4.026-.147-.197-1.203-1.603-1.203-3.059 0-1.456.759-2.171 1.03-2.464.271-.293.593-.367.791-.367.198 0 .395.003.568.011.183.008.431-.071.674.512.249.599.852 2.072.926 2.219.074.147.124.317.025.513-.099.197-.149.317-.297.492-.149.176-.312.39-.446.524-.149.149-.304.312-.13.612.174.3.774 1.277 1.66 2.067.886.79 1.636 1.036 1.933 1.183.297.147.469.122.642-.078.174-.2.742-.862.94-1.159.198-.297.395-.247.668-.147.272.099 1.73.816 2.027.964.297.149.495.223.568.349.074.127.074.729-.163 1.396z"/></svg>`,
+    email: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`,
+    facebook: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>`,
+    messenger: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.914 1.455 5.518 3.734 7.214V22l3.355-1.843c.902.25 1.859.386 2.911.386 5.523 0 10-4.146 10-9.258C22 6.145 17.523 2 12 2zm1.096 11.903L10.36 11.13l-4.903 2.695 5.385-5.719 2.736 2.77 4.903-2.695-5.385 5.722z"/></svg>`
   };
-  contactIcons.call = normalizeCmsPath(savedLogos.phone) || contactIcons.call;
-  contactIcons.whatsapp = normalizeCmsPath(savedLogos.whatsapp) || contactIcons.whatsapp;
-  contactIcons.email = normalizeCmsPath(savedLogos.email) || contactIcons.email;
-  contactIcons.facebook = normalizeCmsPath(savedLogos.facebook) || contactIcons.facebook;
-  contactIcons.messenger = normalizeCmsPath(savedLogos.messenger) || contactIcons.messenger;
+
+  const renderIcon = (key, customPath) => {
+    const normPath = normalizeCmsPath(customPath);
+    if (normPath) {
+      return `<img src="${normPath}" alt="" loading="lazy">`;
+    }
+    return defaultSvgs[key];
+  };
 
   return `
     <div class="contact-actions" aria-label="Contact links">
       <a class="contact-btn call" href="${phoneHref}" aria-label="${t("common.tapCall")}" title="${t("common.tapCall")}">
-        <img src="${contactIcons.call}" alt="" loading="lazy">
+        ${renderIcon("call", savedLogos.phone)}
       </a>
       <a class="contact-btn whatsapp" href="${whatsappHref}" target="_blank" rel="noopener" aria-label="${t("common.whatsapp")}" title="${t("common.whatsapp")}">
-        <img src="${contactIcons.whatsapp}" alt="" loading="lazy">
+        ${renderIcon("whatsapp", savedLogos.whatsapp)}
       </a>
       <a class="contact-btn email" href="mailto:${student.email}" aria-label="${t("common.email")}" title="${t("common.email")}">
-        <img src="${contactIcons.email}" alt="" loading="lazy">
+        ${renderIcon("email", savedLogos.email)}
       </a>
       <a class="contact-btn facebook" href="${fbUrl}" target="_blank" rel="noopener" aria-label="${t("common.viewFacebook")}" title="${t("common.viewFacebook")}">
-        <img src="${contactIcons.facebook}" alt="" loading="lazy">
+        ${renderIcon("facebook", savedLogos.facebook)}
       </a>
       <a class="contact-btn messenger" href="${messengerHref}" target="_blank" rel="noopener" aria-label="Messenger" title="Messenger">
-        <img src="${contactIcons.messenger}" alt="" loading="lazy">
+        ${renderIcon("messenger", savedLogos.messenger)}
       </a>
     </div>
   `;
