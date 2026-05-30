@@ -1,28 +1,68 @@
 {
+  "menu_items": [
+    {
+      "position": 1,
+      "text_en": "Home",
+      "text_bn": "হোম",
+      "link": "index.html"
+    },
+    {
+      "position": 2,
+      "text_en": "Students",
+      "text_bn": "শিক্ষার্থী",
+      "link": "students.html"
+    },
+    {
+      "position": 3,
+      "text_en": "Roommates",
+      "text_bn": "রুমমেট",
+      "link": "roommates.html"
+    },
+    {
+      "position": 4,
+      "text_en": "Results",
+      "text_bn": "ফলাফল",
+      "link": "results.html"
+    },
+    {
+      "position": 5,
+      "text_en": "Hall Info",
+      "text_bn": "হল তথ্য",
+      "link": "hostel.html"
+    },
+    {
+      "position": 6,
+      "text_en": "Hall Super",
+      "text_bn": "হল সুপার",
+      "link": "hallsuper.html"
+    },
+    {
+      "position": 7,
+      "text_en": "Gallery",
+      "text_bn": "গ্যালারি",
+      "link": "gallery.html"
+    },
+    {
+      "position": 8,
+      "text_en": "Developer",
+      "text_bn": "ডেভেলপার",
+      "link": "developer.html"
+    }
+  ],
   "site_title_en": "International Hall",
+  "contact_logos": {
+    "phone": "/assets/uploads/unnamed.png",
+    "whatsapp": "/assets/uploads/wa.png",
+    "email": "/assets/uploads/gmail.png",
+    "facebook": "/assets/uploads/facebook.png",
+    "messenger": "/assets/uploads/messenger.png"
+  },
+  "hero_subtitle_en": "Together we learn, together we succeed.",
   "site_title_bn": "আন্তর্জাতিক ছাত্রাবাস",
   "logo": "images/logo.png",
-  "hero_title_en": "International Hall",
-  "hero_title_bn": "আন্তর্জাতিক ছাত্রাবাস",
-  "hero_subtitle_en": "Together we learn, together we succeed.",
-  "hero_subtitle_bn": "একসাথে শিখি, একসাথে সফল হই।",
-  "hero_image": "images/hostel-hero.jpg",
   "notice_pdf": "",
-  "menu_items": [
-    { "position": 1, "text_en": "Home", "text_bn": "হোম", "link": "index.html" },
-    { "position": 2, "text_en": "Students", "text_bn": "শিক্ষার্থী", "link": "students.html" },
-    { "position": 3, "text_en": "Roommates", "text_bn": "রুমমেট", "link": "roommates.html" },
-    { "position": 4, "text_en": "Results", "text_bn": "ফলাফল", "link": "results.html" },
-    { "position": 5, "text_en": "Hall Info", "text_bn": "হল তথ্য", "link": "hostel.html" },
-    { "position": 6, "text_en": "Hall Super", "text_bn": "হল সুপার", "link": "hallsuper.html" },
-    { "position": 7, "text_en": "Gallery", "text_bn": "গ্যালারি", "link": "gallery.html" },
-    { "position": 8, "text_en": "Developer", "text_bn": "ডেভেলপার", "link": "developer.html" }
-  ],
-  "contact_logos": {
-    "phone": "images/phonelogo.png",
-    "whatsapp": "images/whatsapplogo.png",
-    "email": "images/emaillogo.png",
-    "facebook": "images/facebooklogo.png",
-    "messenger": "images/messengerlogo.png"
-  }
+  "hero_subtitle_bn": "একসাথে শিখি, একসাথে সফল হই।",
+  "hero_title_en": "International Hall",
+  "hero_image": "images/hostel-hero.jpg",
+  "hero_title_bn": "আন্তর্জাতিক ছাত্রাবাস"
 }
