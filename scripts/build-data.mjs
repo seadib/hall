@@ -2,13 +2,16 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const studentsDir = path.join(root, "data", "students");
-const outputPath = path.join(root, "data", "students.json");
 
+// Normalize upload paths from CMS
 function normalizedUploadPath(value) {
   if (!value || typeof value !== "string") return value;
   return value.replace(/^\/+/, "");
 }
+
+// 1. Compile Students
+const studentsDir = path.join(root, "data", "students");
+const studentsOutputPath = path.join(root, "data", "students.json");
 
 function normalizeStudent(student) {
   const id = student.student_id;
@@ -33,18 +36,47 @@ function normalizeStudent(student) {
   };
 }
 
-const files = (await readdir(studentsDir)).filter((file) => file.endsWith(".json"));
-const students = [];
+try {
+  const files = (await readdir(studentsDir)).filter((file) => file.endsWith(".json"));
+  const students = [];
 
-for (const file of files) {
-  const fullPath = path.join(studentsDir, file);
-  const data = JSON.parse(await readFile(fullPath, "utf8"));
-  students.push(normalizeStudent(data));
+  for (const file of files) {
+    const fullPath = path.join(studentsDir, file);
+    const data = JSON.parse(await readFile(fullPath, "utf8"));
+    students.push(normalizeStudent(data));
+  }
+
+  students.sort((a, b) => Number(a.position || 9999) - Number(b.position || 9999));
+
+  await mkdir(path.dirname(studentsOutputPath), { recursive: true });
+  await writeFile(studentsOutputPath, `${JSON.stringify({ students }, null, 2)}\n`, "utf8");
+
+  console.log(`Generated data/students.json with ${students.length} students.`);
+} catch (err) {
+  console.error("Error building student data:", err);
 }
 
-students.sort((a, b) => Number(a.position || 9999) - Number(b.position || 9999));
+// 2. Compile Rooms
+const roomsDir = path.join(root, "data", "rooms");
+const roomsOutputPath = path.join(root, "data", "rooms.json");
 
-await mkdir(path.dirname(outputPath), { recursive: true });
-await writeFile(outputPath, `${JSON.stringify({ students }, null, 2)}\n`, "utf8");
+try {
+  const roomFiles = (await readdir(roomsDir)).filter((file) => file.endsWith(".json"));
+  const rooms = [];
 
-console.log(`Generated data/students.json with ${students.length} students.`);
+  for (const file of roomFiles) {
+    const fullPath = path.join(roomsDir, file);
+    const data = JSON.parse(await readFile(fullPath, "utf8"));
+    if (data.photos) {
+      data.photos = data.photos.map(normalizedUploadPath);
+    }
+    rooms.push(data);
+  }
+
+  rooms.sort((a, b) => String(a.room_no).localeCompare(String(b.room_no), undefined, { numeric: true }));
+
+  await writeFile(roomsOutputPath, `${JSON.stringify({ rooms }, null, 2)}\n`, "utf8");
+  console.log(`Generated data/rooms.json with ${rooms.length} rooms.`);
+} catch (err) {
+  console.error("Error building room data:", err);
+}

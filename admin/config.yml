@@ -46,6 +46,93 @@ collections:
               - { label: "Facebook Logo", name: "facebook", widget: "image", required: false }
               - { label: "Messenger Logo", name: "messenger", widget: "image", required: false }
 
+  - name: "home"
+    label: "Homepage Content"
+    files:
+      - name: "homepage_content"
+        label: "Homepage Content"
+        file: "data/home.json"
+        format: "json"
+        fields:
+          - { label: "Hero Eyebrow EN", name: "hero_eyebrow_en", widget: "string", default: "Dhaka College" }
+          - { label: "Hero Eyebrow BN", name: "hero_eyebrow_bn", widget: "string", default: "ঢাকা কলেজ" }
+          - { label: "Hero Title EN", name: "hero_title_en", widget: "string", default: "International Hall" }
+          - { label: "Hero Title BN", name: "hero_title_bn", widget: "string", default: "আন্তর্জাতিক ছাত্রাবাস" }
+          - label: "Hero Rotating Phrases"
+            name: "hero_phrases"
+            widget: "list"
+            fields:
+              - { label: "Phrase EN", name: "text_en", widget: "string" }
+              - { label: "Phrase BN", name: "text_bn", widget: "string" }
+          - { label: "Info Title EN", name: "info_title_en", widget: "string" }
+          - { label: "Info Title BN", name: "info_title_bn", widget: "string" }
+          - { label: "Info Lead EN", name: "info_lead_en", widget: "text" }
+          - { label: "Info Lead BN", name: "info_lead_bn", widget: "text" }
+          - { label: "History Text EN", name: "history_text_en", widget: "text" }
+          - { label: "History Text BN", name: "history_text_bn", widget: "text" }
+          - { label: "Notable Alumni Text EN", name: "famous_text_en", widget: "text" }
+          - { label: "Notable Alumni Text BN", name: "famous_text_bn", widget: "text" }
+          - { label: "Admission Success Text EN", name: "success_text_en", widget: "text" }
+          - { label: "Admission Success Text BN", name: "success_text_bn", widget: "text" }
+          - { label: "Location Section Title EN", name: "location_title_en", widget: "string" }
+          - { label: "Location Section Title BN", name: "location_title_bn", widget: "string" }
+          - { label: "Location Section Text EN", name: "location_text_en", widget: "text" }
+          - { label: "Location Section Text BN", name: "location_text_bn", widget: "text" }
+          - { label: "Google Map Iframe URL", name: "map_url", widget: "string", hint: "The 'src' attribute of the Google Map embed iframe" }
+
+  - name: "developer"
+    label: "Developer Profile"
+    files:
+      - name: "developer_profile"
+        label: "Developer Profile"
+        file: "data/developer.json"
+        format: "json"
+        fields:
+          - { label: "Name EN", name: "name_en", widget: "string" }
+          - { label: "Name BN", name: "name_bn", widget: "string" }
+          - { label: "Photo / Portrait", name: "portrait", widget: "image" }
+          - { label: "Lead Bio EN", name: "lead_en", widget: "text" }
+          - { label: "Lead Bio BN", name: "lead_bn", widget: "text" }
+          - { label: "About Title EN", name: "about_title_en", widget: "string", default: "About" }
+          - { label: "About Title BN", name: "about_title_bn", widget: "string", default: "পরিচিতি" }
+          - { label: "About Text EN", name: "about_text_en", widget: "text" }
+          - { label: "About Text BN", name: "about_text_bn", widget: "text" }
+          - { label: "Contact Title EN", name: "contact_title_en", widget: "string", default: "Contact" }
+          - { label: "Contact Title BN", name: "contact_title_bn", widget: "string", default: "যোগাযোগ" }
+          - { label: "Contact Text EN", name: "contact_text_en", widget: "text" }
+          - { label: "Contact Text BN", name: "contact_text_bn", widget: "text" }
+          - { label: "Focus Title EN", name: "focus_title_en", widget: "string", default: "Focus" }
+          - { label: "Focus Title BN", name: "focus_title_bn", widget: "string", default: "মূল লক্ষ্য" }
+          - { label: "Focus Text EN", name: "focus_text_en", widget: "text" }
+          - { label: "Focus Text BN", name: "focus_text_bn", widget: "text" }
+          - { label: "Skills (Comma separated list or tags)", name: "skills", widget: "list", field: { label: "Skill", name: "skill", widget: "string" } }
+          - label: "Timeline / Method"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Step Title EN", name: "step_en", widget: "string" }
+              - { label: "Step Title BN", name: "step_bn", widget: "string" }
+              - { label: "Description EN", name: "desc_en", widget: "text" }
+              - { label: "Description BN", name: "desc_bn", widget: "text" }
+          - label: "Featured Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Category EN/BN", name: "title_en", widget: "string", hint: "e.g., Blog, Tool, Hall" }
+              - { label: "Project Title / Domain", name: "url", widget: "string", hint: "e.g., seadib.blogspot.com" }
+              - { label: "Project Link / URL", name: "link", widget: "string" }
+              - { label: "Short Description EN", name: "desc_en", widget: "text" }
+              - { label: "Short Description BN", name: "desc_bn", widget: "text" }
+          - label: "Project Contributors"
+            name: "contributors"
+            widget: "list"
+            fields:
+              - { label: "Name EN", name: "name_en", widget: "string" }
+              - { label: "Name BN", name: "name_bn", widget: "string" }
+              - { label: "Photo / Avatar", name: "photo", widget: "image" }
+              - { label: "Role Description EN", name: "desc_en", widget: "text" }
+              - { label: "Role Description BN", name: "desc_bn", widget: "text" }
+
   - name: "students"
     label: "Students"
     label_singular: "Student"
@@ -63,7 +150,7 @@ collections:
       - { label: "Name EN", name: "name_en", widget: "string" }
       - { label: "Name BN", name: "name_bn", widget: "string" }
       - { label: "Room No", name: "room_no", widget: "string" }
-      - { label: "Roommate IDs", name: "roommate_ids", widget: "list", required: false, field: { label: "Student ID", name: "student_id", widget: "string" } }
+      - { label: "Roommate IDs (Optional)", name: "roommate_ids", widget: "list", required: false, field: { label: "Student ID", name: "student_id", widget: "string" } }
       - { label: "Short Roll", name: "short_roll", widget: "string" }
       - { label: "Full Roll", name: "full_roll", widget: "string" }
       - { label: "Class", name: "class_no", widget: "string", default: "11" }
@@ -92,6 +179,26 @@ collections:
           - { label: "Half Yearly", name: "hy", widget: "file", required: false }
           - { label: "CT-3", name: "ct3", widget: "file", required: false }
           - { label: "Yearly", name: "yearly", widget: "file", required: false }
+
+  - name: "rooms"
+    label: "Rooms"
+    label_singular: "Room"
+    folder: "data/rooms"
+    create: true
+    format: "json"
+    slug: "{{room_no}}"
+    identifier_field: "room_no"
+    summary: "Room {{room_no}}"
+    fields:
+      - { label: "Room No", name: "room_no", widget: "string" }
+      - { label: "Title EN", name: "title_en", widget: "string" }
+      - { label: "Title BN", name: "title_bn", widget: "string" }
+      - { label: "Description EN", name: "description_en", widget: "text", required: false }
+      - { label: "Description BN", name: "description_bn", widget: "text", required: false }
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        field: { label: "Photo", name: "photo", widget: "image" }
 
   - name: "gallery"
     label: "Gallery"

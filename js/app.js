@@ -551,6 +551,7 @@ const famousProfiles = {
 };
 
 let cmsSettings = null;
+let roomsData = [];
 
 async function fetchJson(path) {
   try {
@@ -633,12 +634,82 @@ function applyCmsSettings(settings) {
 }
 
 async function loadCmsContent() {
-  const [settings, studentData] = await Promise.all([
+  const [settings, studentData, roomsList, homeData, devData, galleryData, alumniData, hallData] = await Promise.all([
     fetchJson("data/settings.json"),
-    fetchJson("data/students.json")
+    fetchJson("data/students.json"),
+    fetchJson("data/rooms.json"),
+    fetchJson("data/home.json"),
+    fetchJson("data/developer.json"),
+    fetchJson("data/gallery.json"),
+    fetchJson("data/alumni.json"),
+    fetchJson("data/hall.json")
   ]);
 
   applyCmsSettings(settings);
+
+  if (roomsList?.rooms?.length) {
+    roomsData = roomsList.rooms;
+  }
+
+  // Handle Home Data translations
+  if (homeData) {
+    if (i18n.en.home) {
+      i18n.en.home.heroEyebrow = homeData.hero_eyebrow_en || i18n.en.home.heroEyebrow;
+      i18n.en.home.heroTitle = homeData.hero_title_en || i18n.en.home.heroTitle;
+      i18n.en.home.infoTitle = homeData.info_title_en || i18n.en.home.infoTitle;
+      i18n.en.home.infoLead = homeData.info_lead_en || i18n.en.home.infoLead;
+      i18n.en.home.historyText = homeData.history_text_en || i18n.en.home.historyText;
+      i18n.en.home.famousText = homeData.famous_text_en || i18n.en.home.famousText;
+      i18n.en.home.successText = homeData.success_text_en || i18n.en.home.successText;
+      i18n.en.home.locationTitle = homeData.location_title_en || i18n.en.home.locationTitle;
+      i18n.en.home.locationText = homeData.location_text_en || i18n.en.home.locationText;
+    }
+    if (i18n.bn.home) {
+      i18n.bn.home.heroEyebrow = homeData.hero_eyebrow_bn || i18n.bn.home.heroEyebrow;
+      i18n.bn.home.heroTitle = homeData.hero_title_bn || i18n.bn.home.heroTitle;
+      i18n.bn.home.infoTitle = homeData.info_title_bn || i18n.bn.home.infoTitle;
+      i18n.bn.home.infoLead = homeData.info_lead_bn || i18n.bn.home.infoLead;
+      i18n.bn.home.historyText = homeData.history_text_bn || i18n.bn.home.historyText;
+      i18n.bn.home.famousText = homeData.famous_text_bn || i18n.bn.home.famousText;
+      i18n.bn.home.successText = homeData.success_text_bn || i18n.bn.home.successText;
+      i18n.bn.home.locationTitle = homeData.location_title_bn || i18n.bn.home.locationTitle;
+      i18n.bn.home.locationText = homeData.location_text_bn || i18n.bn.home.locationText;
+    }
+    if (homeData.hero_phrases?.length) {
+      i18n.en.heroPhrases = homeData.hero_phrases.map(p => p.text_en);
+      i18n.bn.heroPhrases = homeData.hero_phrases.map(p => p.text_bn);
+    }
+    const iframe = document.querySelector(".map-wrap iframe");
+    if (iframe && homeData.map_url) {
+      iframe.src = homeData.map_url;
+    }
+  }
+
+  // Handle Hall Data translations
+  if (hallData) {
+    if (i18n.en.hostel) {
+      i18n.en.hostel.historyTitle = hallData.history_title_en || i18n.en.hostel.historyTitle;
+      i18n.en.hostel.historyText = hallData.history_text_en || i18n.en.hostel.historyText;
+    }
+    if (i18n.bn.hostel) {
+      i18n.bn.hostel.historyTitle = hallData.history_title_bn || i18n.bn.hostel.historyTitle;
+      i18n.bn.hostel.historyText = hallData.history_text_bn || i18n.bn.hostel.historyText;
+    }
+    if (i18n.en.hallSuper) {
+      i18n.en.hallSuper.name = hallData.hall_super_name_en || i18n.en.hallSuper.name;
+      i18n.en.hallSuper.bio = hallData.hall_super_bio_en || i18n.en.hallSuper.bio;
+    }
+    if (i18n.bn.hallSuper) {
+      i18n.bn.hallSuper.name = hallData.hall_super_name_bn || i18n.bn.hallSuper.name;
+      i18n.bn.hallSuper.bio = hallData.hall_super_bio_bn || i18n.bn.hallSuper.bio;
+    }
+    
+    // Hall super photo
+    const superImg = document.querySelector(".hostel-photo img");
+    if (superImg && document.body.dataset.page === "hallsuper" && hallData.hall_super_photo) {
+      superImg.src = normalizeCmsPath(hallData.hall_super_photo);
+    }
+  }
 
   if (studentData?.students?.length) {
     const fallbackStudents = students;
@@ -649,7 +720,16 @@ async function loadCmsContent() {
       if (!fallbackStudents.some((item) => item.slug === student.slug)) merged.push(student);
     });
     students = merged.sort((a, b) => (a.position || 9999) - (b.position || 9999));
+    
+    students.forEach((student, idx) => {
+      student.id = idx + 1;
+    });
   }
+
+  // Render CMS page data
+  await renderGalleryPage(galleryData);
+  await renderAlumniList(alumniData);
+  await renderDeveloperPage(devData);
 }
 
 function t(key) {
@@ -1202,7 +1282,7 @@ function initStudentClicks() {
 
     const galleryTrigger = event.target.closest("[data-gallery-src]");
     if (galleryTrigger) {
-      openGalleryModal(galleryTrigger.dataset.gallerySrc, galleryTrigger.dataset.galleryTitle || "Gallery photo");
+      openGalleryModal(galleryTrigger.dataset.gallerySrc, galleryTrigger.dataset.galleryTitle || "Gallery photo", galleryTrigger.dataset.galleryDesc || "");
       return;
     }
 
@@ -1232,47 +1312,81 @@ function openFamousModal(profileId) {
   const modal = byId("studentModal");
   const content = byId("modalContent");
   const profile = famousProfiles[profileId];
-  if (!modal || !content || !profile) return;
+  
+  let finalProfile = null;
+  if (profileId.startsWith("alumni-")) {
+    const index = Number(profileId.split("-")[1]);
+    const cmsAlumni = famousProfiles.alumni && famousProfiles.alumni[index];
+    if (cmsAlumni) {
+      finalProfile = {
+        img: normalizeCmsPath(cmsAlumni.photo) || "images/hostel-building.jpg",
+        name: currentLang === "bn" ? cmsAlumni.name_bn : cmsAlumni.name_en,
+        role: currentLang === "bn" ? cmsAlumni.role_bn : cmsAlumni.role_en,
+        success: currentLang === "bn" ? cmsAlumni.biography_bn : cmsAlumni.biography_en,
+        education: currentLang === "bn" ? cmsAlumni.career_bn : cmsAlumni.career_en,
+        contribution: currentLang === "bn" ? cmsAlumni.hall_contribution_bn : cmsAlumni.hall_contribution_en,
+        achievements: [],
+        biography: currentLang === "bn" ? cmsAlumni.biography_bn : cmsAlumni.biography_en,
+        career: currentLang === "bn" ? cmsAlumni.career_bn : cmsAlumni.career_en,
+        hallMemory: currentLang === "bn" ? cmsAlumni.hall_memory_bn : cmsAlumni.hall_memory_en,
+        hallContribution: currentLang === "bn" ? cmsAlumni.hall_contribution_bn : cmsAlumni.hall_contribution_en
+      };
+    }
+  } else {
+    finalProfile = profile;
+  }
+
+  if (!modal || !content || !finalProfile) return;
 
   activeStudentId = null;
   activeRoomId = null;
 
   content.innerHTML = `
     <div class="profile famous-profile">
-      <img src="${profile.img}" alt="${profile.name}" loading="lazy">
+      <img src="${finalProfile.img}" alt="${finalProfile.name}" loading="lazy">
       <div>
         <p class="eyebrow">${t("common.famousStudents")}</p>
-        <h2 id="modalName">${profile.name}</h2>
-        <p class="lead">${profile.role}</p>
+        <h2 id="modalName">${finalProfile.name}</h2>
+        <p class="lead">${finalProfile.role}</p>
 
         <div class="profile-grid">
-          <div class="profile-item"><span>Success</span><strong>${profile.success}</strong></div>
-          <div class="profile-item"><span>Education</span><strong>${profile.education}</strong></div>
-          <div class="profile-item"><span>Contribution</span><strong>${profile.contribution}</strong></div>
+          <div class="profile-item"><span>Success</span><strong>${finalProfile.success || "-"}</strong></div>
+          <div class="profile-item"><span>Education</span><strong>${finalProfile.education || "-"}</strong></div>
+          <div class="profile-item"><span>Contribution</span><strong>${finalProfile.contribution || "-"}</strong></div>
         </div>
 
-        <h3>Achievements</h3>
-        <ul class="achievement-list">
-          ${profile.achievements.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
+        ${finalProfile.achievements && finalProfile.achievements.length ? `
+          <h3>Achievements</h3>
+          <ul class="achievement-list">
+            ${finalProfile.achievements.map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+        ` : ""}
 
         <div class="alumni-story">
-          <section>
-            <h3>Biography</h3>
-            <p>${profile.biography}</p>
-          </section>
-          <section>
-            <h3>Career Success</h3>
-            <p>${profile.career}</p>
-          </section>
-          <section>
-            <h3>Hall Memories</h3>
-            <p>${profile.hallMemory}</p>
-          </section>
-          <section>
-            <h3>Hall Contribution</h3>
-            <p>${profile.hallContribution}</p>
-          </section>
+          ${finalProfile.biography ? `
+            <section>
+              <h3>Biography</h3>
+              <p>${finalProfile.biography}</p>
+            </section>
+          ` : ""}
+          ${finalProfile.career ? `
+            <section>
+              <h3>Career Success</h3>
+              <p>${finalProfile.career}</p>
+            </section>
+          ` : ""}
+          ${finalProfile.hallMemory ? `
+            <section>
+              <h3>Hall Memories</h3>
+              <p>${finalProfile.hallMemory}</p>
+            </section>
+          ` : ""}
+          ${finalProfile.hallContribution ? `
+            <section>
+              <h3>Hall Contribution</h3>
+              <p>${finalProfile.hallContribution}</p>
+            </section>
+          ` : ""}
         </div>
       </div>
     </div>
@@ -1408,18 +1522,29 @@ function openRoomModal(room) {
   activeStudentId = null;
   activeRoomId = room;
   const occupants = students.filter((student) => student.room === room);
-  const roomIndex = Math.max(1, Math.min(14, Number(room) - 100 || 1));
-  const roomPhotos = [1, 2, 3, 4].map((photoIndex) => `images/room${roomIndex}-${photoIndex}.jpg`);
+  
+  // Dynamic details from roomsData
+  const cmsRoom = roomsData && roomsData.find((r) => String(r.room_no) === String(room));
+  const title = cmsRoom ? (currentLang === "bn" ? cmsRoom.title_bn : cmsRoom.title_en) : `${t("common.room")} ${room}`;
+  const desc = cmsRoom ? (currentLang === "bn" ? cmsRoom.description_bn : cmsRoom.description_en) : "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.";
+  
+  let roomPhotos = [];
+  if (cmsRoom && cmsRoom.photos && cmsRoom.photos.length) {
+    roomPhotos = cmsRoom.photos.map(normalizeCmsPath);
+  } else {
+    const roomIndex = Math.max(1, Math.min(14, Number(room) - 100 || 1));
+    roomPhotos = [1, 2, 3, 4].map((photoIndex) => `images/room${roomIndex}-${photoIndex}.jpg`);
+  }
 
   content.innerHTML = `
     <div class="room-profile">
       <div>
         <p class="eyebrow">${t("common.room")}</p>
-        <h2 id="modalName">${t("common.room")} ${room}</h2>
+        <h2 id="modalName">${title}</h2>
         <p class="lead">${occupants.length} ${t("common.students")} · ${t("common.hostelInfo")}</p>
       </div>
       <div class="room-photo-grid">
-        ${roomPhotos.map((photo, index) => `<img src="${photo}" alt="Room ${roomIndex} photo ${index + 1}" loading="lazy">`).join("")}
+        ${roomPhotos.map((photo, index) => `<img src="${photo}" alt="Room photo ${index + 1}" loading="lazy">`).join("")}
       </div>
       <div class="info-grid room-info-grid">
         <article class="info-box">
@@ -1432,7 +1557,7 @@ function openRoomModal(room) {
         </article>
         <article class="info-box">
           <h3>${t("common.about")}</h3>
-          <p>Demo room details. Later you can replace the room photos and add bed, table, window and seat information.</p>
+          <p>${desc}</p>
         </article>
       </div>
     </div>
@@ -1444,7 +1569,7 @@ function openRoomModal(room) {
   initImageFallbacks();
 }
 
-function openGalleryModal(src, title) {
+function openGalleryModal(src, title, desc = "") {
   const modal = byId("studentModal");
   const content = byId("modalContent");
   if (!modal || !content) return;
@@ -1458,7 +1583,7 @@ function openGalleryModal(src, title) {
       <div class="gallery-preview-body">
         <p class="eyebrow">${t("nav.gallery")}</p>
         <h2 id="modalName">${title}</h2>
-        <p>${t("gallery.demoText")}</p>
+        <p>${desc || t("gallery.demoText")}</p>
         <div class="gallery-preview-actions">
           <a class="btn primary" href="${src}" download>Download</a>
           <a class="btn secondary" href="${src}" target="_blank" rel="noopener">Open image</a>
@@ -1555,3 +1680,110 @@ document.addEventListener("DOMContentLoaded", async () => {
   initImageFallbacks();
   initAos();
 });
+
+async function renderGalleryPage(galleryData) {
+  const grid = document.querySelector(".gallery-grid");
+  if (!grid || document.body.dataset.page !== "gallery") return;
+
+  const data = galleryData || await fetchJson("data/gallery.json");
+  if (data && data.items && data.items.length) {
+    const items = data.items.slice().sort((a, b) => Number(a.position || 0) - Number(b.position || 0));
+    grid.innerHTML = items.map((item, index) => {
+      const photo = normalizeCmsPath(item.photo) || "images/hostel-building.jpg";
+      const title = currentLang === "bn" ? item.title_bn : item.title_en;
+      const desc = currentLang === "bn" ? item.description_bn : item.description_en;
+      return `
+        <article class="gallery-card" data-aos="fade-up" data-aos-delay="${(index % 6) * 50}">
+          <button type="button" data-gallery-src="${photo}" data-gallery-title="${title || ""}" data-gallery-desc="${desc || ""}">
+            <img src="${photo}" alt="${title || "Gallery photo"}" loading="lazy">
+            <h3>${title || ""}</h3>
+          </button>
+        </article>
+      `;
+    }).join("");
+  }
+}
+
+async function renderAlumniList(alumniData) {
+  const grid = document.querySelector(".person-grid");
+  if (!grid || document.body.dataset.page !== "hostel") return;
+
+  const data = alumniData || await fetchJson("data/alumni.json");
+  if (data && data.profiles && data.profiles.length) {
+    const profiles = data.profiles.slice().sort((a, b) => Number(a.position || 0) - Number(b.position || 0));
+    famousProfiles.alumni = profiles;
+
+    grid.innerHTML = profiles.map((p, index) => {
+      const photo = normalizeCmsPath(p.photo) || "images/hostel-building.jpg";
+      const name = currentLang === "bn" ? p.name_bn : p.name_en;
+      return `
+        <article class="person-card" data-aos="fade-up" data-aos-delay="${index * 120}" data-famous-id="alumni-${index}" tabindex="0" role="button">
+          <img src="${photo}" alt="${name}" loading="lazy">
+          <h3>${name}</h3>
+        </article>
+      `;
+    }).join("");
+  }
+}
+
+async function renderDeveloperPage(devData) {
+  if (document.body.dataset.page !== "developer") return;
+
+  const dev = devData || await fetchJson("data/developer.json");
+  if (!dev) return;
+
+  const nameEl = document.querySelector(".developer-intro h1");
+  if (nameEl) nameEl.textContent = currentLang === "bn" ? dev.name_bn : dev.name_en;
+
+  const bioEl = document.querySelector(".developer-lead");
+  if (bioEl) bioEl.textContent = currentLang === "bn" ? dev.lead_bn : dev.lead_en;
+
+  const portraitEl = document.querySelector(".developer-portrait img");
+  if (portraitEl && dev.portrait) portraitEl.src = normalizeCmsPath(dev.portrait);
+
+  const panels = document.querySelectorAll(".developer-info-grid .developer-panel");
+  if (panels.length >= 3) {
+    panels[0].querySelector("h2").textContent = currentLang === "bn" ? dev.about_title_bn : dev.about_title_en;
+    panels[0].querySelector("p").textContent = currentLang === "bn" ? dev.about_text_bn : dev.about_text_en;
+
+    panels[1].querySelector("h2").textContent = currentLang === "bn" ? dev.contact_title_bn : dev.contact_title_en;
+    panels[1].querySelector("p").innerHTML = (currentLang === "bn" ? dev.contact_text_bn : dev.contact_text_en).replace(/\n/g, "<br>");
+
+    panels[2].querySelector("h2").textContent = currentLang === "bn" ? dev.focus_title_bn : dev.focus_title_en;
+    panels[2].querySelector("p").textContent = currentLang === "bn" ? dev.focus_text_bn : dev.focus_text_en;
+  }
+
+  const tagsGrid = document.querySelector(".developer-tags");
+  if (tagsGrid && dev.skills) {
+    tagsGrid.innerHTML = dev.skills.map(s => `<span>${s.skill}</span>`).join("");
+  }
+
+  const timelineGrid = document.querySelector(".timeline");
+  if (timelineGrid && dev.timeline) {
+    timelineGrid.innerHTML = dev.timeline.map(t => `
+      <p><b>${currentLang === "bn" ? t.step_bn : t.step_en}</b><span>${currentLang === "bn" ? t.desc_bn : t.desc_en}</span></p>
+    `).join("");
+  }
+
+  const projectsGrid = document.querySelector(".project-grid");
+  if (projectsGrid && dev.projects) {
+    projectsGrid.innerHTML = dev.projects.map((p, index) => `
+      <a class="project-tile" href="${p.link}" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="${index * 80}">
+        <span>${p.title_en}</span>
+        <strong>${p.url}</strong>
+        <p>${currentLang === "bn" ? p.desc_bn : p.desc_en}</p>
+      </a>
+    `).join("");
+  }
+
+  const contributorsGrid = document.querySelector(".contributor-grid");
+  if (contributorsGrid && dev.contributors) {
+    contributorsGrid.innerHTML = dev.contributors.map((c, index) => `
+      <article class="person-card" data-aos="fade-up" data-aos-delay="${index * 120}">
+        <img src="${normalizeCmsPath(c.photo)}" alt="${currentLang === "bn" ? c.name_bn : c.name_en}" loading="lazy">
+        <h3>${currentLang === "bn" ? c.name_bn : c.name_en}</h3>
+        <p>${currentLang === "bn" ? c.desc_bn : c.desc_en}</p>
+      </article>
+    `).join("");
+  }
+}
