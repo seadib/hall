@@ -133,72 +133,85 @@ collections:
               - { label: "Role Description EN", name: "desc_en", widget: "text" }
               - { label: "Role Description BN", name: "desc_bn", widget: "text" }
 
-  - name: "students"
-    label: "Students"
-    label_singular: "Student"
-    folder: "data/students"
-    create: true
-    format: "json"
-    slug: "{{student_id}}"
-    identifier_field: "name_en"
-    summary: "{{position}}. {{name_en}} - Room {{room_no}}"
-    media_folder: "../../assets/uploads/students/{{slug}}"
-    public_folder: "/assets/uploads/students/{{slug}}"
-    fields:
-      - { label: "Position", name: "position", widget: "number", value_type: "int", default: 1 }
-      - { label: "Student ID", name: "student_id", widget: "string", hint: "Example: adib1. This becomes the JSON file name." }
-      - { label: "Name EN", name: "name_en", widget: "string" }
-      - { label: "Name BN", name: "name_bn", widget: "string" }
-      - { label: "Room No", name: "room_no", widget: "string" }
-      - { label: "Roommate IDs (Optional)", name: "roommate_ids", widget: "list", required: false, field: { label: "Student ID", name: "student_id", widget: "string" } }
-      - { label: "Short Roll", name: "short_roll", widget: "string" }
-      - { label: "Full Roll", name: "full_roll", widget: "string" }
-      - { label: "Class", name: "class_no", widget: "string", default: "11" }
-      - { label: "Group Key", name: "group", widget: "select", options: ["science", "commerce", "arts"], default: "science" }
-      - { label: "Group EN", name: "group_en", widget: "string", required: false }
-      - { label: "Group BN", name: "group_bn", widget: "string", required: false }
-      - { label: "Section", name: "section", widget: "string", required: false }
-      - { label: "Practical Group", name: "practical_group", widget: "string", required: false }
-      - { label: "Blood Group", name: "blood_group", widget: "string", required: false }
-      - { label: "Address EN", name: "address_en", widget: "text", required: false }
-      - { label: "Address BN", name: "address_bn", widget: "text", required: false }
-      - { label: "Phone", name: "phone", widget: "string", required: false }
-      - { label: "Father Phone", name: "father_phone", widget: "string", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "Facebook", name: "facebook", widget: "string", required: false }
-      - { label: "Bio EN", name: "bio_en", widget: "text", required: false }
-      - { label: "Bio BN", name: "bio_bn", widget: "text", required: false }
-      - { label: "Photo", name: "photo", widget: "image", required: false }
-      - label: "Result PDFs"
-        name: "pdfs"
-        widget: "object"
-        collapsed: true
+  - name: "students_mgmt"
+    label: "Student Management"
+    files:
+      - file: "data/students.json"
+        label: "All Students List"
+        name: "students_list"
+        format: "json"
+        media_folder: "../../assets/uploads/students"
+        public_folder: "/assets/uploads/students"
         fields:
-          - { label: "CT-1", name: "ct1", widget: "file", required: false }
-          - { label: "CT-2", name: "ct2", widget: "file", required: false }
-          - { label: "Half Yearly", name: "hy", widget: "file", required: false }
-          - { label: "CT-3", name: "ct3", widget: "file", required: false }
-          - { label: "Yearly", name: "yearly", widget: "file", required: false }
+          - label: "Students"
+            name: "students"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.position}}. {{fields.name_en}} (Room: {{fields.room_no}}) - Roll: {{fields.short_roll}}"
+            add_to_top: false
+            fields:
+              - { label: "Position", name: "position", widget: "number", value_type: "int", default: 1 }
+              - { label: "Student ID / Slug", name: "student_id", widget: "string", hint: "Example: adib1" }
+              - { label: "Name EN", name: "name_en", widget: "string" }
+              - { label: "Name BN", name: "name_bn", widget: "string" }
+              - { label: "Room No", name: "room_no", widget: "string" }
+              - { label: "Roommate IDs (Optional)", name: "roommate_ids", widget: "list", required: false, field: { label: "Student ID", name: "student_id", widget: "string" } }
+              - { label: "Short Roll", name: "short_roll", widget: "string" }
+              - { label: "Full Roll", name: "full_roll", widget: "string" }
+              - { label: "Class", name: "class_no", widget: "string", default: "11" }
+              - { label: "Group Key", name: "group", widget: "select", options: ["science", "commerce", "arts"], default: "science" }
+              - { label: "Group EN", name: "group_en", widget: "string", required: false }
+              - { label: "Group BN", name: "group_bn", widget: "string", required: false }
+              - { label: "Section", name: "section", widget: "string", required: false }
+              - { label: "Practical Group", name: "practical_group", widget: "string", required: false }
+              - { label: "Blood Group", name: "blood_group", widget: "string", required: false }
+              - { label: "Address EN", name: "address_en", widget: "text", required: false }
+              - { label: "Address BN", name: "address_bn", widget: "text", required: false }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Father Phone", name: "father_phone", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Messenger Username/Link", name: "messenger", widget: "string", required: false }
+              - { label: "Bio EN", name: "bio_en", widget: "text", required: false }
+              - { label: "Bio BN", name: "bio_bn", widget: "text", required: false }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - label: "Result PDFs"
+                name: "pdfs"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "CT-1", name: "ct1", widget: "file", required: false }
+                  - { label: "CT-2", name: "ct2", widget: "file", required: false }
+                  - { label: "Half Yearly", name: "hy", widget: "file", required: false }
+                  - { label: "CT-3", name: "ct3", widget: "file", required: false }
+                  - { label: "Yearly", name: "yearly", widget: "file", required: false }
 
-  - name: "rooms"
-    label: "Rooms"
-    label_singular: "Room"
-    folder: "data/rooms"
-    create: true
-    format: "json"
-    slug: "{{room_no}}"
-    identifier_field: "room_no"
-    summary: "Room {{room_no}}"
-    fields:
-      - { label: "Room No", name: "room_no", widget: "string" }
-      - { label: "Title EN", name: "title_en", widget: "string" }
-      - { label: "Title BN", name: "title_bn", widget: "string" }
-      - { label: "Description EN", name: "description_en", widget: "text", required: false }
-      - { label: "Description BN", name: "description_bn", widget: "text", required: false }
-      - label: "Photos"
-        name: "photos"
-        widget: "list"
-        field: { label: "Photo", name: "photo", widget: "image" }
+  - name: "rooms_mgmt"
+    label: "Room Management"
+    files:
+      - file: "data/rooms.json"
+        label: "All Rooms List"
+        name: "rooms_list"
+        format: "json"
+        media_folder: "../../assets/uploads/rooms"
+        public_folder: "/assets/uploads/rooms"
+        fields:
+          - label: "Rooms"
+            name: "rooms"
+            widget: "list"
+            collapsed: true
+            summary: "Room {{fields.room_no}} - {{fields.title_en}}"
+            add_to_top: false
+            fields:
+              - { label: "Room No", name: "room_no", widget: "string" }
+              - { label: "Title EN", name: "title_en", widget: "string" }
+              - { label: "Title BN", name: "title_bn", widget: "string" }
+              - { label: "Description EN", name: "description_en", widget: "text", required: false }
+              - { label: "Description BN", name: "description_bn", widget: "text", required: false }
+              - label: "Photos"
+                name: "photos"
+                widget: "list"
+                field: { label: "Photo", name: "photo", widget: "image" }
 
   - name: "gallery"
     label: "Gallery"

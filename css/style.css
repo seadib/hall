@@ -221,11 +221,15 @@ body:not([data-page="home"]) .nav-links > a.active,
 
 .more-menu {
   position: relative;
-  display: none;
+  display: inline-block;
 }
 
 .more-menu[hidden] {
-  display: none;
+  display: none !important;
+}
+
+.nav-links a.is-overflow {
+  display: none !important;
 }
 
 .more-menu-toggle {
@@ -1099,6 +1103,11 @@ h3 {
 .contact-btn.missing-icon {
   opacity: 0.35;
   background: var(--surface);
+}
+
+.contact-btn.has-custom-img {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .profile-grid {

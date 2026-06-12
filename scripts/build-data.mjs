@@ -1,4 +1,5 @@
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
@@ -9,9 +10,8 @@ function normalizedUploadPath(value) {
   return value.replace(/^\/+/, "");
 }
 
-// 1. Compile Students
-const studentsDir = path.join(root, "data", "students");
-const studentsOutputPath = path.join(root, "data", "students.json");
+// 1. Normalize Students
+const studentsPath = path.join(root, "data", "students.json");
 
 function normalizeStudent(student) {
   const id = student.student_id;
@@ -37,46 +37,42 @@ function normalizeStudent(student) {
 }
 
 try {
-  const files = (await readdir(studentsDir)).filter((file) => file.endsWith(".json"));
-  const students = [];
+  if (existsSync(studentsPath)) {
+    const data = JSON.parse(await readFile(studentsPath, "utf8"));
+    const students = (data.students || []).map(normalizeStudent);
 
-  for (const file of files) {
-    const fullPath = path.join(studentsDir, file);
-    const data = JSON.parse(await readFile(fullPath, "utf8"));
-    students.push(normalizeStudent(data));
+    students.sort((a, b) => Number(a.position || 9999) - Number(b.position || 9999));
+
+    await writeFile(studentsPath, `${JSON.stringify({ students }, null, 2)}\n`, "utf8");
+    console.log(`Normalized data/students.json with ${students.length} students.`);
+  } else {
+    console.log("data/students.json does not exist. Skipping student normalization.");
   }
-
-  students.sort((a, b) => Number(a.position || 9999) - Number(b.position || 9999));
-
-  await mkdir(path.dirname(studentsOutputPath), { recursive: true });
-  await writeFile(studentsOutputPath, `${JSON.stringify({ students }, null, 2)}\n`, "utf8");
-
-  console.log(`Generated data/students.json with ${students.length} students.`);
 } catch (err) {
-  console.error("Error building student data:", err);
+  console.error("Error normalizing student data:", err);
 }
 
-// 2. Compile Rooms
-const roomsDir = path.join(root, "data", "rooms");
-const roomsOutputPath = path.join(root, "data", "rooms.json");
+// 2. Normalize Rooms
+const roomsPath = path.join(root, "data", "rooms.json");
 
 try {
-  const roomFiles = (await readdir(roomsDir)).filter((file) => file.endsWith(".json"));
-  const rooms = [];
+  if (existsSync(roomsPath)) {
+    const data = JSON.parse(await readFile(roomsPath, "utf8"));
+    const rooms = data.rooms || [];
 
-  for (const file of roomFiles) {
-    const fullPath = path.join(roomsDir, file);
-    const data = JSON.parse(await readFile(fullPath, "utf8"));
-    if (data.photos) {
-      data.photos = data.photos.map(normalizedUploadPath);
+    for (const room of rooms) {
+      if (room.photos) {
+        room.photos = room.photos.map(normalizedUploadPath);
+      }
     }
-    rooms.push(data);
+
+    rooms.sort((a, b) => String(a.room_no).localeCompare(String(b.room_no), undefined, { numeric: true }));
+
+    await writeFile(roomsPath, `${JSON.stringify({ rooms }, null, 2)}\n`, "utf8");
+    console.log(`Normalized data/rooms.json with ${rooms.length} rooms.`);
+  } else {
+    console.log("data/rooms.json does not exist. Skipping room normalization.");
   }
-
-  rooms.sort((a, b) => String(a.room_no).localeCompare(String(b.room_no), undefined, { numeric: true }));
-
-  await writeFile(roomsOutputPath, `${JSON.stringify({ rooms }, null, 2)}\n`, "utf8");
-  console.log(`Generated data/rooms.json with ${rooms.length} rooms.`);
 } catch (err) {
-  console.error("Error building room data:", err);
+  console.error("Error normalizing room data:", err);
 }

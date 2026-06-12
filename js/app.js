@@ -829,7 +829,8 @@ function updateMoreMenu() {
   toggle.setAttribute("aria-expanded", "false");
   menu.hidden = true;
 
-  if (!window.matchMedia("(max-width: 920px)").matches) return;
+  // On small screens, use native horizontal scrollbar rather than collapsing links
+  if (window.matchMedia("(max-width: 640px)").matches) return;
 
   const style = window.getComputedStyle(nav);
   const gap = Number.parseFloat(style.columnGap || style.gap) || 0;
@@ -855,7 +856,7 @@ function updateMoreMenu() {
     }
 
     link.classList.add("is-overflow");
-    const panelLink = panel.querySelector(`[data-nav-key="${link.dataset.navKey}"]`);
+    const panelLink = panelLinks[index];
     if (panelLink) panelLink.hidden = false;
   });
 
@@ -1448,7 +1449,12 @@ function contactActions(student, phoneHref, whatsappHref) {
   const renderIcon = (key, customPath) => {
     const normPath = normalizeCmsPath(customPath);
     if (normPath) {
-      return `<img src="${normPath}" alt="" loading="lazy">`;
+      return `
+        <img src="${normPath}" alt="" loading="lazy" 
+          onload="this.parentElement.classList.add('has-custom-img')" 
+          onerror="this.style.display='none'; this.parentElement.classList.remove('has-custom-img'); const fallback = this.parentElement.querySelector('.fallback-svg'); if(fallback) fallback.style.display='block';">
+        <span class="fallback-svg" style="display:none;">${defaultSvgs[key]}</span>
+      `;
     }
     return defaultSvgs[key];
   };
@@ -1634,20 +1640,17 @@ function initModal() {
 
 function initImageFallbacks() {
   document.querySelectorAll("img").forEach((img) => {
+    if (img.closest(".contact-btn")) return; // Skip contact buttons, handled inline
+
     if (img.complete && img.naturalWidth === 0) {
-      if (img.closest(".contact-btn")) {
-        img.closest(".contact-btn").classList.add("missing-icon");
-        img.remove();
+      if (!img.dataset.fallbackApplied) {
+        img.dataset.fallbackApplied = "true";
+        img.src = "images/hostel-building.jpg";
       }
       return;
     }
 
     img.addEventListener("error", () => {
-      if (img.closest(".contact-btn")) {
-        img.closest(".contact-btn").classList.add("missing-icon");
-        img.remove();
-        return;
-      }
       if (!img.dataset.fallbackApplied) {
         img.dataset.fallbackApplied = "true";
         img.src = "images/hostel-building.jpg";
