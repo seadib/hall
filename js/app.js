@@ -653,14 +653,13 @@ function applyCmsSettings(settings) {
 }
 
 async function loadCmsContent() {
-  const [settings, studentData, roomsList, homeData, devData, galleryData, alumniData, hallData] = await Promise.all([
+  const [settings, studentData, roomsList, homeData, devData, galleryData, hallData] = await Promise.all([
     fetchJson("data/settings.json"),
     fetchJson("data/students.json"),
     fetchJson("data/rooms.json"),
     fetchJson("data/home.json"),
     fetchJson("data/developer.json"),
     fetchJson("data/gallery.json"),
-    fetchJson("data/alumni.json"),
     fetchJson("data/hall.json")
   ]);
 
@@ -755,7 +754,7 @@ async function loadCmsContent() {
 
   // Render CMS page data
   await renderGalleryPage(galleryData);
-  await renderAlumniList(alumniData);
+  await renderAlumniList(hallData?.alumni_profiles);
   await renderDeveloperPage(devData);
   await renderHallInfoPage(hallData);
   await renderHallSuperPage(hallData);
@@ -1738,6 +1737,7 @@ function initAos() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  ensureNavigation();
   await loadCmsContent();
   initLanguage();
   initTheme();
@@ -1780,12 +1780,17 @@ async function renderAlumniList(alumniData) {
   const grid = document.querySelector(".person-grid");
   if (!grid || document.body.dataset.page !== "hostel") return;
 
-  const data = alumniData || await fetchJson("data/alumni.json");
-  if (data && data.profiles && data.profiles.length) {
-    const profiles = data.profiles.slice().sort((a, b) => Number(a.position || 0) - Number(b.position || 0));
-    famousProfiles.alumni = profiles;
+  let profiles = alumniData;
+  if (!profiles) {
+    const hallData = await fetchJson("data/hall.json");
+    profiles = hallData?.alumni_profiles || hallData?.profiles || [];
+  }
 
-    grid.innerHTML = profiles.map((p, index) => {
+  if (profiles && profiles.length) {
+    const sortedProfiles = profiles.slice().sort((a, b) => Number(a.position || 0) - Number(b.position || 0));
+    famousProfiles.alumni = sortedProfiles;
+
+    grid.innerHTML = sortedProfiles.map((p, index) => {
       const photo = normalizeCmsPath(p.photo) || "images/hostel-building.jpg";
       const name = currentLang === "bn" ? p.name_bn : p.name_en;
       return `

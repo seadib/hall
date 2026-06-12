@@ -31,6 +31,8 @@ collections:
           - label: "Menu Items"
             name: "menu_items"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.position}}. {{fields.text_en}} - {{fields.link}}"
             fields:
               - { label: "Position", name: "position", widget: "number", value_type: "int", default: 1 }
               - { label: "Text EN", name: "text_en", widget: "string" }
@@ -61,6 +63,8 @@ collections:
           - label: "Hero Rotating Phrases"
             name: "hero_phrases"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.text_en}} / {{fields.text_bn}}"
             fields:
               - { label: "Phrase EN", name: "text_en", widget: "string" }
               - { label: "Phrase BN", name: "text_bn", widget: "string" }
@@ -105,10 +109,12 @@ collections:
           - { label: "Focus Title BN", name: "focus_title_bn", widget: "string", default: "মূল লক্ষ্য" }
           - { label: "Focus Text EN", name: "focus_text_en", widget: "text" }
           - { label: "Focus Text BN", name: "focus_text_bn", widget: "text" }
-          - { label: "Skills (Comma separated list or tags)", name: "skills", widget: "list", field: { label: "Skill", name: "skill", widget: "string" } }
+          - { label: "Skills (Comma separated list or tags)", name: "skills", widget: "list", collapsed: true, field: { label: "Skill", name: "skill", widget: "string" } }
           - label: "Timeline / Method"
             name: "timeline"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.step_en}} / {{fields.step_bn}}"
             fields:
               - { label: "Step Title EN", name: "step_en", widget: "string" }
               - { label: "Step Title BN", name: "step_bn", widget: "string" }
@@ -117,6 +123,8 @@ collections:
           - label: "Featured Projects"
             name: "projects"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.title_en}} ({{fields.url}})"
             fields:
               - { label: "Category EN/BN", name: "title_en", widget: "string", hint: "e.g., Blog, Tool, Hall" }
               - { label: "Project Title / Domain", name: "url", widget: "string", hint: "e.g., seadib.blogspot.com" }
@@ -126,6 +134,8 @@ collections:
           - label: "Project Contributors"
             name: "contributors"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.name_en}} - {{fields.desc_en}}"
             fields:
               - { label: "Name EN", name: "name_en", widget: "string" }
               - { label: "Name BN", name: "name_bn", widget: "string" }
@@ -155,7 +165,7 @@ collections:
               - { label: "Name EN", name: "name_en", widget: "string" }
               - { label: "Name BN", name: "name_bn", widget: "string" }
               - { label: "Room No", name: "room_no", widget: "string" }
-              - { label: "Roommate IDs (Optional)", name: "roommate_ids", widget: "list", required: false, field: { label: "Student ID", name: "student_id", widget: "string" } }
+              - { label: "Roommate IDs (Optional)", name: "roommate_ids", widget: "list", collapsed: true, required: false, field: { label: "Student ID", name: "student_id", widget: "string" } }
               - { label: "Short Roll", name: "short_roll", widget: "string" }
               - { label: "Full Roll", name: "full_roll", widget: "string" }
               - { label: "Class", name: "class_no", widget: "string", default: "11" }
@@ -211,6 +221,7 @@ collections:
               - label: "Photos"
                 name: "photos"
                 widget: "list"
+                collapsed: true
                 field: { label: "Photo", name: "photo", widget: "image" }
 
   - name: "gallery"
@@ -224,6 +235,8 @@ collections:
           - label: "Items"
             name: "items"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.position}}. {{fields.title_en}}"
             fields:
               - { label: "Position", name: "position", widget: "number", value_type: "int", default: 1 }
               - { label: "Title EN", name: "title_en", widget: "string" }
@@ -231,33 +244,6 @@ collections:
               - { label: "Description EN", name: "description_en", widget: "text", required: false }
               - { label: "Description BN", name: "description_bn", widget: "text", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
-
-  - name: "alumni"
-    label: "Alumni"
-    files:
-      - name: "alumni_profiles"
-        label: "Alumni Profiles"
-        file: "data/alumni.json"
-        format: "json"
-        fields:
-          - label: "Profiles"
-            name: "profiles"
-            widget: "list"
-            fields:
-              - { label: "Position", name: "position", widget: "number", value_type: "int", default: 1 }
-              - { label: "Name EN", name: "name_en", widget: "string" }
-              - { label: "Name BN", name: "name_bn", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image", required: false }
-              - { label: "Role EN", name: "role_en", widget: "string", required: false }
-              - { label: "Role BN", name: "role_bn", widget: "string", required: false }
-              - { label: "Biography EN", name: "biography_en", widget: "text", required: false }
-              - { label: "Biography BN", name: "biography_bn", widget: "text", required: false }
-              - { label: "Career EN", name: "career_en", widget: "text", required: false }
-              - { label: "Career BN", name: "career_bn", widget: "text", required: false }
-              - { label: "Hall Memories EN", name: "hall_memory_en", widget: "text", required: false }
-              - { label: "Hall Memories BN", name: "hall_memory_bn", widget: "text", required: false }
-              - { label: "Hall Contribution EN", name: "hall_contribution_en", widget: "text", required: false }
-              - { label: "Hall Contribution BN", name: "hall_contribution_bn", widget: "text", required: false }
 
   - name: "hall"
     label: "Hall Pages"
@@ -279,12 +265,16 @@ collections:
           - label: "Nearby Places"
             name: "history_places"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.name_en}} / {{fields.name_bn}}"
             fields:
               - { label: "Name EN", name: "name_en", widget: "string" }
               - { label: "Name BN", name: "name_bn", widget: "string" }
           - label: "Facility Photos Gallery"
             name: "hall_photos"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.title_en}}"
             fields:
               - { label: "Photo", name: "photo", widget: "image" }
               - { label: "Title EN", name: "title_en", widget: "string" }
@@ -298,6 +288,8 @@ collections:
           - label: "Admission Success Chart"
             name: "success_chart"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.year}} - {{fields.text_en}}"
             fields:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Bar Width %", name: "width", widget: "number", value_type: "int", min: 1, max: 100 }
@@ -318,9 +310,31 @@ collections:
           - label: "Hall Super Info Cards"
             name: "hall_super_info_boxes"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.title_en}}"
             max: 3
             fields:
               - { label: "Card Title EN", name: "title_en", widget: "string" }
               - { label: "Card Title BN", name: "title_bn", widget: "string" }
               - { label: "Card Text EN", name: "text_en", widget: "text" }
               - { label: "Card Text BN", name: "text_bn", widget: "text" }
+          - label: "Alumni Profiles"
+            name: "alumni_profiles"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.position}}. {{fields.name_en}} (Role: {{fields.role_en}})"
+            fields:
+              - { label: "Position", name: "position", widget: "number", value_type: "int", default: 1 }
+              - { label: "Name EN", name: "name_en", widget: "string" }
+              - { label: "Name BN", name: "name_bn", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Role EN", name: "role_en", widget: "string", required: false }
+              - { label: "Role BN", name: "role_bn", widget: "string", required: false }
+              - { label: "Biography EN", name: "biography_en", widget: "text", required: false }
+              - { label: "Biography BN", name: "biography_bn", widget: "text", required: false }
+              - { label: "Career EN", name: "career_en", widget: "text", required: false }
+              - { label: "Career BN", name: "career_bn", widget: "text", required: false }
+              - { label: "Hall Memories EN", name: "hall_memory_en", widget: "text", required: false }
+              - { label: "Hall Memories BN", name: "hall_memory_bn", widget: "text", required: false }
+              - { label: "Hall Contribution EN", name: "hall_contribution_en", widget: "text", required: false }
+              - { label: "Hall Contribution BN", name: "hall_contribution_bn", widget: "text", required: false }
