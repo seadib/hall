@@ -267,12 +267,60 @@ collections:
         file: "data/hall.json"
         format: "json"
         fields:
+          - { label: "Hall Info Title EN", name: "hostel_title_en", widget: "string" }
+          - { label: "Hall Info Title BN", name: "hostel_title_bn", widget: "string" }
+          - { label: "Hall Info Subtitle EN", name: "hostel_subtitle_en", widget: "string" }
+          - { label: "Hall Info Subtitle BN", name: "hostel_subtitle_bn", widget: "string" }
           - { label: "History Title EN", name: "history_title_en", widget: "string" }
           - { label: "History Title BN", name: "history_title_bn", widget: "string" }
           - { label: "History Text EN", name: "history_text_en", widget: "text" }
           - { label: "History Text BN", name: "history_text_bn", widget: "text" }
+          - { label: "Main Building Photo", name: "hall_photo", widget: "image", required: false }
+          - label: "Nearby Places"
+            name: "history_places"
+            widget: "list"
+            fields:
+              - { label: "Name EN", name: "name_en", widget: "string" }
+              - { label: "Name BN", name: "name_bn", widget: "string" }
+          - label: "Facility Photos Gallery"
+            name: "hall_photos"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Title EN", name: "title_en", widget: "string" }
+              - { label: "Title BN", name: "title_bn", widget: "string" }
+              - { label: "Description EN", name: "desc_en", widget: "text", required: false }
+              - { label: "Description BN", name: "desc_bn", widget: "text", required: false }
+          - { label: "Admission Success Title EN", name: "success_title_en", widget: "string" }
+          - { label: "Admission Success Title BN", name: "success_title_bn", widget: "string" }
+          - { label: "Admission Success Text EN", name: "success_text_en", widget: "text", required: false }
+          - { label: "Admission Success Text BN", name: "success_text_bn", widget: "text", required: false }
+          - label: "Admission Success Chart"
+            name: "success_chart"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Bar Width %", name: "width", widget: "number", value_type: "int", min: 1, max: 100 }
+              - { label: "Details EN", name: "text_en", widget: "string" }
+              - { label: "Details BN", name: "text_bn", widget: "string" }
+          - { label: "Location Title EN", name: "location_title_en", widget: "string" }
+          - { label: "Location Title BN", name: "location_title_bn", widget: "string" }
+          - { label: "Location Text EN", name: "location_text_en", widget: "text", required: false }
+          - { label: "Location Text BN", name: "location_text_bn", widget: "text", required: false }
+          - { label: "Google Map IFrame URL", name: "map_url", widget: "string" }
+          - { label: "Hall Super Eyebrow EN", name: "hall_super_eyebrow_en", widget: "string", required: false }
+          - { label: "Hall Super Eyebrow BN", name: "hall_super_eyebrow_bn", widget: "string", required: false }
           - { label: "Hall Super Name EN", name: "hall_super_name_en", widget: "string", required: false }
           - { label: "Hall Super Name BN", name: "hall_super_name_bn", widget: "string", required: false }
           - { label: "Hall Super Photo", name: "hall_super_photo", widget: "image", required: false }
           - { label: "Hall Super Bio EN", name: "hall_super_bio_en", widget: "text", required: false }
           - { label: "Hall Super Bio BN", name: "hall_super_bio_bn", widget: "text", required: false }
+          - label: "Hall Super Info Cards"
+            name: "hall_super_info_boxes"
+            widget: "list"
+            max: 3
+            fields:
+              - { label: "Card Title EN", name: "title_en", widget: "string" }
+              - { label: "Card Title BN", name: "title_bn", widget: "string" }
+              - { label: "Card Text EN", name: "text_en", widget: "text" }
+              - { label: "Card Text BN", name: "text_bn", widget: "text" }

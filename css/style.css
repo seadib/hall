@@ -1862,3 +1862,91 @@ h3 {
     min-height: 0;
   }
 }
+
+/* Room Modal: Compact Occupants and About Description */
+.room-about-desc {
+  margin: 16px 0 24px;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--surface-light);
+  border-left: 4px solid var(--accent);
+}
+
+.room-about-desc p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.room-occupants {
+  margin-top: 24px;
+}
+
+.room-occupants h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.occupants-list {
+  display: grid;
+  gap: 12px;
+}
+
+.occupant-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--surface-light);
+  border: 1px solid var(--border-soft);
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.occupant-row:hover,
+.occupant-row:focus-visible {
+  transform: translateY(-2px);
+  background: var(--surface-strong);
+  border-color: var(--accent);
+}
+
+.occupant-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-strong);
+  border: 2px solid var(--border);
+}
+
+.occupant-info {
+  flex-grow: 1;
+}
+
+.occupant-info h4 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: var(--text-strong);
+}
+
+.occupant-info p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.occupant-action {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.18s ease;
+}
+
+.occupant-row:hover .occupant-action {
+  color: var(--accent-strong);
+}

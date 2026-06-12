@@ -142,6 +142,15 @@ const i18n = {
       threeName: "Sadia Chowdhury",
       threeText: "Demo profile: university scholarship achiever, known for debate, leadership and academic excellence."
     },
+    alumni: {
+      biography: "Biography",
+      career: "Career Success",
+      hallMemory: "Hall Memories",
+      hallContribution: "Hall Contribution",
+      success: "Success",
+      education: "Education",
+      contribution: "Contribution"
+    },
     places: {
       newMarket: "New Market",
       scienceLab: "Science Lab",
@@ -341,6 +350,15 @@ const i18n = {
       twoText: "ডেমো প্রোফাইল: ইঞ্জিনিয়ারিং গ্র্যাজুয়েট, এডমিশন প্রস্তুতি ও student project mentor।",
       threeName: "সাদিয়া চৌধুরী",
       threeText: "ডেমো প্রোফাইল: বিশ্ববিদ্যালয় scholarship achiever, বিতর্ক ও নেতৃত্বে পরিচিত।"
+    },
+    alumni: {
+      biography: "জীবনী",
+      career: "পেশাগত সফলতা",
+      hallMemory: "ছাত্রাবাসের স্মৃতি",
+      hallContribution: "ছাত্রাবাসে অবদান",
+      success: "সাফল্য",
+      education: "শিক্ষা",
+      contribution: "অবদান"
     },
     places: {
       newMarket: "নিউ মার্কেট",
@@ -689,26 +707,34 @@ async function loadCmsContent() {
   // Handle Hall Data translations
   if (hallData) {
     if (i18n.en.hostel) {
+      i18n.en.hostel.title = hallData.hostel_title_en || i18n.en.hostel.title;
+      i18n.en.hostel.subtitle = hallData.hostel_subtitle_en || i18n.en.hostel.subtitle;
       i18n.en.hostel.historyTitle = hallData.history_title_en || i18n.en.hostel.historyTitle;
       i18n.en.hostel.historyText = hallData.history_text_en || i18n.en.hostel.historyText;
+      i18n.en.hostel.successTitle = hallData.success_title_en || i18n.en.hostel.successTitle;
+      i18n.en.hostel.successText = hallData.success_text_en || i18n.en.hostel.successText;
+      i18n.en.hostel.locationTitle = hallData.location_title_en || i18n.en.hostel.locationTitle;
+      i18n.en.hostel.locationText = hallData.location_text_en || i18n.en.hostel.locationText;
     }
     if (i18n.bn.hostel) {
+      i18n.bn.hostel.title = hallData.hostel_title_bn || i18n.bn.hostel.title;
+      i18n.bn.hostel.subtitle = hallData.hostel_subtitle_bn || i18n.bn.hostel.subtitle;
       i18n.bn.hostel.historyTitle = hallData.history_title_bn || i18n.bn.hostel.historyTitle;
       i18n.bn.hostel.historyText = hallData.history_text_bn || i18n.bn.hostel.historyText;
+      i18n.bn.hostel.successTitle = hallData.success_title_bn || i18n.bn.hostel.successTitle;
+      i18n.bn.hostel.successText = hallData.success_text_bn || i18n.bn.hostel.successText;
+      i18n.bn.hostel.locationTitle = hallData.location_title_bn || i18n.bn.hostel.locationTitle;
+      i18n.bn.hostel.locationText = hallData.location_text_bn || i18n.bn.hostel.locationText;
     }
     if (i18n.en.hallSuper) {
       i18n.en.hallSuper.name = hallData.hall_super_name_en || i18n.en.hallSuper.name;
       i18n.en.hallSuper.bio = hallData.hall_super_bio_en || i18n.en.hallSuper.bio;
+      i18n.en.hallSuper.subtitle = hallData.hall_super_subtitle_en || i18n.en.hallSuper.subtitle;
     }
     if (i18n.bn.hallSuper) {
       i18n.bn.hallSuper.name = hallData.hall_super_name_bn || i18n.bn.hallSuper.name;
       i18n.bn.hallSuper.bio = hallData.hall_super_bio_bn || i18n.bn.hallSuper.bio;
-    }
-    
-    // Hall super photo
-    const superImg = document.querySelector(".hostel-photo img");
-    if (superImg && document.body.dataset.page === "hallsuper" && hallData.hall_super_photo) {
-      superImg.src = normalizeCmsPath(hallData.hall_super_photo);
+      i18n.bn.hallSuper.subtitle = hallData.hall_super_subtitle_bn || i18n.bn.hallSuper.subtitle;
     }
   }
 
@@ -731,6 +757,8 @@ async function loadCmsContent() {
   await renderGalleryPage(galleryData);
   await renderAlumniList(alumniData);
   await renderDeveloperPage(devData);
+  await renderHallInfoPage(hallData);
+  await renderHallSuperPage(hallData);
 }
 
 function t(key) {
@@ -1352,9 +1380,9 @@ function openFamousModal(profileId) {
         <p class="lead">${finalProfile.role}</p>
 
         <div class="profile-grid">
-          <div class="profile-item"><span>Success</span><strong>${finalProfile.success || "-"}</strong></div>
-          <div class="profile-item"><span>Education</span><strong>${finalProfile.education || "-"}</strong></div>
-          <div class="profile-item"><span>Contribution</span><strong>${finalProfile.contribution || "-"}</strong></div>
+          <div class="profile-item"><span>${t("alumni.success")}</span><strong>${finalProfile.success || "-"}</strong></div>
+          <div class="profile-item"><span>${t("alumni.education")}</span><strong>${finalProfile.education || "-"}</strong></div>
+          <div class="profile-item"><span>${t("alumni.contribution")}</span><strong>${finalProfile.contribution || "-"}</strong></div>
         </div>
 
         ${finalProfile.achievements && finalProfile.achievements.length ? `
@@ -1367,25 +1395,25 @@ function openFamousModal(profileId) {
         <div class="alumni-story">
           ${finalProfile.biography ? `
             <section>
-              <h3>Biography</h3>
+              <h3>${t("alumni.biography")}</h3>
               <p>${finalProfile.biography}</p>
             </section>
           ` : ""}
           ${finalProfile.career ? `
             <section>
-              <h3>Career Success</h3>
+              <h3>${t("alumni.career")}</h3>
               <p>${finalProfile.career}</p>
             </section>
           ` : ""}
           ${finalProfile.hallMemory ? `
             <section>
-              <h3>Hall Memories</h3>
+              <h3>${t("alumni.hallMemory")}</h3>
               <p>${finalProfile.hallMemory}</p>
             </section>
           ` : ""}
           ${finalProfile.hallContribution ? `
             <section>
-              <h3>Hall Contribution</h3>
+              <h3>${t("alumni.hallContribution")}</h3>
               <p>${finalProfile.hallContribution}</p>
             </section>
           ` : ""}
@@ -1565,19 +1593,29 @@ function openRoomModal(room) {
       <div class="room-photo-grid">
         ${roomPhotos.map((photo, index) => `<img src="${photo}" alt="Room photo ${index + 1}" loading="lazy">`).join("")}
       </div>
-      <div class="info-grid room-info-grid">
-        <article class="info-box">
-          <h3>${t("common.students")}</h3>
-          <p>${occupants.map((student) => `${studentValue(student, "name")} (${t("common.roll")} ${student.roll})`).join("<br>")}</p>
-        </article>
-        <article class="info-box">
-          <h3>${t("common.group")}</h3>
-          <p>${occupants.map((student) => `${groupLabel(student.group)}${student.section ? ` · ${student.section}` : ""}${student.practicalGroup ? ` · ${student.practicalGroup}` : ""}`).join("<br>")}</p>
-        </article>
-        <article class="info-box">
-          <h3>${t("common.about")}</h3>
-          <p>${desc}</p>
-        </article>
+      <div class="room-about-desc">
+        <p>${desc}</p>
+      </div>
+      <div class="room-occupants">
+        <h3>${t("common.roomOccupants") || "Room Occupants"}</h3>
+        <div class="occupants-list">
+          ${occupants.map((student) => {
+            const photo = normalizeCmsPath(student.img || student.photo) || "images/logo.png";
+            const groupText = `${groupLabel(student.group)}${student.section ? ` · Sec: ${student.section}` : ""}${student.practicalGroup ? ` · Gr: ${student.practicalGroup}` : ""}`;
+            return `
+              <div class="occupant-row" onclick="openStudentModalFromRoom('${student.slug}')" tabindex="0" role="button">
+                <img class="occupant-img" src="${photo}" alt="" loading="lazy">
+                <div class="occupant-info">
+                  <h4>${studentValue(student, "name")}</h4>
+                  <p>${t("common.roll")} ${student.roll} · Class ${classLabel(student.classNo)} · ${groupText}</p>
+                </div>
+                <div class="occupant-action">
+                  <span>View Profile &rarr;</span>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
       </div>
     </div>
   `;
@@ -1629,6 +1667,24 @@ function closeStudentModal() {
 }
 
 function initModal() {
+  if (!document.getElementById("studentModal")) {
+    const modalDiv = document.createElement("div");
+    modalDiv.id = "studentModal";
+    modalDiv.className = "modal";
+    modalDiv.setAttribute("aria-hidden", "true");
+    modalDiv.setAttribute("role", "dialog");
+    modalDiv.setAttribute("aria-modal", "true");
+    modalDiv.setAttribute("aria-labelledby", "modalName");
+    modalDiv.innerHTML = `
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-panel">
+        <button class="modal-close" type="button" aria-label="Close profile" data-close-modal>&times;</button>
+        <div id="modalContent"></div>
+      </article>
+    `;
+    document.body.appendChild(modalDiv);
+  }
+
   document.addEventListener("click", (event) => {
     if (event.target.closest("[data-close-modal]")) closeStudentModal();
   });
@@ -1803,3 +1859,103 @@ async function renderDeveloperPage(devData) {
     `).join("");
   }
 }
+
+async function renderHallInfoPage(hallData) {
+  if (document.body.dataset.page !== "hostel") return;
+
+  const data = hallData || await fetchJson("data/hall.json");
+  if (!data) return;
+
+  // 1. History Places List
+  const placesList = document.querySelector(".nearby-list");
+  if (placesList && data.history_places && data.history_places.length) {
+    placesList.innerHTML = data.history_places.map((place) => {
+      const name = currentLang === "bn" ? place.name_bn : place.name_en;
+      return `<li>${name}</li>`;
+    }).join("");
+  }
+
+  // 2. Main History Photo
+  const mainPhoto = document.querySelector(".hostel-photo img");
+  if (mainPhoto && data.hall_photo) {
+    mainPhoto.src = normalizeCmsPath(data.hall_photo);
+  }
+
+  // 3. Gallery Grid Photos
+  const galleryGrid = document.querySelector(".gallery-grid.hall-photo-demo");
+  if (galleryGrid && data.hall_photos && data.hall_photos.length) {
+    galleryGrid.innerHTML = data.hall_photos.map((item, index) => {
+      const photo = normalizeCmsPath(item.photo);
+      const title = currentLang === "bn" ? item.title_bn : item.title_en;
+      const desc = currentLang === "bn" ? item.desc_bn : item.desc_en;
+      return `
+        <article class="gallery-card" data-aos="fade-up" data-aos-delay="${index * 120}">
+          <img src="${photo}" alt="${title}" loading="lazy">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+        </article>
+      `;
+    }).join("");
+  }
+
+  // 4. Admission Success Chart
+  const successChart = document.querySelector(".success-chart");
+  if (successChart && data.success_chart && data.success_chart.length) {
+    successChart.innerHTML = data.success_chart.map((row) => {
+      const text = currentLang === "bn" ? row.text_bn : row.text_en;
+      return `
+        <div class="chart-row">
+          <span>${row.year}</span>
+          <div style="--w: ${row.width}%"><b>${text}</b></div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // 5. Map IFrame
+  const iframe = document.querySelector(".map-wrap iframe");
+  if (iframe && data.map_url) {
+    iframe.src = data.map_url;
+  }
+}
+
+async function renderHallSuperPage(hallData) {
+  if (document.body.dataset.page !== "hallsuper") return;
+
+  const data = hallData || await fetchJson("data/hall.json");
+  if (!data) return;
+
+  // 1. Hall Super Photo
+  const superImg = document.querySelector(".hostel-photo img");
+  if (superImg && data.hall_super_photo) {
+    superImg.src = normalizeCmsPath(data.hall_super_photo);
+  }
+
+  // 2. Eyebrow translation override
+  const eyebrow = document.querySelector(".split .eyebrow");
+  if (eyebrow) {
+    eyebrow.textContent = currentLang === "bn" ? (data.hall_super_eyebrow_bn || "সম্মানিত নেতৃত্ব") : (data.hall_super_eyebrow_en || "Respectful Leadership");
+  }
+
+  // 3. Info grid (info boxes)
+  const infoGrid = document.querySelector(".info-grid");
+  if (infoGrid && data.hall_super_info_boxes && data.hall_super_info_boxes.length) {
+    infoGrid.innerHTML = data.hall_super_info_boxes.map((box) => {
+      const title = currentLang === "bn" ? box.title_bn : box.title_en;
+      const text = currentLang === "bn" ? box.text_bn : box.text_en;
+      return `
+        <article class="info-box">
+          <h3>${title}</h3>
+          <p>${text}</p>
+        </article>
+      `;
+    }).join("");
+  }
+}
+
+window.openStudentModalFromRoom = function(slug) {
+  const student = students.find((s) => s.slug === slug);
+  if (student) {
+    openStudentModal(student);
+  }
+};
