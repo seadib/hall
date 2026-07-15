@@ -69,3 +69,29 @@ This project is configured to auto-deploy to **GitHub Pages** and sync files via
    - Go to Site Configuration -> Identity -> Enable Identity.
    - Go to Services -> Git Gateway -> click **Enable Git Gateway** and link your GitHub account.
 5. Go to your site's URL `/admin/` to register and log in to manage your website from any device!
+
+---
+
+## 🔍 SEO & Favicon Optimization Guidelines
+
+To ensure the website is fully indexable and ranked highly under keywords like `dhaka college international hall wbsite`, `dc hall website`, `adib dchall`, `international hall info`, and `hostel`, we have integrated a dedicated SEO and favicon system:
+
+### 1. Favicon Search Result Requirements
+Google and other search engines require specific formats for favicons to show up in search results:
+- **Multiple Sizes**: Declared in all HTML headers for multiple square resolutions (192x192, 96x96, 48x48, 32x32, 16x16) along with Apple touch icons (180x180). This complies with Google's guidelines that favicons must be a multiple of 48px square.
+- **Source Image**: The official building image is located at `images/logo.png`. Overwriting this file automatically updates the favicon and logo everywhere.
+
+### 2. Search Keywords & Metadata
+- **Meta Tags**: All HTML templates (`index.html`, `embed.html`, etc.) contain specific description and keyword tags targeting: `dhaka college international hall wbsite`, `dc hall website`, `adib dchall`, `international hall info`, `hostel`.
+- **JSON-LD Schema**: Embedded structured JSON-LD organization markup in `index.html` to help Google index alternative search synonyms.
+
+### 3. Automated SEO Script
+If you add new HTML pages to the project and want to apply these meta and favicon settings instantly, run:
+```bash
+python scripts/seo-update.py
+```
+
+### 4. Indexing & Discovery
+- **`robots.txt`**: Located in the root directory to allow crawlers to index the site and point to the sitemap.
+- **`sitemap.xml`**: Maps and indexes all HTML pages so Google can discover them immediately.
+

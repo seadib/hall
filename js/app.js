@@ -8,18 +8,40 @@ const i18n = {
       hostel: "International Hall | Hall Info",
       hallsuper: "International Hall | Hall Super",
       gallery: "International Hall | Gallery",
-      developer: "International Hall | Developer"
+      developer: "International Hall | Developer",
+      profile: "International Hall | Profile",
+      embed: "International Hall | Portal",
+      "dc-social": "International Hall | DC Facebook Pages",
+      "dc-clubs": "International Hall | Dhaka College Clubs"
     },
     nav: {
       logo: "International Hall",
       home: "Home",
+      hall: "Hall",
+      dhakaCollege: "Dhaka College",
+      developer: "Developer",
       students: "Students",
       roommates: "Roommates",
       results: "Results",
       hostel: "Hall Info",
       hallSuper: "Hall Super",
       gallery: "Gallery",
-      developer: "Developer"
+      dcSocial: "DC Facebook Pages",
+      dcClubs: "Dhaka College Clubs"
+    },
+    auth: {
+      title: "Student Login",
+      passwordLabel: "Password",
+      submit: "Login",
+      logout: "Logout",
+      successTitle: "Successfully Logged In",
+      notice: "If you are a student of Dhaka College International Hall, please log in with your password. Entering the password will allow you to view all information.",
+      successMessage: "You are logged in as a student! All locked contact numbers and locations are now visible.",
+      error: "Invalid password. Please try again."
+    },
+    embed: {
+      back: "Back",
+      openTab: "Open in New Tab"
     },
     common: {
       about: "About",
@@ -105,6 +127,14 @@ const i18n = {
       "Study together, grow together.",
       "Dream big from Dhaka College."
     ],
+    dcSocial: {
+      title: "DC Facebook Pages",
+      subtitle: "Scroll and interact with official Facebook pages and groups of Dhaka College."
+    },
+    dcClubs: {
+      title: "Dhaka College Clubs",
+      subtitle: "Explore active interest clubs, co-curricular groups, and associations at Dhaka College."
+    },
     students: {
       title: "Student Directory",
       subtitle: "Profiles, contact details, room, roll, group, section and academic files in one searchable list."
@@ -217,18 +247,40 @@ const i18n = {
       hostel: "আন্তর্জাতিক ছাত্রাবাস | হল তথ্য",
       hallsuper: "আন্তর্জাতিক ছাত্রাবাস | হল সুপার",
       gallery: "আন্তর্জাতিক ছাত্রাবাস | গ্যালারি",
-      developer: "আন্তর্জাতিক ছাত্রাবাস | ডেভেলপার"
+      developer: "আন্তর্জাতিক ছাত্রাবাস | ডেভেলপার",
+      profile: "আন্তর্জাতিক ছাত্রাবাস | প্রোফাইল",
+      embed: "আন্তর্জাতিক ছাত্রাবাস | পোর্টাল",
+      "dc-social": "আন্তর্জাতিক ছাত্রাবাস | ডিসি ফেসবুক পেজ",
+      "dc-clubs": "আন্তর্জাতিক ছাত্রাবাস | ক্লাবসমূহ"
     },
     nav: {
       logo: "আন্তর্জাতিক ছাত্রাবাস",
       home: "হোম",
+      hall: "হল",
+      dhakaCollege: "ঢাকা কলেজ",
+      developer: "ডেভেলপার",
       students: "শিক্ষার্থী",
       roommates: "রুমমেট",
       results: "ফলাফল",
       hostel: "হল তথ্য",
       hallSuper: "হল সুপার",
       gallery: "গ্যালারি",
-      developer: "ডেভেলপার"
+      dcSocial: "ডিসি ফেসবুক পেজ",
+      dcClubs: "ঢাকা কলেজ ক্লাবসমূহ"
+    },
+    auth: {
+      title: "শিক্ষার্থী লগইন",
+      passwordLabel: "পাসওয়ার্ড",
+      submit: "লগইন",
+      logout: "লগআউট",
+      successTitle: "সফলভাবে লগইন হয়েছে",
+      notice: "তুমি যদি ঢাকা কলেজ ইন্টারন্যাশনালের হলের স্টুডেন্ট হয়ে থাকো, তাহলে পাসওয়ার্ড দিয়ে লগইন করো। পাসওয়ার্ড দিলে তুমি সকল ইনফরমেশন দেখতে পাবে।",
+      successMessage: "তুমি একজন শিক্ষার্থী হিসেবে লগইন করে আছো! সকল লক করা নম্বর এবং লোকেশন এখন দৃশ্যমান।",
+      error: "ভুল পাসওয়ার্ড। আবার চেষ্টা করো।"
+    },
+    embed: {
+      back: "ফিরে যান",
+      openTab: "নতুন ট্যাবে খুলুন"
     },
     common: {
       about: "পরিচিতি",
@@ -314,6 +366,14 @@ const i18n = {
       "একসাথে পড়ি, একসাথে এগিয়ে যাই।",
       "ঢাকা কলেজ থেকে বড় স্বপ্নের শুরু।"
     ],
+    dcSocial: {
+      title: "ডিসি ফেসবুক পেজ",
+      subtitle: "ঢাকা কলেজের ফেসবুক পেজ ও গ্রুপগুলোর পোস্ট সরাসরি স্ক্রোল করে দেখুন।"
+    },
+    dcClubs: {
+      title: "ঢাকা কলেজ ক্লাবসমূহ",
+      subtitle: "ঢাকা কলেজের বিভিন্ন ক্লাব, ক্লাব কার্যক্রম ও ফেসবুক কমিউনিটি পেজ।"
+    },
     students: {
       title: "শিক্ষার্থী ডিরেক্টরি",
       subtitle: "প্রোফাইল, যোগাযোগ, রুম, রোল, গ্রুপ, সেকশন ও একাডেমিক ফাইল এক জায়গায়।"
@@ -368,7 +428,7 @@ const i18n = {
     hallSuper: {
       title: "হল সুপার",
       subtitle: "শিক্ষার্থীদের জন্য সম্মানিত হল সুপারের গুরুত্বপূর্ণ তথ্য।",
-      eyebrow: "সম্মানিত নেতৃত্ব",
+      eyebrow: "Respectful Leadership",
       name: "প্রফেসর মো. রহমান",
       bio: "ডেমো প্রোফাইল: হল সুপার শৃঙ্খলা, যত্ন ও একাডেমিক উৎসাহ দিয়ে শিক্ষার্থীদের গাইড করেন। তিনি হলকে গুছানো, নিরাপদ ও পড়াশোনাবান্ধব রাখতে কাজ করেন।",
       joinedTitle: "হল দায়িত্বে যোগদান",
@@ -417,6 +477,7 @@ const i18n = {
     }
   }
 };
+
 
 let currentLang = localStorage.getItem("dc-hostel-lang") || "en";
 if (!i18n[currentLang]) currentLang = "en";
@@ -896,43 +957,59 @@ function ensureNavigation() {
   const nav = document.querySelector(".nav-links");
   if (!nav) return;
 
-  const links = cmsSettings?.menu_items?.length
-    ? cmsSettings.menu_items
-      .slice()
-      .sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
-      .map((item) => [item.link, item.text_en, item.text_bn])
-    : [
-      ["index.html", "home"],
-      ["students.html", "students"],
-      ["roommates.html", "roommates"],
-      ["results.html", "results"],
-      ["hostel.html", "hostel"],
-      ["hallsuper.html", "hallSuper"],
-      ["gallery.html", "gallery"],
-      ["developer.html", "developer"]
-    ];
   const page = document.body.dataset.page || "home";
 
-  nav.innerHTML = links.map(([href, keyOrEn, bn]) => {
-    const key = cmsSettings?.menu_items?.length ? "" : keyOrEn;
-    const label = cmsSettings?.menu_items?.length ? (currentLang === "bn" ? bn : keyOrEn) : t(`nav.${key}`);
-    const active = href.toLowerCase().includes(`${page}.html`) || (page === "home" && href === "index.html") || (key && (key.toLowerCase() === page.toLowerCase() || (key === "hallSuper" && page === "hallsuper")));
-    return `<a href="${href}" class="${active ? "active" : ""}" ${key ? `data-nav-key="${key}" data-i18n="nav.${key}"` : ""}>${label}</a>`;
-  }).join("") + `
-    <div class="more-menu" hidden>
-      <button class="more-menu-toggle" type="button" aria-expanded="false">${moreMenuLabel()}</button>
-      <div class="more-menu-panel"></div>
+  const isHomeActive = page === "home";
+  const isDevActive = page === "developer";
+  const isHallActive = ["students", "roommates", "results", "hostel", "hallsuper", "gallery"].includes(page);
+  const isDcActive = ["embed", "dc-social", "dc-clubs"].includes(page);
+
+  // Dynamic Dhaka College URL configurations from settings
+  const dcWebUrl = cmsSettings?.dhaka_college?.official_site_url || "https://www.dhakacollege.edu.bd/";
+  const dcNoticeUrl = cmsSettings?.dhaka_college?.notice_url || "https://www.dhakacollege.edu.bd/en/notice?limit=100&page=1";
+  const dcResultUrl = cmsSettings?.dhaka_college?.result_admit_url || "https://dhakacollege.eshiksabd.com/";
+  const dcArchiveUrl = cmsSettings?.dhaka_college?.archive_url || "https://thedcarchive.pages.dev/";
+
+  const dcWebTitle = currentLang === "bn" ? (cmsSettings?.dhaka_college?.official_site_title_bn || "ঢাকা কলেজ ওয়েবসাইট") : (cmsSettings?.dhaka_college?.official_site_title_en || "Dhaka College Website");
+  const dcNoticeTitle = currentLang === "bn" ? (cmsSettings?.dhaka_college?.notice_title_bn || "নোটিস বোর্ড") : (cmsSettings?.dhaka_college?.notice_title_en || "Dhaka College Notice");
+  const dcResultTitle = currentLang === "bn" ? (cmsSettings?.dhaka_college?.result_admit_title_bn || "রেজাল্ট ও এডমিট কার্ড") : (cmsSettings?.dhaka_college?.result_admit_title_en || "DC Result & Admit Card");
+  const dcArchiveTitle = currentLang === "bn" ? (cmsSettings?.dhaka_college?.archive_title_bn || "দা ডিসি আর্কাইভ") : (cmsSettings?.dhaka_college?.archive_title_en || "The DC Archive Website");
+
+  const dcDropdownLabel = window.innerWidth <= 480 ? "DC" : t("nav.dhakaCollege");
+
+  nav.innerHTML = `
+    <a href="index.html" class="${isHomeActive ? "active" : ""}" data-i18n="nav.home">${t("nav.home")}</a>
+    
+    <div class="nav-dropdown ${isHallActive ? "active" : ""}">
+      <button class="dropdown-trigger ${isHallActive ? "active" : ""}" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>${t("nav.hall")}</span>
+      </button>
+      <div class="dropdown-content">
+        <a href="students.html" class="${page === "students" ? "active" : ""}">${t("nav.students")}</a>
+        <a href="roommates.html" class="${page === "roommates" ? "active" : ""}">${t("nav.roommates")}</a>
+        <a href="results.html" class="${page === "results" ? "active" : ""}">${t("nav.results")}</a>
+        <a href="hostel.html" class="${page === "hostel" ? "active" : ""}">${t("nav.hostel")}</a>
+        <a href="hallsuper.html" class="${page === "hallsuper" ? "active" : ""}">${t("nav.hallSuper")}</a>
+        <a href="gallery.html" class="${page === "gallery" ? "active" : ""}">${t("nav.gallery")}</a>
+      </div>
     </div>
+
+    <div class="nav-dropdown ${isDcActive ? "active" : ""}">
+      <button class="dropdown-trigger ${isDcActive ? "active" : ""}" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>${dcDropdownLabel}</span>
+      </button>
+      <div class="dropdown-content">
+        <a href="embed.html?url=${encodeURIComponent(dcWebUrl)}&title=${encodeURIComponent(dcWebTitle)}">${dcWebTitle}</a>
+        <a href="embed.html?url=${encodeURIComponent(dcNoticeUrl)}&title=${encodeURIComponent(dcNoticeTitle)}">${dcNoticeTitle}</a>
+        <a href="${dcResultUrl}" target="_blank" rel="noopener">${dcResultTitle}</a>
+        <a href="${dcArchiveUrl}" target="_blank" rel="noopener">${dcArchiveTitle}</a>
+        <a href="dc-social.html" class="${page === "dc-social" ? "active" : ""}">${t("nav.dcSocial")}</a>
+        <a href="dc-clubs.html" class="${page === "dc-clubs" ? "active" : ""}">${t("nav.dcClubs")}</a>
+      </div>
+    </div>
+
+    <a href="developer.html" class="${isDevActive ? "active" : ""}" data-i18n="nav.developer">${t("nav.developer")}</a>
   `;
-
-  const panel = nav.querySelector(".more-menu-panel");
-  nav.querySelectorAll(":scope > a").forEach((link) => {
-    const panelLink = link.cloneNode(true);
-    panelLink.hidden = true;
-    panel.appendChild(panelLink);
-  });
-
-  requestAnimationFrame(updateMoreMenu);
 }
 
 function renderFooter() {
@@ -1234,8 +1311,14 @@ function initRoommateFilters() {
 }
 
 function initMoreMenu() {
-  window.addEventListener("resize", updateMoreMenu);
-  window.addEventListener("load", updateMoreMenu);
+  window.addEventListener("resize", () => {
+    updateMoreMenu();
+    ensureNavigation();
+  });
+  window.addEventListener("load", () => {
+    updateMoreMenu();
+    ensureNavigation();
+  });
 
   document.addEventListener("click", (event) => {
     const toggle = event.target.closest(".more-menu-toggle");
@@ -1274,14 +1357,112 @@ function renderResults() {
   const table = byId("resultTable");
   if (!table) return;
 
+  const isUnlocked = getAuthStatus();
+  const lockResults = cmsSettings?.locked_fields?.lock_results !== false;
+  const showResults = !lockResults || isUnlocked;
+  const lockIconSvg = `<svg viewBox="0 0 24 24" width="12" height="12" fill="#10b981" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>`;
+
   table.innerHTML = students.map((student, index) => `
     <tr>
       <td>${index + 1}</td>
       <td><button type="button" data-student-id="${student.id}">${studentValue(student, "name")}</button></td>
       <td title="${student.fullRoll}">${student.roll}</td>
-      ${resultFiles(student).map(([key, file]) => `<td><a class="table-pdf-link" href="${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a></td>`).join("")}
+      ${resultFiles(student).map(([key, file]) => {
+        const fileHref = showResults ? file : "profile.html";
+        const targetAttr = showResults ? 'target="_blank" rel="noopener"' : '';
+        const lockIcon = showResults ? '' : ` ${lockIconSvg}`;
+        const linkClass = showResults ? "table-pdf-link" : "table-pdf-link locked";
+        return `<td><a class="${linkClass}" href="${fileHref}" ${targetAttr}>${t(`pdf.${key}`)}${lockIcon}</a></td>`;
+      }).join("")}
     </tr>
   `).join("");
+}
+
+async function renderDcSocialPage() {
+  const grid = byId("dcSocialGrid");
+  if (!grid || document.body.dataset.page !== "dc-social") return;
+
+  const links = cmsSettings?.dhaka_college?.social_links || [];
+  if (links.length) {
+    grid.innerHTML = links.map((link) => {
+      const title = currentLang === "bn" ? link.title_bn : link.title_en;
+      const typeLabel = link.is_group 
+        ? (currentLang === "bn" ? "ফেসবুক গ্রুপ" : "Facebook Group") 
+        : (currentLang === "bn" ? "ফেসবুক পেজ" : "Facebook Page");
+      if (link.is_group) {
+        return `
+          <div class="dc-card social-link-card group-card" data-aos="fade-up" style="padding: 16px; min-height: 610px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="card-badge group-badge" style="background: rgba(24, 119, 242, 0.1); color: #1877f2; margin-bottom: 16px;">${typeLabel}</div>
+              <h3 style="margin-bottom: 12px;">${title}</h3>
+              <p class="club-desc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+                ${currentLang === "bn" 
+                  ? "ফেসবুক সিকিউরিটি পলিসি অনুযায়ী গ্রুপ টাইমলাইন সরাসরি ওয়েবপেজে প্রদর্শন সম্ভব নয়। আমাদের অফিশিয়াল ফেসবুক গ্রুপে জয়েন করতে এবং অ্যাক্টিভ পোস্টগুলো দেখতে নিচের লিংকে ক্লিক করুন।" 
+                  : "Due to Facebook security policies, group timelines cannot be embedded directly in external sites. Click below to open and join our active Facebook community."}
+              </p>
+              <p class="card-url" style="font-size: 0.8rem; color: var(--text-muted); word-break: break-all; margin-bottom: 24px;">${link.url}</p>
+            </div>
+            <a class="visit-btn" href="${link.url}" target="_blank" rel="noopener" style="background: #1877f2; color: #ffffff; padding: 10px 16px; border-radius: 8px; text-align: center; justify-content: center; font-size: 0.88rem; width: 100%; transition: background 0.2s;">
+              ${currentLang === "bn" ? "ফেসবুক গ্রুপে জয়েন করুন ↗" : "Join Facebook Group ↗"}
+            </a>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="dc-card social-link-card page-embed-card" data-aos="fade-up" style="padding: 16px; min-height: 610px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="card-badge page-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981; margin-bottom: 12px;">${typeLabel}: ${title}</div>
+              <div class="fb-embed-container" style="height: 500px; border-radius: 12px; overflow: hidden; background: var(--surface-strong); border: 1px solid var(--border); margin-bottom: 12px;">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(link.url)}&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="340" height="500" style="border:none;overflow:hidden;width:100%;height:100%;border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px;">
+              <a class="visit-btn" href="${link.url}" target="_blank" rel="noopener" style="font-size: 0.82rem;">
+                ${currentLang === "bn" ? "নতুন ট্যাবে খুলুন ↗" : "Open in New Tab ↗"}
+              </a>
+            </div>
+          </div>
+        `;
+      }
+    }).join("");
+  } else {
+    grid.innerHTML = `<p>${currentLang === 'bn' ? 'কোনো সোশ্যাল লিংক পাওয়া হয়নি।' : 'No social links found.'}</p>`;
+  }
+}
+
+async function renderDcClubsPage() {
+  const grid = byId("dcClubsGrid");
+  if (!grid || document.body.dataset.page !== "dc-clubs") return;
+
+  const clubs = cmsSettings?.dhaka_college?.clubs || [];
+  if (clubs.length) {
+    grid.innerHTML = clubs.map((club) => {
+      const name = currentLang === "bn" ? club.name_bn : club.name_en;
+      const desc = currentLang === "bn" ? (club.desc_bn || "") : (club.desc_en || "");
+      const logo = normalizeCmsPath(club.logo) || "images/logo.png";
+      return `
+        <div class="dc-card club-card" data-aos="fade-up" style="padding: 16px; min-height: 650px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="club-header" style="margin-bottom: 12px;">
+              <img class="club-logo" src="${logo}" alt="" loading="lazy">
+              <h3>${name}</h3>
+            </div>
+            <p class="club-desc" style="margin-bottom: 12px; height: 48px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${desc}</p>
+            <div class="fb-embed-container" style="height: 500px; border-radius: 12px; overflow: hidden; background: var(--surface-strong); border: 1px solid var(--border); margin-bottom: 12px;">
+              <iframe src="https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(club.facebook_url)}&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="340" height="500" style="border:none;overflow:hidden;width:100%;height:100%;border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px;">
+            <a class="visit-btn" href="${club.facebook_url}" target="_blank" rel="noopener" style="font-size: 0.82rem;">
+              ${currentLang === "bn" ? "নতুন ট্যাবে খুলুন ↗" : "Open in New Tab ↗"}
+            </a>
+          </div>
+        </div>
+      `;
+    }).join("");
+  } else {
+    grid.innerHTML = `<p>${currentLang === 'bn' ? 'কোনো ক্লাব পাওয়া যায়নি।' : 'No clubs found.'}</p>`;
+  }
 }
 
 function renderDynamicContent() {
@@ -1289,6 +1470,8 @@ function renderDynamicContent() {
   renderStudentCards();
   renderRoommates();
   renderResults();
+  renderDcSocialPage();
+  renderDcClubsPage();
   initImageFallbacks();
 
   if (activeStudentId) {
@@ -1303,6 +1486,24 @@ function renderDynamicContent() {
 
 function initStudentClicks() {
   document.addEventListener("click", (event) => {
+    const copyBtn = event.target.closest(".copy-roll-btn");
+    if (copyBtn) {
+      const roll = copyBtn.dataset.roll;
+      navigator.clipboard.writeText(roll).then(() => {
+        const copyIcon = copyBtn.querySelector(".copy-icon");
+        const checkIcon = copyBtn.querySelector(".check-icon");
+        if (copyIcon && checkIcon) {
+          copyIcon.style.display = "none";
+          checkIcon.style.display = "inline-block";
+          setTimeout(() => {
+            copyIcon.style.display = "inline-block";
+            checkIcon.style.display = "none";
+          }, 2000);
+        }
+      });
+      return;
+    }
+
     const famousTrigger = event.target.closest("[data-famous-id]");
     if (famousTrigger) {
       openFamousModal(famousTrigger.dataset.famousId);
@@ -1451,20 +1652,121 @@ function facebookUsername(url) {
   }
 }
 
-function contactActions(student, phoneHref, whatsappHref) {
-  const fbUrl = student.fb || "https://facebook.com/";
-  let messengerHref = fbUrl;
-  if (student.messenger) {
-    messengerHref = student.messenger.startsWith("http") ? student.messenger : `https://m.me/${student.messenger}`;
-  } else {
-    const messengerName = facebookUsername(fbUrl);
-    if (messengerName) {
-      messengerHref = `https://m.me/${messengerName}`;
-    }
+// Authentication & Masking Helpers
+function maskData(val) {
+  if (!val) return "";
+  return "••••••••";
+}
+
+function getAuthStatus() {
+  if (!cmsSettings) return false;
+  if (cmsSettings.global_visibility === true) return true;
+  const savedPassword = localStorage.getItem("dc-student-password");
+  if (savedPassword && savedPassword === cmsSettings.password) return true;
+  return false;
+}
+
+function checkSessionValidity() {
+  if (!cmsSettings) return;
+  const savedPassword = localStorage.getItem("dc-student-password");
+  if (savedPassword && savedPassword !== cmsSettings.password) {
+    localStorage.removeItem("dc-student-password");
+    location.reload();
   }
+}
+
+function initAuth() {
+  const page = document.body.dataset.page;
+  if (page !== "profile") return;
+
+  const isUnlocked = getAuthStatus();
+  const loginFormCard = byId("loginFormCard");
+  const statusCard = byId("statusCard");
+  const loginForm = byId("loginForm");
+  const logoutBtn = byId("logoutBtn");
+  const passwordInput = byId("password");
+  const togglePasswordBtn = byId("togglePasswordBtn");
+  const eyeIcon = byId("eyeIcon");
+  const errorMsg = byId("loginError");
+  const successMsg = byId("successMessage");
+  const noticeText = byId("noticeText");
+
+  if (noticeText) noticeText.textContent = t("auth.notice");
+  if (successMsg) successMsg.textContent = t("auth.successMessage");
+
+  if (isUnlocked) {
+    if (loginFormCard) loginFormCard.style.display = "none";
+    if (statusCard) statusCard.style.display = "block";
+  } else {
+    if (loginFormCard) loginFormCard.style.display = "block";
+    if (statusCard) statusCard.style.display = "none";
+  }
+
+  if (togglePasswordBtn && passwordInput) {
+    togglePasswordBtn.addEventListener("click", () => {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      if (eyeIcon) {
+        if (type === "text") {
+          eyeIcon.innerHTML = `<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-4.5C7 2.5 2.73 5.61 1 10c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5S8.97 4.5 12 4.5s5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5z"/>`;
+        } else {
+          eyeIcon.innerHTML = `<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>`;
+        }
+      }
+    });
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const enteredPassword = passwordInput.value.trim();
+      if (enteredPassword === cmsSettings.password) {
+        localStorage.setItem("dc-student-password", enteredPassword);
+        if (errorMsg) errorMsg.style.display = "none";
+        location.reload();
+      } else {
+        if (errorMsg) {
+          errorMsg.style.display = "block";
+          errorMsg.textContent = t("auth.error");
+        }
+      }
+    });
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("dc-student-password");
+      location.reload();
+    });
+  }
+}
+
+function initDropdowns() {
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".dropdown-trigger");
+    if (trigger) {
+      const parent = trigger.parentElement;
+      const wasOpen = parent.classList.contains("open");
+      
+      document.querySelectorAll(".nav-dropdown.open").forEach((dropdown) => {
+        dropdown.classList.remove("open");
+      });
+      
+      if (!wasOpen) {
+        parent.classList.add("open");
+      }
+      e.stopPropagation();
+    } else {
+      document.querySelectorAll(".nav-dropdown.open").forEach((dropdown) => {
+        dropdown.classList.remove("open");
+      });
+    }
+  });
+}
+
+function contactActions(student, phoneHref, whatsappHref, emailHref, fbHref, messengerHref, lockStatus = {}) {
   const savedLogos = cmsSettings?.contact_logos || {};
   
-  // High-quality white vector SVG icons as defaults
   const defaultSvgs = {
     call: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4.01c-.55 0-1 .45-1 1C3.01 12.63 11.38 21 20.01 21c.55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/></svg>`,
     whatsapp: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.472 1.332 4.988L2 22l5.163-1.355c1.464.798 3.111 1.218 4.793 1.218 5.506 0 9.988-4.482 9.988-9.988 0-2.662-1.036-5.164-2.918-7.046A9.923 9.923 0 0 0 12.012 2zm5.727 14.126c-.237.668-1.378 1.285-1.921 1.343-.492.052-1.127.086-1.808-.13-2.946-.931-4.992-3.83-5.139-4.026-.147-.197-1.203-1.603-1.203-3.059 0-1.456.759-2.171 1.03-2.464.271-.293.593-.367.791-.367.198 0 .395.003.568.011.183.008.431-.071.674.512.249.599.852 2.072.926 2.219.074.147.124.317.025.513-.099.197-.149.317-.297.492-.149.176-.312.39-.446.524-.149.149-.304.312-.13.612.174.3.774 1.277 1.66 2.067.886.79 1.636 1.036 1.933 1.183.297.147.469.122.642-.078.174-.2.742-.862.94-1.159.198-.297.395-.247.668-.147.272.099 1.73.816 2.027.964.297.149.495.223.568.349.074.127.074.729-.163 1.396z"/></svg>`,
@@ -1486,21 +1788,27 @@ function contactActions(student, phoneHref, whatsappHref) {
     return defaultSvgs[key];
   };
 
+  const callClass = lockStatus.phone ? "contact-btn call locked" : "contact-btn call";
+  const whatsappClass = lockStatus.socials ? "contact-btn whatsapp locked" : "contact-btn whatsapp";
+  const emailClass = lockStatus.email ? "contact-btn email locked" : "contact-btn email";
+  const fbClass = lockStatus.socials ? "contact-btn facebook locked" : "contact-btn facebook";
+  const messengerClass = lockStatus.socials ? "contact-btn messenger locked" : "contact-btn messenger";
+
   return `
     <div class="contact-actions" aria-label="Contact links">
-      <a class="contact-btn call" href="${phoneHref}" aria-label="${t("common.tapCall")}" title="${t("common.tapCall")}">
+      <a class="${callClass}" href="${phoneHref}" aria-label="${t("common.tapCall")}" title="${t("common.tapCall")}">
         ${renderIcon("call", savedLogos.phone)}
       </a>
-      <a class="contact-btn whatsapp" href="${whatsappHref}" target="_blank" rel="noopener" aria-label="${t("common.whatsapp")}" title="${t("common.whatsapp")}">
+      <a class="${whatsappClass}" href="${whatsappHref}" ${!lockStatus.socials ? 'target="_blank" rel="noopener"' : ''} aria-label="${t("common.whatsapp")}" title="${t("common.whatsapp")}">
         ${renderIcon("whatsapp", savedLogos.whatsapp)}
       </a>
-      <a class="contact-btn email" href="mailto:${student.email}" aria-label="${t("common.email")}" title="${t("common.email")}">
+      <a class="${emailClass}" href="${emailHref}" aria-label="${t("common.email")}" title="${t("common.email")}">
         ${renderIcon("email", savedLogos.email)}
       </a>
-      <a class="contact-btn facebook" href="${fbUrl}" target="_blank" rel="noopener" aria-label="${t("common.viewFacebook")}" title="${t("common.viewFacebook")}">
+      <a class="${fbClass}" href="${fbHref}" ${!lockStatus.socials ? 'target="_blank" rel="noopener"' : ''} aria-label="${t("common.viewFacebook")}" title="${t("common.viewFacebook")}">
         ${renderIcon("facebook", savedLogos.facebook)}
       </a>
-      <a class="contact-btn messenger" href="${messengerHref}" target="_blank" rel="noopener" aria-label="Messenger" title="Messenger">
+      <a class="${messengerClass}" href="${messengerHref}" ${!lockStatus.socials ? 'target="_blank" rel="noopener"' : ''} aria-label="Messenger" title="Messenger">
         ${renderIcon("messenger", savedLogos.messenger)}
       </a>
     </div>
@@ -1513,10 +1821,54 @@ function openStudentModal(student) {
   if (!modal || !content) return;
 
   activeStudentId = student.id;
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(studentValue(student, "address"))}`;
-  const phoneHref = `tel:${cleanPhoneNumber(student.phone)}`;
-  const fatherPhoneHref = `tel:${cleanPhoneNumber(student.fatherPhone)}`;
-  const whatsappHref = `https://wa.me/${whatsappNumber(student.phone)}`;
+
+  const smallLockIconSvg = `<svg viewBox="0 0 24 24" width="14" height="14" fill="#10b981" style="display:inline-block; vertical-align:middle; margin-left:6px;"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>`;
+
+  const isUnlocked = getAuthStatus();
+  const lockPhone = cmsSettings?.locked_fields?.lock_phone !== false;
+  const lockFather = cmsSettings?.locked_fields?.lock_father_phone !== false;
+  const lockEmail = cmsSettings?.locked_fields?.lock_email !== false;
+  const lockAddress = cmsSettings?.locked_fields?.lock_address !== false;
+  const lockSocials = cmsSettings?.locked_fields?.lock_socials !== false;
+  const lockResults = cmsSettings?.locked_fields?.lock_results !== false;
+
+  const showPhone = !lockPhone || isUnlocked;
+  const showFather = !lockFather || isUnlocked;
+  const showEmail = !lockEmail || isUnlocked;
+  const showAddress = !lockAddress || isUnlocked;
+  const showSocials = !lockSocials || isUnlocked;
+  const showResults = !lockResults || isUnlocked;
+
+  const displayPhone = showPhone ? student.phone : maskData(student.phone);
+  const displayFather = showFather ? student.fatherPhone : maskData(student.fatherPhone);
+  const displayEmail = showEmail ? student.email : maskData(student.email);
+  const displayAddress = showAddress ? studentValue(student, "address") : maskData(studentValue(student, "address"));
+
+  const lockStatus = {
+    phone: !showPhone,
+    email: !showEmail,
+    socials: !showSocials
+  };
+
+  const phoneHref = showPhone ? `tel:${cleanPhoneNumber(student.phone)}` : "profile.html";
+  const fatherPhoneHref = showFather ? `tel:${cleanPhoneNumber(student.fatherPhone)}` : "profile.html";
+  const emailHref = showEmail ? `mailto:${student.email}` : "profile.html";
+  const addressHref = showAddress ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(studentValue(student, "address"))}` : "profile.html";
+
+  const fbUrl = student.fb || "https://facebook.com/";
+  const fbHref = showSocials ? fbUrl : "profile.html";
+
+  let baseMessenger = fbUrl;
+  if (student.messenger) {
+    baseMessenger = student.messenger.startsWith("http") ? student.messenger : `https://m.me/${student.messenger}`;
+  } else {
+    const messengerName = facebookUsername(fbUrl);
+    if (messengerName) {
+      baseMessenger = `https://m.me/${messengerName}`;
+    }
+  }
+  const messengerHref = showSocials ? baseMessenger : "profile.html";
+  const whatsappHref = showSocials ? `https://wa.me/${whatsappNumber(student.phone)}` : "profile.html";
 
   content.innerHTML = `
     <div class="profile">
@@ -1525,19 +1877,63 @@ function openStudentModal(student) {
         <p class="eyebrow">${t("common.fullProfile")}</p>
         <h2 id="modalName">${studentValue(student, "name")}</h2>
         <p class="lead">${t("common.room")} ${student.room} · ${t("common.roll")} ${student.roll}</p>
-        ${contactActions(student, phoneHref, whatsappHref)}
+        ${contactActions(student, phoneHref, whatsappHref, emailHref, fbHref, messengerHref, lockStatus)}
 
         <div class="profile-grid">
-          <div class="profile-item"><span>${t("common.roll")}</span><strong>${student.fullRoll}</strong></div>
+          <div class="profile-item roll-item">
+            <span>${t("common.roll")}</span>
+            <strong class="roll-copy-wrapper" style="display: inline-flex; align-items: center; gap: 8px;">
+              <span class="roll-text">${student.fullRoll}</span>
+              <button type="button" class="copy-roll-btn" data-roll="${student.fullRoll}" aria-label="Copy Roll Number" title="Copy Roll" style="background:none; border:none; padding:4px; color:var(--text-muted); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; border-radius:4px; transition:background 0.2s, color 0.2s;">
+                <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="pointer-events:none;"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                <svg class="check-icon" viewBox="0 0 24 24" width="14" height="14" fill="#10b981" style="display:none; pointer-events:none;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </button>
+            </strong>
+          </div>
           <div class="profile-item"><span>${t("common.classLabel")}</span><strong>${classLabel(student.classNo)}</strong></div>
           <div class="profile-item"><span>${t("common.group")}</span><strong>${groupLabel(student.group)}</strong></div>
           <div class="profile-item"><span>${t("common.section")}</span><strong>${student.section || "-"}</strong></div>
           <div class="profile-item"><span>${t("common.practicalGroup")}</span><strong>${student.practicalGroup || "-"}</strong></div>
-          <div class="profile-item"><span>${t("common.whatsapp")}</span><strong><a href="${whatsappHref}" target="_blank" rel="noopener">${student.phone}</a></strong></div>
-          <div class="profile-item"><span>${t("common.phone")}</span><strong><a href="${phoneHref}">${student.phone}</a></strong></div>
-          <div class="profile-item"><span>${t("common.fatherPhone")}</span><strong><a href="${fatherPhoneHref}">${student.fatherPhone}</a></strong></div>
-          <div class="profile-item"><span>${t("common.email")}</span><strong><a href="mailto:${student.email}">${student.email}</a></strong></div>
-          <div class="profile-item"><span>${t("common.address")}</span><strong><a href="${mapUrl}" target="_blank" rel="noopener">${studentValue(student, "address")}</a></strong></div>
+          <div class="profile-item ${!showSocials ? 'locked-item' : ''}">
+            <span>${t("common.whatsapp")}</span>
+            <strong>
+              <a href="${whatsappHref}" ${showSocials ? 'target="_blank" rel="noopener"' : ''}>
+                ${displayPhone}${!showSocials ? smallLockIconSvg : ''}
+              </a>
+            </strong>
+          </div>
+          <div class="profile-item ${!showPhone ? 'locked-item' : ''}">
+            <span>${t("common.phone")}</span>
+            <strong>
+              <a href="${phoneHref}">
+                ${displayPhone}${!showPhone ? smallLockIconSvg : ''}
+              </a>
+            </strong>
+          </div>
+          <div class="profile-item ${!showFather ? 'locked-item' : ''}">
+            <span>${t("common.fatherPhone")}</span>
+            <strong>
+              <a href="${fatherPhoneHref}">
+                ${displayFather}${!showFather ? smallLockIconSvg : ''}
+              </a>
+            </strong>
+          </div>
+          <div class="profile-item ${!showEmail ? 'locked-item' : ''}">
+            <span>${t("common.email")}</span>
+            <strong>
+              <a href="${emailHref}">
+                ${displayEmail}${!showEmail ? smallLockIconSvg : ''}
+              </a>
+            </strong>
+          </div>
+          <div class="profile-item ${!showAddress ? 'locked-item' : ''}">
+            <span>${t("common.address")}</span>
+            <strong>
+              <a href="${addressHref}" ${showAddress ? 'target="_blank" rel="noopener"' : ''}>
+                ${displayAddress}${!showAddress ? smallLockIconSvg : ''}
+              </a>
+            </strong>
+          </div>
           <div class="profile-item"><span>${t("common.blood")}</span><strong>${student.blood}</strong></div>
           <div class="profile-item"><span>${t("common.college")}</span><strong>${studentValue(student, "college")}</strong></div>
         </div>
@@ -1547,7 +1943,13 @@ function openStudentModal(student) {
 
         <h3>${t("common.academicResult")}</h3>
         <div class="pdf-grid">
-          ${resultFiles(student).map(([key, file]) => `<a class="result-box" href="${file}" target="_blank" rel="noopener">${t(`pdf.${key}`)}</a>`).join("")}
+          ${resultFiles(student).map(([key, file]) => {
+            const fileHref = showResults ? file : "profile.html";
+            const targetAttr = showResults ? 'target="_blank" rel="noopener"' : '';
+            const lockIcon = showResults ? '' : ` ${smallLockIconSvg}`;
+            const linkClass = showResults ? "result-box" : "result-box locked";
+            return `<a class="${linkClass}" href="${fileHref}" ${targetAttr}>${t(`pdf.${key}`)}${lockIcon}</a>`;
+          }).join("")}
         </div>
 
       </div>
@@ -1569,18 +1971,23 @@ function openRoomModal(room) {
   activeRoomId = room;
   const occupants = students.filter((student) => student.room === room);
   
-  // Dynamic details from roomsData
   const cmsRoom = roomsData && roomsData.find((r) => String(r.room_no) === String(room));
   const title = cmsRoom ? (currentLang === "bn" ? cmsRoom.title_bn : cmsRoom.title_en) : `${t("common.room")} ${room}`;
-  const desc = cmsRoom ? (currentLang === "bn" ? cmsRoom.description_bn : cmsRoom.description_en) : "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.";
+  const desc = cmsRoom ? (currentLang === "bn" ? cmsRoom.description_bn : cmsRoom.description_en) : "Room details.";
   
   let roomPhotos = [];
   if (cmsRoom && cmsRoom.photos && cmsRoom.photos.length) {
     roomPhotos = cmsRoom.photos.map(normalizeCmsPath);
-  } else {
-    const roomIndex = Math.max(1, Math.min(14, Number(room) - 100 || 1));
-    roomPhotos = [1, 2, 3, 4].map((photoIndex) => `images/room${roomIndex}-${photoIndex}.jpg`);
   }
+
+  const photoGridHtml = roomPhotos.length 
+    ? `<div class="room-photo-grid">${roomPhotos.map((photo, index) => `<img src="${photo}" alt="Room photo ${index + 1}" loading="lazy">`).join("")}</div>`
+    : `<div class="no-photos-placeholder">
+         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+           <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 5H5l3.5-4.5z"/>
+         </svg>
+         <p>${currentLang === 'bn' ? 'কোনো রুমের ছবি আপলোড করা হয়নি' : 'No photos uploaded for this room yet'}</p>
+       </div>`;
 
   content.innerHTML = `
     <div class="room-profile">
@@ -1589,9 +1996,7 @@ function openRoomModal(room) {
         <h2 id="modalName">${title}</h2>
         <p class="lead">${occupants.length} ${t("common.students")} · ${t("common.hostelInfo")}</p>
       </div>
-      <div class="room-photo-grid">
-        ${roomPhotos.map((photo, index) => `<img src="${photo}" alt="Room photo ${index + 1}" loading="lazy">`).join("")}
-      </div>
+      ${photoGridHtml}
       <div class="room-about-desc">
         <p>${desc}</p>
       </div>
@@ -1739,6 +2144,9 @@ function initAos() {
 document.addEventListener("DOMContentLoaded", async () => {
   ensureNavigation();
   await loadCmsContent();
+  checkSessionValidity();
+  initAuth();
+  initDropdowns();
   initLanguage();
   initTheme();
   initNavbar();
