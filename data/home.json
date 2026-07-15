@@ -4,11 +4,26 @@
   "hero_title_en": "International Hall",
   "hero_title_bn": "আন্তর্জাতিক ছাত্রাবাস",
   "hero_phrases": [
-    { "text_en": "Together we learn, together we succeed.", "text_bn": "একসাথে শিখি, একসাথে সফল হই।" },
-    { "text_en": "Discipline today, success tomorrow.", "text_bn": "আজকের শৃঙ্খলাই আগামী দিনের সাফল্য।" },
-    { "text_en": "A hall of focus, friendship and ambition.", "text_bn": "মনোযোগ, বন্ধুত্ব আর স্বপ্নের আবাস।" },
-    { "text_en": "Study together, grow together.", "text_bn": "একসাথে পড়ি, একসাথে এগিয়ে যাই।" },
-    { "text_en": "Dream big from Dhaka College.", "text_bn": "ঢাকা কলেজ থেকে বড় স্বপ্নের শুরু।" }
+    {
+      "text_en": "Together we learn, together we succeed.",
+      "text_bn": "একসাথে শিখি, একসাথে সফল হই।"
+    },
+    {
+      "text_en": "Discipline today, success tomorrow.",
+      "text_bn": "আজকের শৃঙ্খলাই আগামী দিনের সাফল্য।"
+    },
+    {
+      "text_en": "A hall of focus, friendship and ambition.",
+      "text_bn": "মনোযোগ, বন্ধুত্ব আর স্বপ্নের আবাস।"
+    },
+    {
+      "text_en": "Study together, grow together.",
+      "text_bn": "একসাথে পড়ি, একসাথে এগিয়ে যাই।"
+    },
+    {
+      "text_en": "Dream big from Dhaka College.",
+      "text_bn": "ঢাকা কলেজ থেকে বড় স্বপ্নের শুরু।"
+    }
   ],
   "info_title_en": "Legacy, achievement and student life",
   "info_title_bn": "ঐতিহ্য, অর্জন ও ছাত্রজীবন",
