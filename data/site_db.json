@@ -80,186 +80,115 @@
   "rooms_mgmt": {
     "rooms": [
       {
-        "room_no": "101",
-        "title_en": "Room 101",
-        "title_bn": "রুম ১০১",
+        "room_no": "314",
+        "title_en": "Room 314",
+        "title_bn": "রুম ৩১৪",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room1-1.jpg",
-          "images/room1-2.jpg",
-          "images/room1-3.jpg",
-          "images/room1-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "102",
-        "title_en": "Room 102",
-        "title_bn": "রুম ১০২",
+        "room_no": "315",
+        "title_en": "Room 315",
+        "title_bn": "রুম ৩১৫",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room2-1.jpg",
-          "images/room2-2.jpg",
-          "images/room2-3.jpg",
-          "images/room2-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "103",
-        "title_en": "Room 103",
-        "title_bn": "রুম ১০৩",
+        "room_no": "316",
+        "title_en": "Room 316",
+        "title_bn": "রুম ৩১৬",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room3-1.jpg",
-          "images/room3-2.jpg",
-          "images/room3-3.jpg",
-          "images/room3-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "104",
-        "title_en": "Room 104",
-        "title_bn": "রুম ১০৪",
+        "room_no": "317",
+        "title_en": "Room 317",
+        "title_bn": "রুম ৩১৭",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room4-1.jpg",
-          "images/room4-2.jpg",
-          "images/room4-3.jpg",
-          "images/room4-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "105",
-        "title_en": "Room 105",
-        "title_bn": "রুম ১০৫",
+        "room_no": "318",
+        "title_en": "Room 318",
+        "title_bn": "রুম ৩১৮",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room5-1.jpg",
-          "images/room5-2.jpg",
-          "images/room5-3.jpg",
-          "images/room5-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "106",
-        "title_en": "Room 106",
-        "title_bn": "রুম ১০৬",
+        "room_no": "319",
+        "title_en": "Room 319",
+        "title_bn": "রুম ৩১৯",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room6-1.jpg",
-          "images/room6-2.jpg",
-          "images/room6-3.jpg",
-          "images/room6-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "107",
-        "title_en": "Room 107",
-        "title_bn": "রুম ১০৭",
+        "room_no": "320",
+        "title_en": "Room 320",
+        "title_bn": "রুম ৩২০",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room7-1.jpg",
-          "images/room7-2.jpg",
-          "images/room7-3.jpg",
-          "images/room7-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "108",
-        "title_en": "Room 108",
-        "title_bn": "রুম ১০৮",
+        "room_no": "321",
+        "title_en": "Room 321",
+        "title_bn": "রুম ৩২১",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room8-1.jpg",
-          "images/room8-2.jpg",
-          "images/room8-3.jpg",
-          "images/room8-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "109",
-        "title_en": "Room 109",
-        "title_bn": "রুম ১০৯",
+        "room_no": "322",
+        "title_en": "Room 322",
+        "title_bn": "রুম ৩২২",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room9-1.jpg",
-          "images/room9-2.jpg",
-          "images/room9-3.jpg",
-          "images/room9-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "110",
-        "title_en": "Room 110",
-        "title_bn": "রুম ১১০",
+        "room_no": "323",
+        "title_en": "Room 323",
+        "title_bn": "রুম ৩২৩",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room10-1.jpg",
-          "images/room10-2.jpg",
-          "images/room10-3.jpg",
-          "images/room10-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "111",
-        "title_en": "Room 111",
-        "title_bn": "রুম ১১১",
+        "room_no": "324",
+        "title_en": "Room 324",
+        "title_bn": "রুম ৩২৪",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room11-1.jpg",
-          "images/room11-2.jpg",
-          "images/room11-3.jpg",
-          "images/room11-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "112",
-        "title_en": "Room 112",
-        "title_bn": "রুম ১১২",
+        "room_no": "325",
+        "title_en": "Room 325",
+        "title_bn": "রুম ৩২৫",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room12-1.jpg",
-          "images/room12-2.jpg",
-          "images/room12-3.jpg",
-          "images/room12-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "113",
-        "title_en": "Room 113",
-        "title_bn": "রুম ১১৩",
+        "room_no": "326",
+        "title_en": "Room 326",
+        "title_bn": "রুম ৩২৬",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
         "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room13-1.jpg",
-          "images/room13-2.jpg",
-          "images/room13-3.jpg",
-          "images/room13-4.jpg"
-        ]
+        "photos": []
       },
       {
-        "room_no": "114",
-        "title_en": "Room 114",
-        "title_bn": "রুম ১১৪",
+        "room_no": "327",
+        "title_en": "Room 327",
+        "title_bn": "রুম ৩২৭",
         "description_en": "Demo room details. Later you can replace the room photos and add bed, table, window and seat information.",
-        "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।",
-        "photos": [
-          "images/room14-1.jpg",
-          "images/room14-2.jpg",
-          "images/room14-3.jpg",
-          "images/room14-4.jpg"
-        ]
+        "description_bn": "রুমের ডেমো বিবরণ। পরে আপনি রুমের ছবি পরিবর্তন করতে এবং বিছানা, টেবিল, জানালা ও সিটের তথ্য যুক্ত করতে পারবেন।"
       }
     ]
   },
@@ -283,7 +212,7 @@
         "class_no": "12",
         "position": 1,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/adib1-11-ct1.pdf",
@@ -296,7 +225,7 @@
         "full_roll": "1202526010139",
         "phone": "01625329874",
         "photo": "images/adib1.jpg",
-        "messenger": "m.me/seadix/",
+        "messenger": "seadix/",
         "address_en": "Hatia, Noakhali",
         "practical_group": "A2",
         "address_bn": "হাতিয়া, নোয়াখালী",
@@ -327,7 +256,7 @@
         "class_no": "12",
         "position": 2,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/santo2-11-ct1.pdf",
@@ -340,7 +269,7 @@
         "full_roll": "1202526010161",
         "phone": "01613601161",
         "photo": "images/santo2.jpg",
-        "messenger": "m.me/naimul.islam55/",
+        "messenger": "naimul.islam55/",
         "address_en": "Hatia, Noakhali",
         "practical_group": "B1",
         "address_bn": "হাতিয়া, নোয়াখালী",
@@ -371,7 +300,7 @@
         "class_no": "12",
         "position": 3,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/jahid3-11-ct1.pdf",
@@ -384,7 +313,7 @@
         "full_roll": "1202526010164",
         "phone": "01844474892",
         "photo": "images/jahid3.jpg",
-        "messenger": "m.me/1BABcH2cjn/",
+        "messenger": "1BABcH2cjn",
         "address_en": "Hatia, Noakhali",
         "practical_group": "B1",
         "address_bn": "হাতিয়া, নোয়াখালী",
@@ -400,7 +329,7 @@
       {
         "short_roll": "326",
         "name_bn": "মোঃ শাকিল শেখ",
-        "bio_en": "",
+        "bio_en": "CT-1 Pass",
         "pdfs": {
           "ct1": "pdfs/sakil4-11-ct1.pdf",
           "ct2": "pdfs/sakil4-11-ct2.pdf",
@@ -408,11 +337,11 @@
           "ct3": "pdfs/sakil4-11-ct3.pdf",
           "yearly": "pdfs/sakil4-11-y.pdf"
         },
-        "bio_bn": "",
+        "bio_bn": "CT-1 Pass",
         "section": "C",
-        "room_no": "103",
+        "room_no": "326",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 4,
         "group_en": "Science",
         "father_phone": "01758684640",
@@ -430,10 +359,12 @@
         "photo": "images/sakil4.jpg",
         "address_en": "Kanchan, Rupganj, Narayanganj",
         "practical_group": "C1",
-        "address_bn": "Kanchan, Rupganj, Narayanganj",
-        "roommate_ids": [],
+        "address_bn": "কাঞ্চন, রূপগঞ্জ, নারায়ণগঞ্জ",
+        "roommate_ids": [
+          "adib1"
+        ],
         "blood_group": "O+",
-        "email": "sakil4@gmail.com",
+        "email": "-",
         "name_en": "Md. Shakil Sheikh",
         "student_id": "sakil4",
         "group": "science"
@@ -451,12 +382,12 @@
         },
         "bio_bn": "CT-1= Absent, CT-2= Absent, Half yearly = Absent, CT-3= loading, Year FINAL= Loading",
         "section": "A",
-        "room_no": "104",
+        "room_no": "318",
         "facebook": "https://www.facebook.com/share/18oRrju5zF/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 5,
         "group_en": "Science",
-        "father_phone": "01800000005",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/sasfkat5-11-ct1.pdf",
@@ -469,10 +400,13 @@
         "full_roll": "1202526010008",
         "phone": "01996569688",
         "photo": "images/sasfkat5.jpg",
+        "messenger": "18oRrju5zF",
         "address_en": "Deboi, Rupganj, Narayanganj",
         "practical_group": "A1",
-        "address_bn": "Deboi, Rupganj, Narayanganj",
-        "roommate_ids": [],
+        "address_bn": "দেবই, রূপগঞ্জ, নারায়ণগঞ্জ",
+        "roommate_ids": [
+          "riyad19"
+        ],
         "blood_group": "O+",
         "email": "shafkatrahmandkam@gmail.com",
         "name_en": "Shafkat Rahman",
@@ -480,8 +414,8 @@
         "group": "science"
       },
       {
-        "short_roll": "106",
-        "name_bn": "মুন্সি করিম",
+        "short_roll": "022",
+        "name_bn": "শাহরিয়ার আল সাকিব মুন্সি",
         "bio_en": "Demo student profile for International Hall. Detailed information can be updated later from the student sheet.",
         "pdfs": {
           "ct1": "pdfs/munsi6-11-ct1.pdf",
@@ -491,13 +425,13 @@
           "yearly": "pdfs/munsi6-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
-        "room_no": "103",
+        "section": "A",
+        "room_no": "315",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 6,
-        "group_en": "Humanities",
-        "father_phone": "01800000006",
+        "group_en": "Science",
+        "father_phone": "01319061472",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/munsi6-11-ct1.pdf",
@@ -506,19 +440,19 @@
           "ct3": "pdfs/munsi6-11-ct3.pdf",
           "yearly": "pdfs/munsi6-11-y.pdf"
         },
-        "group_bn": "মানবিক",
-        "full_roll": "106",
-        "phone": "01700000006",
+        "group_bn": "বিজ্ঞান",
+        "full_roll": "1202526010022",
+        "phone": "01577203120",
         "photo": "/assets/uploads/munsi.png",
-        "address_en": "Sylhet",
-        "practical_group": "",
-        "address_bn": "সিলেট",
+        "address_en": "Choto Alampur, Debidwar, Cumilla",
+        "practical_group": "A1",
+        "address_bn": "ছোট আলমপুর, দেবিদ্বার, কুমিল্লা",
         "roommate_ids": [],
-        "blood_group": "B-",
-        "email": "munsi6@gmail.com",
-        "name_en": "Munsi Karim",
+        "blood_group": "B+",
+        "email": "usage3913@gmail.com",
+        "name_en": "Shahriar al Sakib Munshi",
         "student_id": "munsi6",
-        "group": "arts"
+        "group": "science"
       },
       {
         "short_roll": "122",
@@ -538,7 +472,7 @@
         "class_no": "12",
         "position": 7,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/musfik7-11-ct1.pdf",
@@ -551,7 +485,7 @@
         "full_roll": "1202526010122",
         "phone": "01577390514",
         "photo": "images/musfik7.jpg",
-        "messenger": "m.me/18osDPmvYU/",
+        "messenger": "18osDPmvYU",
         "address_en": "South Sakuchia, Monpura, Bhola",
         "practical_group": "A2",
         "address_bn": "দক্ষিণ সাকুচিয়া, মনপুরা, ভোলা",
@@ -576,13 +510,13 @@
           "yearly": "pdfs/esty8-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
+        "section": "F",
         "room_no": "326",
         "facebook": "https://facebook.com/",
         "class_no": "12",
         "position": 8,
-        "group_en": "Business Studies",
-        "father_phone": "01800000008",
+        "group_en": "Science",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/esty8-11-ct1.pdf",
@@ -591,21 +525,21 @@
           "ct3": "pdfs/esty8-11-ct3.pdf",
           "yearly": "pdfs/esty8-11-y.pdf"
         },
-        "group_bn": "ব্যবসায় শিক্ষা",
+        "group_bn": "বিজ্ঞান",
         "full_roll": "108",
-        "phone": "01700000008",
-        "photo": "images/esty8.jpg",
-        "address_en": "Tangail",
-        "practical_group": "",
+        "phone": "-",
+        "photo": "/assets/uploads/taskin.jpg",
+        "address_en": "Tangail ",
+        "practical_group": "F2",
         "address_bn": "টাঙ্গাইল",
         "roommate_ids": [
           "alauddin17"
         ],
-        "blood_group": "AB-",
-        "email": "esty8@gmail.com",
+        "blood_group": "C+",
+        "email": "-",
         "name_en": "Taskina Rahman ESTY  ",
         "student_id": "esty8",
-        "group": "commerce"
+        "group": "science"
       },
       {
         "short_roll": "141",
@@ -638,7 +572,7 @@
         "full_roll": "1202526010141",
         "phone": "01346588124",
         "photo": "/assets/uploads/img_20260509_184212-tarif-alam-1-.jpg",
-        "messenger": "m.me/1EDVSWD95F/",
+        "messenger": "1EDVSWD95F",
         "address_en": "Ranisonkail, Thakurgaon",
         "practical_group": "A2",
         "address_bn": "রাণীশংকৈল, ঠাকুরগাঁও",
@@ -669,7 +603,7 @@
         "class_no": "12",
         "position": 10,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/kayes10-11-ct1.pdf",
@@ -707,12 +641,12 @@
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
         "section": "B",
-        "room_no": "106",
+        "room_no": "329",
         "facebook": "https://facebook.com/",
         "class_no": "12",
         "position": 11,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/jahid11-11-ct1.pdf",
@@ -725,7 +659,7 @@
         "full_roll": "1202526010223",
         "phone": "01828246239",
         "photo": "/assets/uploads/jahidvay.jpg",
-        "address_en": "নরসিংদী",
+        "address_en": "Narsingdi",
         "practical_group": "B1",
         "address_bn": "নরসিংদী",
         "roommate_ids": [
@@ -752,7 +686,7 @@
         "section": "B",
         "room_no": "314",
         "facebook": "https://www.facebook.com/siam.hasan.anik.402132",
-        "class_no": "11",
+        "class_no": "12",
         "position": 12,
         "group_en": "Science",
         "father_phone": "01761866285",
@@ -768,16 +702,16 @@
         "full_roll": "1202526010195",
         "phone": "01804692801",
         "photo": "images/siam12.jpg",
-        "messenger": "m,me/siam.hasan.anik.402132",
+        "messenger": "siam.hasan.anik.402132",
         "address_en": "Moshinda Majpara, Gurudaspur, Natore",
         "practical_group": "B1",
         "address_bn": "মশিন্দা মাঝপাড়া, গুরুদাসপুর, নাটোর",
         "roommate_ids": [
-          "kays10"
+          "kayes10"
         ],
         "blood_group": "B+",
         "email": "siamhasananik01@gmail.com",
-        "name_en": "Siam Hasan",
+        "name_en": "Siam Hasan ",
         "student_id": "siam12",
         "group": "science"
       },
@@ -796,10 +730,10 @@
         "section": "C",
         "room_no": "107",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 13,
         "group_en": "Science",
-        "father_phone": "01800000013",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/siam13-11-ct1.pdf",
@@ -810,15 +744,15 @@
         },
         "group_bn": "বিজ্ঞান",
         "full_roll": "1202526010113",
-        "phone": "01700000013",
-        "photo": "/assets/uploads/siamkustia.jpg",
+        "phone": "-",
+        "photo": "/assets/uploads/siamkustiaa.jpg",
         "address_en": "Mymensingh",
         "practical_group": "C1",
         "address_bn": "ময়মনসিংহ",
         "roommate_ids": [],
-        "blood_group": "A-",
-        "email": "siam13@gmail.com",
-        "name_en": "Siam Hossain",
+        "blood_group": "C+",
+        "email": "-",
+        "name_en": "Siam Hossain Kustia",
         "student_id": "siam13",
         "group": "science"
       },
@@ -840,7 +774,7 @@
         "class_no": "12",
         "position": 14,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/saimun14-11-ct1.pdf",
@@ -850,9 +784,9 @@
           "yearly": "pdfs/saimun14-11-y.pdf"
         },
         "group_bn": "বিজ্ঞান",
-        "full_roll": "114",
+        "full_roll": "1202526010322",
         "phone": "01772589255",
-        "photo": "/assets/uploads/saim.webp",
+        "photo": "/assets/uploads/saimun3.jpg",
         "address_en": "Baipail, Savar, Dhaka",
         "practical_group": "C1",
         "address_bn": "বাইপাইল, সাভার, ঢাকা",
@@ -860,10 +794,10 @@
           "alif28"
         ],
         "blood_group": "AB-",
-        "email": "-----------",
+        "email": "-",
         "name_en": "Saimun Islam",
         "student_id": "saimun14",
-        "group": "commerce"
+        "group": "science"
       },
       {
         "short_roll": "863",
@@ -878,7 +812,7 @@
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
         "section": "F",
-        "room_no": "106",
+        "room_no": "323",
         "facebook": "https://www.facebook.com/share/1T3gCxVk6J/",
         "class_no": "12",
         "position": 15,
@@ -896,11 +830,13 @@
         "full_roll": "1202526010863",
         "phone": "01995393323",
         "photo": "images/pranto15.jpg",
-        "messenger": "m.me/share/1T3gCxVk6J/",
+        "messenger": "1T3gCxVk6J",
         "address_en": "Kushtia Sadar, Kushtia",
         "practical_group": "F2",
         "address_bn": "কুষ্টিয়া সদর, কুষ্টিয়া",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "nayem18"
+        ],
         "blood_group": "O+",
         "email": "rh597040@gmail.com",
         "name_en": "Ratul Hassan Pranto",
@@ -908,8 +844,8 @@
         "group": "science"
       },
       {
-        "short_roll": "116",
-        "name_bn": "নাঈম ইসলাম",
+        "short_roll": "639",
+        "name_bn": "নাঈম সরওয়ার",
         "bio_en": "Demo student profile for International Hall. Detailed information can be updated later from the student sheet.",
         "pdfs": {
           "ct1": "pdfs/nayem18-11-ct1.pdf",
@@ -919,13 +855,13 @@
           "yearly": "pdfs/nayem18-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "A",
-        "room_no": "108",
+        "section": "E",
+        "room_no": "323",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 16,
         "group_en": "Science",
-        "father_phone": "01800000016",
+        "father_phone": "01711985399",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/nayem18-11-ct1.pdf",
@@ -935,16 +871,18 @@
           "yearly": "pdfs/nayem18-11-y.pdf"
         },
         "group_bn": "বিজ্ঞান",
-        "full_roll": "1202526010116",
-        "phone": "01700000016",
+        "full_roll": "1202526010639",
+        "phone": "01331198715",
         "photo": "/assets/uploads/nayeem.jpg",
-        "address_en": "Tangail",
-        "practical_group": "A2",
-        "address_bn": "টাঙ্গাইল",
-        "roommate_ids": [],
-        "blood_group": "AB-",
-        "email": "nayem18@gmail.com",
-        "name_en": "Nayem Islam",
+        "address_en": "Alamdanga, Chuadanga",
+        "practical_group": "E1",
+        "address_bn": "আলমডাঙ্গা, চুয়াডাঙ্গা",
+        "roommate_ids": [
+          "pranto15"
+        ],
+        "blood_group": "O+",
+        "email": "-",
+        "name_en": "Nayeem Sarwar",
         "student_id": "nayem18",
         "group": "science"
       },
@@ -960,13 +898,13 @@
           "yearly": "pdfs/alauddin17-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
-        "room_no": "109",
+        "section": "-",
+        "room_no": "326",
         "facebook": "https://facebook.com/",
         "class_no": "11",
         "position": 17,
-        "group_en": "Business Studies",
-        "father_phone": "01800000017",
+        "group_en": "Busine",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/alauddin17-11-ct1.pdf",
@@ -977,20 +915,22 @@
         },
         "group_bn": "ব্যবসায় শিক্ষা",
         "full_roll": "117",
-        "phone": "01700000017",
-        "photo": "/assets/uploads/alauddin.png",
+        "phone": "-",
+        "photo": "/assets/uploads/screenshot-2026-07-16-111850.png",
         "address_en": "Kaliganj, Dhaka",
-        "practical_group": "",
+        "practical_group": "-",
         "address_bn": "কালীগঞ্জ, ঢাকা",
-        "roommate_ids": [],
-        "blood_group": "B+",
-        "email": "alauddin17@gmail.com",
+        "roommate_ids": [
+          "esty8"
+        ],
+        "blood_group": "C+",
+        "email": "-",
         "name_en": "Alauddin Khan",
         "student_id": "alauddin17",
-        "group": "commerce"
+        "group": "arts"
       },
       {
-        "short_roll": "118",
+        "short_roll": "872",
         "name_bn": "রফিক হাসান",
         "bio_en": "Demo student profile for International Hall. Detailed information can be updated later from the student sheet.",
         "pdfs": {
@@ -1001,13 +941,13 @@
           "yearly": "pdfs/rafiq18-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
+        "section": "F",
         "room_no": "109",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 18,
         "group_en": "Humanities",
-        "father_phone": "01800000018",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/rafiq18-11-ct1.pdf",
@@ -1017,18 +957,18 @@
           "yearly": "pdfs/rafiq18-11-y.pdf"
         },
         "group_bn": "মানবিক",
-        "full_roll": "118",
-        "phone": "01700000018",
+        "full_roll": "1202526010872",
+        "phone": "-",
         "photo": "/assets/uploads/rafi.jpg",
         "address_en": "Narayanganj",
-        "practical_group": "",
+        "practical_group": "F2",
         "address_bn": "নারায়ণগঞ্জ",
         "roommate_ids": [],
-        "blood_group": "A+",
-        "email": "rafiq18@gmail.com",
+        "blood_group": "C+",
+        "email": "-",
         "name_en": "Rafiq Hasan",
         "student_id": "rafiq18",
-        "group": "arts"
+        "group": "science"
       },
       {
         "short_roll": "596",
@@ -1086,13 +1026,13 @@
           "yearly": "pdfs/mosih20-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
-        "room_no": "110",
+        "section": "-",
+        "room_no": "109",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 20,
         "group_en": "Business Studies",
-        "father_phone": "01800000020",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/mosih20-11-ct1.pdf",
@@ -1103,17 +1043,19 @@
         },
         "group_bn": "ব্যবসায় শিক্ষা",
         "full_roll": "120",
-        "phone": "01700000020",
-        "photo": "images/mosih20.jpg",
+        "phone": "-",
+        "photo": "/assets/uploads/mosih.jpg",
         "address_en": "Gazipur",
-        "practical_group": "",
+        "practical_group": "-",
         "address_bn": "গাজীপুর",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "abrar21"
+        ],
         "blood_group": "AB+",
-        "email": "mosih20@gmail.com",
+        "email": "-",
         "name_en": "Mosih Rahman",
         "student_id": "mosih20",
-        "group": "commerce"
+        "group": "science"
       },
       {
         "short_roll": "121",
@@ -1127,13 +1069,13 @@
           "yearly": "pdfs/abrar21-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
-        "room_no": "111",
+        "section": "-",
+        "room_no": "109",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 21,
         "group_en": "Humanities",
-        "father_phone": "01800000021",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/abrar21-11-ct1.pdf",
@@ -1144,17 +1086,19 @@
         },
         "group_bn": "মানবিক",
         "full_roll": "121",
-        "phone": "01700000021",
+        "phone": "-",
         "photo": "images/abrar21.jpg",
         "address_en": "Mymensingh",
-        "practical_group": "",
+        "practical_group": "-",
         "address_bn": "ময়মনসিংহ",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "mosih20"
+        ],
         "blood_group": "A-",
-        "email": "abrar21@gmail.com",
+        "email": "-",
         "name_en": "Abrar Hossain",
         "student_id": "abrar21",
-        "group": "arts"
+        "group": "science"
       },
       {
         "short_roll": "122",
@@ -1169,12 +1113,12 @@
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
         "section": "B",
-        "room_no": "111",
+        "room_no": "324",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 22,
         "group_en": "Science",
-        "father_phone": "01800000022",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/rudro22-11-ct1.pdf",
@@ -1185,14 +1129,16 @@
         },
         "group_bn": "বিজ্ঞান",
         "full_roll": "1202526010122",
-        "phone": "01700000022",
-        "photo": "images/rudro22.jpg",
+        "phone": "-",
+        "photo": "/assets/uploads/rudro.jpg",
         "address_en": "Sylhet",
         "practical_group": "B2",
         "address_bn": "সিলেট",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "ariful25"
+        ],
         "blood_group": "B-",
-        "email": "rudro22@gmail.com",
+        "email": "-",
         "name_en": "Rudro Mahmud",
         "student_id": "rudro22",
         "group": "science"
@@ -1209,13 +1155,13 @@
           "yearly": "pdfs/riasad23-11-y.pdf"
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
-        "section": "",
-        "room_no": "112",
+        "section": "-",
+        "room_no": "riasad23",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 23,
         "group_en": "Business Studies",
-        "father_phone": "01800000023",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/riasad23-11-ct1.pdf",
@@ -1226,17 +1172,19 @@
         },
         "group_bn": "ব্যবসায় শিক্ষা",
         "full_roll": "123",
-        "phone": "01700000023",
-        "photo": "images/riasad23.jpg",
+        "phone": "-",
+        "photo": "/assets/uploads/reasad.jpg",
         "address_en": "Barishal",
-        "practical_group": "",
+        "practical_group": "-",
         "address_bn": "বরিশাল",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "riasad23"
+        ],
         "blood_group": "O-",
-        "email": "riasad23@gmail.com",
+        "email": "-",
         "name_en": "Riasad Karim",
         "student_id": "riasad23",
-        "group": "commerce"
+        "group": "science"
       },
       {
         "short_roll": "124",
@@ -1297,7 +1245,7 @@
         "class_no": "12",
         "position": 25,
         "group_en": "Science",
-        "father_phone": "-----------",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/ariful25-11-ct1.pdf",
@@ -1310,7 +1258,7 @@
         "full_roll": "1202526010050",
         "phone": "01848631025",
         "photo": "/assets/uploads/img_20260503_130625_624-ariful-islam-1-.jpg",
-        "messenger": "m.me/100093029856067",
+        "messenger": "100093029856067",
         "address_en": "Rohanpur, Gomastapur, Chapainawabganj",
         "practical_group": "A1",
         "address_bn": "রোহনপুর, গোমস্তাপুর, চাঁপাইনবাবগঞ্জ",
@@ -1379,12 +1327,12 @@
         },
         "bio_bn": "আন্তর্জাতিক ছাত্রাবাসের ডেমো শিক্ষার্থী প্রোফাইল। পরে sheet থেকে বিস্তারিত তথ্য আপডেট করা যাবে।",
         "section": "",
-        "room_no": "114",
+        "room_no": "317",
         "facebook": "https://facebook.com/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 27,
         "group_en": "Humanities",
-        "father_phone": "01800000027",
+        "father_phone": "-",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/sabit27-11-ct1.pdf",
@@ -1395,14 +1343,16 @@
         },
         "group_bn": "মানবিক",
         "full_roll": "127",
-        "phone": "01700000027",
+        "phone": "-",
         "photo": "images/sabit27.jpg",
         "address_en": "Cumilla",
         "practical_group": "",
         "address_bn": "কুমিল্লা",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "riasad23"
+        ],
         "blood_group": "O+",
-        "email": "sabit27@gmail.com",
+        "email": "-",
         "name_en": "Sabit Rahman",
         "student_id": "sabit27",
         "group": "arts"
@@ -1420,12 +1370,12 @@
         },
         "bio_bn": "What an amazing website it is for our international hall which created by meritorious adib. Keep going higher. Truly appreciating for such kind of initiatives. With all are staying with it . Hoping main target Will fulfill with it's modern development.",
         "section": "B",
-        "room_no": "110",
+        "room_no": "326",
         "facebook": "https://www.facebook.com/share/18MFvaQuS2/",
-        "class_no": "11",
+        "class_no": "12",
         "position": 28,
         "group_en": "Science",
-        "father_phone": "1540759625",
+        "father_phone": "01540759625",
         "custom_links": [],
         "generated_pdf_names": {
           "ct1": "pdfs/alif28-11-ct1.pdf",
@@ -1438,10 +1388,13 @@
         "full_roll": "1202526010153",
         "phone": "01758173284",
         "photo": "images/alif28.jpg",
-        "address_en": "সুন্দরগঞ্জ, গাইবান্ধা",
+        "messenger": "18MFvaQuS2",
+        "address_en": "Sundarganj, Gaibandha",
         "practical_group": "B1",
         "address_bn": "সুন্দরগঞ্জ, গাইবান্ধা",
-        "roommate_ids": [],
+        "roommate_ids": [
+          "saimun14"
+        ],
         "blood_group": "AB+",
         "email": "mdalimuzzamanalif890@gmail.com",
         "name_en": "Alimuzzamann Alif",
@@ -1649,6 +1602,14 @@
         "description_en": "Headline and short event description will be added here.",
         "description_bn": "এখানে event headline ও সংক্ষিপ্ত description যোগ করা হবে।",
         "photo": "images/gallery1.jpg"
+      },
+      {
+        "position": 2,
+        "photo": "/assets/uploads/img_20251014_112414.jpg",
+        "title_en": "Event 02",
+        "title_bn": "ইভেন্ট ০২ ",
+        "description_en": "Headline and short event description will be added here.",
+        "description_bn": "Headline and short event description will be added here."
       }
     ]
   },
